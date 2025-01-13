@@ -2,6 +2,7 @@
 import MainHeader from '../components/MainHeader.vue'
 import ContentSpacing from '../components/ContentSpacing.vue'
 import TicketsSection from '../components/TicketsSection.vue'
+import TryoutSection from '../components/TryoutSection.vue'
 </script>
 
 <template>
@@ -9,5 +10,7 @@ import TicketsSection from '../components/TicketsSection.vue'
     <MainHeader />
     <ContentSpacing />
     <TicketsSection />
+    <ContentSpacing />
+    <TryoutSection />
   </main>
 </template>
