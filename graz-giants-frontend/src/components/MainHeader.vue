@@ -12,19 +12,18 @@
 <style scoped>
 img {
   object-fit: cover;
-  max-height: 800px;
+  height: 350px;
   width: 100%;
-  height: auto;
 }
 
-@media (max-width: 390px) {
+@media screen and (min-width: 391px) {
   img {
-    min-height: 350px;
+    height: 800px;
   }
 }
 
 p {
-  bottom: 65px;
+  top: 417px;
   position: absolute;
   padding: 0 0 80px 80px;
   color: #fab900;
@@ -36,7 +35,7 @@ p {
   text-transform: uppercase;
 }
 
-@media (max-width: 390px) {
+@media screen and (max-width: 390px) {
   p {
     top: 203px;
     padding: 0 0 0 80px;

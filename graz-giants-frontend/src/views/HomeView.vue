@@ -1,11 +1,13 @@
 <script setup>
 import MainHeader from '../components/MainHeader.vue'
 import ContentSpacing from '../components/ContentSpacing.vue'
+import TicketsSection from '../components/TicketsSection.vue'
 </script>
 
 <template>
   <main>
     <MainHeader />
     <ContentSpacing />
+    <TicketsSection />
   </main>
 </template>
