@@ -1,9 +1,11 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+import MainHeader from '../components/MainHeader.vue'
+import ContentSpacing from '../components/ContentSpacing.vue'
 </script>
 
 <template>
   <main>
-    <TheWelcome />
+    <MainHeader />
+    <ContentSpacing />
   </main>
 </template>

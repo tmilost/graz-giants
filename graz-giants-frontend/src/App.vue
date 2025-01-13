@@ -1,27 +1,65 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue'
+import { RouterView } from 'vue-router'
+import NavBar from './components/Navbar.vue'
+import SidebarMobile from './components/SidebarMobile.vue'
+
+const isNavBarSideMenuDropdownActive = ref(false)
+
+function changeNavBarMobileDisabled() {
+  isNavBarSideMenuDropdownActive.value = false
+}
 </script>
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <NavBar v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive" />
     </div>
   </header>
-
-  <RouterView />
+  <div
+    class="sidebar-bar"
+    v-if="isNavBarSideMenuDropdownActive"
+    @click="changeNavBarMobileDisabled()"
+  >
+    <SidebarMobile v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive" />
+  </div>
+  <div class="body" @click="changeNavBarMobileDisabled()">
+    <RouterView />
+  </div>
 </template>
 
 <style scoped>
-header {
+.wrapper {
+  padding: 0 80px;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.sidebar-bar {
+  display: none;
+}
+
+@media (max-width: 390px) {
+  .wrapper {
+    padding: 0 40px;
+  }
+
+  .sidebar-bar {
+    display: block;
+  }
+}
+
+.body {
+  /* padding: 0 80px; */
+}
+
+/* header {
   line-height: 1.5;
   max-height: 100vh;
 }
@@ -81,5 +119,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
