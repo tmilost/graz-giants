@@ -3,6 +3,7 @@ import MainHeader from '../components/MainHeader.vue'
 import ContentSpacing from '../components/ContentSpacing.vue'
 import TicketsSection from '../components/TicketsSection.vue'
 import TryoutSection from '../components/TryoutSection.vue'
+import LastGame from '../components/LastGame.vue'
 </script>
 
 <template>
@@ -12,5 +13,7 @@ import TryoutSection from '../components/TryoutSection.vue'
     <TicketsSection />
     <ContentSpacing />
     <TryoutSection />
+    <ContentSpacing />
+    <LastGame />
   </main>
 </template>
