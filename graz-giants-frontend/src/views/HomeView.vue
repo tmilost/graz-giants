@@ -7,6 +7,7 @@ import LastGame from '../components/LastGame.vue'
 import GameTable from '../components/GameTable.vue'
 import OurPartners from '../components/OurPartners.vue'
 import GiantsNews from '../components/GiantsNews.vue'
+import NewsLetter from '../components/NewsLetter.vue'
 </script>
 
 <template>
@@ -23,5 +24,7 @@ import GiantsNews from '../components/GiantsNews.vue'
     <OurPartners />
     <ContentSpacing />
     <GiantsNews />
+    <ContentSpacing />
+    <NewsLetter />
   </main>
 </template>
