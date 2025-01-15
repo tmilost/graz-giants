@@ -84,6 +84,7 @@
 
 table {
   border-collapse: collapse;
+  margin-bottom: 20px;
 }
 
 table tr:first-child {

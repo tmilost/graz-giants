@@ -6,6 +6,7 @@ import TryoutSection from '../components/TryoutSection.vue'
 import LastGame from '../components/LastGame.vue'
 import GameTable from '../components/GameTable.vue'
 import OurPartners from '../components/OurPartners.vue'
+import GiantsNews from '../components/GiantsNews.vue'
 </script>
 
 <template>
@@ -21,6 +22,6 @@ import OurPartners from '../components/OurPartners.vue'
     <ContentSpacing />
     <OurPartners />
     <ContentSpacing />
-    <ContentSpacing />
+    <GiantsNews />
   </main>
 </template>
