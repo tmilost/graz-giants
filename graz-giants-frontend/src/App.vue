@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import { RouterView } from 'vue-router'
 import NavBar from './components/Navbar.vue'
 import SidebarMobile from './components/SidebarMobile.vue'
+import FooterGiants from './components/FooterGiants.vue'
 
 const isNavBarSideMenuDropdownActive = ref(false)
 
@@ -27,6 +28,9 @@ function changeNavBarMobileDisabled() {
   <div class="body" @click="changeNavBarMobileDisabled()">
     <RouterView />
   </div>
+  <footer>
+    <FooterGiants />
+  </footer>
 </template>
 
 <style scoped>
