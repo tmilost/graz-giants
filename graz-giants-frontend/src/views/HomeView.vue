@@ -4,6 +4,8 @@ import ContentSpacing from '../components/ContentSpacing.vue'
 import TicketsSection from '../components/TicketsSection.vue'
 import TryoutSection from '../components/TryoutSection.vue'
 import LastGame from '../components/LastGame.vue'
+import GameTable from '../components/GameTable.vue'
+import OurPartners from '../components/OurPartners.vue'
 </script>
 
 <template>
@@ -15,5 +17,10 @@ import LastGame from '../components/LastGame.vue'
     <TryoutSection />
     <ContentSpacing />
     <LastGame />
+    <GameTable />
+    <ContentSpacing />
+    <OurPartners />
+    <ContentSpacing />
+    <ContentSpacing />
   </main>
 </template>
