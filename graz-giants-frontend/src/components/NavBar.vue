@@ -9,11 +9,7 @@
       <button class="hamburger-menu" @click="changeNavBarMobileActive()">
         <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
       </button>
-      <div>
-        <button class="shop-button">
-          <p>Zum Fan-Shop</p>
-        </button>
-      </div>
+      <div class="shop-button" v-html="buttonLink"></div>
     </div>
   </div>
 
@@ -31,15 +27,23 @@ import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
 const navbarLinks = ref('')
+const buttonLink = ref('')
 
 async function getNavbarLinks() {
-  await apiCalls.retrieveNavbarLinks().then((res) => {
+  await apiCalls.retrieveWordpressPost('NavBarTabs').then((res) => {
     navbarLinks.value = res
+  })
+}
+
+async function getButtonLink() {
+  await apiCalls.retrieveWordpressPost('ShopButton').then((res) => {
+    buttonLink.value = res
   })
 }
 
 onMounted(() => {
   getNavbarLinks()
+  getButtonLink()
 })
 
 const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
@@ -127,23 +131,22 @@ function changeNavBarMobileActive() {
   flex-wrap: nowrap;
 }
 
-.shop-button {
+.shop-button:deep(.wp-block-button a),
+.shop-button:deep(.wp-block-button a:active) {
   border-radius: 20px;
   background: #fab900;
   border: 0;
   padding: 10px 20px;
   display: flex;
   text-wrap: nowrap;
-}
 
-.shop-button p {
   color: #003867;
-  font-size: 15px;
+  font-size: 14px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  text-decoration: none;
 }
-
 .hamburger-menu {
   margin-right: 40px;
   padding-top: 8px;

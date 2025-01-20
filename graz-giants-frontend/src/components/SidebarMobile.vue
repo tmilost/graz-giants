@@ -21,7 +21,7 @@ const apiCalls = useApiCalls()
 const navbarLinks = ref('')
 
 async function getNavbarLinks() {
-  await apiCalls.retrieveNavbarLinks().then((res) => {
+  await apiCalls.retrieveWordpressPost('NavBarTabs').then((res) => {
     navbarLinks.value = res
   })
 }
@@ -31,7 +31,6 @@ onMounted(() => {
 })
 
 function changeNavBarMobileActive() {
-  console.log(isNavBarMobileActive.value)
   isNavBarMobileActive.value = !isNavBarMobileActive.value
 }
 </script>

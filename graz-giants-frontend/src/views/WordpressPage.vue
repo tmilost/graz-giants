@@ -17,6 +17,7 @@ onMounted(() => {
 })
 
 async function getWordpressPage() {
+  console.log(route.params.wordpressPage)
   await apiCalls.retrieveWordpressPage(route.params.wordpressPage).then((res) => {
     wordpressPage.value = res
   })
@@ -26,6 +27,7 @@ async function getWordpressPage() {
 <style scoped>
 .wordpress-page {
   margin-top: 80px;
+  min-height: 100%;
 }
 .wordpress-page:deep(:not(:first-child)) {
   padding: 0 80px;
