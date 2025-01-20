@@ -3,12 +3,9 @@
     <div>
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </div>
-    <div class="nav-bar-text">
-      <RouterLink to="/asd">American Football</RouterLink>
-      <RouterLink to="/">Cheerleading</RouterLink>
-      <RouterLink to="/">Powerlifting</RouterLink>
-      <RouterLink to="/">Gameday</RouterLink>
-      <RouterLink to="/">Partner</RouterLink>
+ 
+    <div class="nav-bar-text" v-html="navbarLinks">
+
     </div>
     <div class="nav-bar-right-side">
       <button class="hamburger-menu" @click="changeNavBarMobileActive()">
@@ -26,8 +23,24 @@
 </template>
 
 <script setup>
+import { onMounted, computed, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import DropDownMenu from '../components/DropDownMenu.vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const navbarLinks = ref('')
+
+async function getNavbarLinks() {
+  await apiCalls.retrieveNavbarLinks().then((res) => {
+    navbarLinks.value = res
+  })
+}
+
+onMounted(() => {
+  getNavbarLinks()
+})
+
 
 const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
 
@@ -48,7 +61,7 @@ function changeNavBarMobileActive() {
   z-index: 9;
 }
 
-.nav-bar-text {
+.nav-bar-text  {
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
@@ -63,7 +76,7 @@ function changeNavBarMobileActive() {
   }
 }
 
-.nav-bar-text a {
+.nav-bar-text >>> p a{
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
@@ -74,7 +87,7 @@ function changeNavBarMobileActive() {
   text-decoration: none;
 }
 
-.nav-bar-text a:active {
+.nav-bar-text >>> a:active {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
