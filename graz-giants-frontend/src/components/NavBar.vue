@@ -1,7 +1,6 @@
 <template>
   <div class="nav-bar">
     <router-link to="/">
-
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </router-link>
 

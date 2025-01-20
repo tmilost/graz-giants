@@ -24,5 +24,16 @@ export const useApiCalls = defineStore('apiCalls', () => {
         return null
       })
   }
-  return { retrieveNavbarLinks, retrieveWordpressPage }
+
+  function retrieveWordpressPost(postSlug) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/posts?slug=${postSlug}`)
+      .then((response) => {
+        return response.data[0].content.rendered
+      })
+      .catch(() => {
+        return null
+      })
+  }
+  return { retrieveNavbarLinks, retrieveWordpressPage, retrieveWordpressPost }
 })

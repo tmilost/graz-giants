@@ -2,8 +2,8 @@
   <div class="footer">
     <div class="logo">
       <router-link to="/">
-      <img src="../assets/GiantsLogo.svg" alt="giants logo" />
-    </router-link>
+        <img src="../assets/GiantsLogo.svg" alt="giants logo" />
+      </router-link>
     </div>
     <div class="footer-middle">
       <div class="content">
@@ -35,16 +35,16 @@
     </div>
     <div class="copyright-mobile">
       <div class="copyright-top">Copyright © 2024 Thalheim Graz Giants</div>
-<div class="copyright-bottom">
-      <div class="copyright-left">
-        <a href="">Impressum</a>
-        <a href="">Datenschutz</a>
+      <div class="copyright-bottom">
+        <div class="copyright-left">
+          <a href="">Impressum</a>
+          <a href="">Datenschutz</a>
+        </div>
+        <div class="copyright-right">
+          <img src="../assets/FBIcon.svg" alt="FB Icon" />
+          <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
+        </div>
       </div>
-      <div class="copyright-right">
-        <img src="../assets/FBIcon.svg" alt="FB Icon" />
-        <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
-      </div>
-    </div>
     </div>
   </div>
 </template>
@@ -162,19 +162,19 @@
 
   border-top: 1px solid #fff;
 
-color: #fff;
-font-size: 12px;
-font-style: normal;
-font-weight: 400;
-line-height: 21px;
-/* 175% */
-text-decoration-line: underline;
-text-decoration-style: solid;
-text-decoration-skip-ink: none;
-text-decoration-thickness: auto;
-text-underline-offset: auto;
-text-underline-position: from-font;
-text-transform: uppercase;
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+  /* 175% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  text-transform: uppercase;
 }
 
 @media screen and (max-width: 390px) {

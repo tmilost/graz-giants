@@ -1,31 +1,39 @@
 <template>
   <div class="tickets-section">
-    <img src="../assets/ticketsImage.png" alt="tickets image" />
-    <div class="tickets-section-box">
-      <p class="title">Tickets</p>
-      <p class="text">
-        Sei live dabei in Actionberg und erlebe<br />
-        American Football hautnah!
-        <br />
-        <br />
-        Bring gemeinsam mit uns das Askö-Stadion <br />zum beben!
-      </p>
-      <button class="button">Jetzt Tickets kaufen</button>
-    </div>
+    <div v-html="postContent" />
   </div>
 </template>
 
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('ticketsection').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
+
 <style scoped>
-img {
+.tickets-section >>> img {
   display: block;
   object-fit: cover;
+  height: auto;
+  max-height: 379px;
   min-height: 379px;
   width: 100%;
-  height: auto;
 }
 
 @media screen and (max-width: 390px) {
-  img {
+  .tickets-section >>> img {
     display: none;
   }
 }
@@ -35,11 +43,11 @@ img {
   position: relative;
 }
 
-.tickets-section-box {
+.tickets-section >>> .wp-block-quote {
   position: absolute;
   width: 475px;
-  height: 322px;
-  top: 28px;
+  height: 329px;
+  top: 30px;
   right: 80px;
   background: rgba(255, 255, 255, 0.9);
   padding: 30px;
@@ -50,7 +58,7 @@ img {
     align-items: center;
   }
 
-  .tickets-section-box {
+  .tickets-section >>> .wp-block-quote {
     background: transparent;
     top: 0;
     right: 0;
@@ -61,19 +69,19 @@ img {
   }
 }
 
-.title {
+.tickets-section >>> p:first-child {
   color: #003867;
   text-align: left;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 39.2px;
-  /* 140% */
+
   text-transform: uppercase;
   padding-bottom: 40px;
 }
 
-.text {
+.tickets-section >>> p:not(:first-child) {
   color: #003867;
 
   font-size: 15px;
@@ -84,7 +92,13 @@ img {
   padding-bottom: 40px;
 }
 
-.button {
+@media screen and (max-width: 390px) {
+  .tickets-section >>> p {
+    text-align: center;
+  }
+}
+
+.tickets-section >>> .wp-block-buttons {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;

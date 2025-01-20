@@ -5,7 +5,7 @@
     </button>
     <router-link to="/">
       <div class="mobile-sidebar-image">
-        <img  src="../assets/headerGiantsG.svg" alt="x button icon" />
+        <img src="../assets/headerGiantsG.svg" alt="x button icon" />
       </div>
     </router-link>
     <div class="sidebar-text" v-html="navbarLinks" />
