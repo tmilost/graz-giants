@@ -1,6 +1,6 @@
 <template>
-  <div class="game-table">
-    <div class="table-div">
+  <div class="game-table" v-html="postContent"></div>
+  <!-- <div class="table-div">
       <div class="title">AFL Tabelle 2025</div>
       <table>
         <tr>
@@ -54,21 +54,46 @@
         </tr>
       </table>
     </div>
-    <img src="../assets/Giantsbild.png" alt="Giantsbild image" />
-  </div>
+    <img src="../assets/Giantsbild.png" alt="Giantsbild image" /> -->
 </template>
+
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('GameTable').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
 
 <style scoped>
 .game-table {
   background: #003867;
   display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
-.table-div {
+@media screen and (max-width: 790px) {
+  .game-table {
+    flex-direction: column;
+  }
+}
+
+.game-table >>> .wp-block-quote {
   margin: 0 80px;
 }
 
-.title {
+.game-table >>> p {
   color: #fab900;
   text-align: center;
   font-size: 28px;
@@ -81,62 +106,91 @@
   text-align: left;
 }
 
-table {
+@media screen and (max-width: 790px) {
+  .game-table >>> p {
+    margin: 20px 0 20px;
+  }
+}
+
+.game-table >>> .wp-block-table {
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-table tr:first-child {
+.game-table >>> .wp-block-table tr:first-child {
   color: #fab900;
-  text-align: center;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
   line-height: 33.6px;
-  /* 140% */
   text-transform: uppercase;
   text-align: left;
 }
 
-table tr:not(:first-child) {
+.game-table >>> .wp-block-table tr:not(:first-child) {
   color: #fff;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
-  /* 140% */
+
   border-bottom: 1px solid #fff;
 }
 
-tr {
+.game-table >>> .wp-block-table tr {
   text-align: left;
 }
 
-tr:first-child th:first-child {
+.game-table >>> .wp-block-table tr:first-child td:first-child {
   width: 400px;
 }
 
-tr:first-child th:not(:first-child) {
+.game-table >>> .wp-block-table tr:first-child td:not(:first-child) {
   width: 66px;
 }
 
-tr:first-child th:last-child {
+.game-table >>> .wp-block-table tr:first-child td:last-child {
   width: 38px;
 }
 
-img {
+.game-table >>> img {
   display: block;
   object-fit: cover;
   min-height: 502px;
   width: 359px;
   height: auto;
-  margin-left: auto;
   margin-right: 80px;
 }
 
 @media screen and (max-width: 790px) {
-  img {
+  .game-table >>> img {
     display: none;
+  }
+}
+
+.game-table >>> .wp-block-buttons {
+  display: none;
+}
+
+@media screen and (max-width: 790px) {
+  .game-table >>> .wp-block-buttons,
+  .game-table >>> .wp-block-buttons a,
+  .game-table >>> .wp-block-buttons a:active {
+    display: block;
+    padding-bottom: 20px;
+
+    color: #fab900;
+    text-align: center;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 21px; /* 140% */
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
   }
 }
 </style>
