@@ -1,30 +1,33 @@
 <template>
-  <div class="last-game">
-    <div class="last-game-text">
-      <p>Letztes Spiel</p>
-      <p>AFL Gameweek 7</p>
-    </div>
-
-    <div class="score">
-      <img src="../assets/giantsHelm.png" alt="giants helm image" />
-      <div class="score-number-left">14</div>
-      <div class="score-vs">vs</div>
-      <div class="score-number-right">13</div>
-      <img src="../assets/vikingsHelm.png" alt="vikings helm image" />
-    </div>
-    <div class="text">
-      <a href="google.com">Zum Spielbericht</a>
-    </div>
-  </div>
+  <div v-if="postContent" class="last-game" v-html="postContent"></div>
 </template>
+
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('LastGame').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
 
 <style scoped>
 .last-game {
   padding: 0 80px;
 }
 
-.last-game-text {
+.last-game >>> .wp-block-quote:first-child {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 
   color: #003867;
@@ -38,7 +41,14 @@
   text-transform: uppercase;
 }
 
-.score {
+@media screen and (max-width: 390px) {
+  .last-game >>> .wp-block-quote:first-child {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.last-game >>> .wp-block-quote:not(:first-child) {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -48,19 +58,32 @@
   margin: 80px 0 50px 0;
 }
 
-.score-number-left {
+@media screen and (max-width: 810px) {
+  .last-game >>> .wp-block-quote:not(:first-child) {
+    transform: scale(0.5);
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .last-game >>> .wp-block-quote:not(:first-child) {
+    transform: scale(0.4);
+    margin: 0;
+  }
+}
+
+.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(2) {
   width: 150px;
-  height: 15vw;
-  max-height: 150px;
+  height: 150px;
   background: #003867;
 
+  padding: 21px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   color: #fab900;
   text-align: center;
-  font-size: 7vw;
+  font-size: 90px;
   font-style: normal;
   font-weight: 400;
   line-height: 90px;
@@ -69,7 +92,7 @@
   margin-left: 80px;
 }
 
-.score-vs {
+.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(3) {
   color: #003867;
 
   text-align: center;
@@ -81,10 +104,9 @@
   padding: 0 50px;
 }
 
-.score-number-right {
+.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(4) {
   width: 150px;
-  height: 15vw;
-  max-height: 150px;
+  height: 150px;
 
   display: flex;
   justify-content: center;
@@ -92,7 +114,7 @@
 
   color: #003867;
   text-align: center;
-  font-size: 7vw;
+  font-size: 90px;
   font-style: normal;
   font-weight: 400;
   line-height: 90px;
@@ -101,7 +123,8 @@
   margin-right: 80px;
 }
 
-.text a {
+.last-game >>> .wp-block-button a,
+.last-game >>> .wp-block-button a:active {
   color: #003867;
   text-align: center;
   font-size: 15px;
