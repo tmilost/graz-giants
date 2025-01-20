@@ -3,18 +3,27 @@
     <button class="x-button" @click="changeNavBarMobileActive()">
       <img src="../assets/iconX.svg" alt="x button icon" />
     </button>
-    <div class="sidebar-text">
-      <RouterLink to="/asd">American Football</RouterLink>
-      <RouterLink to="/">Cheerleading</RouterLink>
-      <RouterLink to="/">Powerlifting</RouterLink>
-      <RouterLink to="/">Gameday</RouterLink>
-      <RouterLink to="/">Partner</RouterLink>
-    </div>
+    <div class="sidebar-text" v-html="navbarLinks" />
   </div>
 </template>
 
 <script setup>
+import { ref, onMounted } from 'vue'
 const isNavBarMobileActive = defineModel('isNavBarMobileActive')
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const navbarLinks = ref('')
+
+async function getNavbarLinks() {
+  await apiCalls.retrieveNavbarLinks().then((res) => {
+    navbarLinks.value = res
+  })
+}
+
+onMounted(() => {
+  getNavbarLinks()
+})
 
 function changeNavBarMobileActive() {
   console.log(isNavBarMobileActive.value)
@@ -24,7 +33,7 @@ function changeNavBarMobileActive() {
 
 <style scoped>
 .mobile-sidebar {
-  position: absolute;
+  position: fixed;
   width: 240px;
   background-color: #080405;
   top: 0;
@@ -51,7 +60,7 @@ function changeNavBarMobileActive() {
   row-gap: 30px;
 }
 
-.sidebar-text a {
+.sidebar-text >>> p a {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
@@ -62,7 +71,7 @@ function changeNavBarMobileActive() {
   text-decoration: none;
 }
 
-.sidebar-text a:active {
+.sidebar-text >>> p a:active {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
