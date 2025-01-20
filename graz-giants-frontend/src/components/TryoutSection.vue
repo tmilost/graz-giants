@@ -1,20 +1,35 @@
 <template>
   <div class="tryout-section">
-    <img id="desktop-image" src="../assets/tryoutImage.png" alt="tryout image" />
-    <img id="mobile-image" src="../assets/tryoutImageMobile.png" alt="tryout image" />
-    <div class="tryout-section-box">
-      <p class="title">Sei bei unserem <br />Tryout Dabei!</p>
-      <p class="text">
-        American Footbal <br />l und Cheerleading Tryout. <br />
-        Melde dic <br />h jetzt an und sei dabei!
-      </p>
-      <button class="button">Jetzt Tickets kaufen</button>
-    </div>
+    <div v-html="postContent"></div>
   </div>
 </template>
 
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('TryoutSection').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
+
 <style scoped>
-#desktop-image {
+.tryout-section {
+  height: 379px;
+  position: relative;
+  background: #fab900;
+}
+
+.tryout-section >>> figure:nth-child(1) img {
   display: block;
   object-fit: cover;
   min-height: 379px;
@@ -25,12 +40,12 @@
 }
 
 @media screen and (max-width: 390px) {
-  #desktop-image {
+  .tryout-section >>> figure:nth-child(1) img {
     display: none;
   }
 }
 
-#mobile-image {
+.tryout-section >>> figure:nth-child(2) img {
   display: none;
   object-fit: cover;
   height: 337px;
@@ -38,7 +53,7 @@
 }
 
 @media screen and (max-width: 390px) {
-  #mobile-image {
+  .tryout-section >>> figure:nth-child(2) img {
     display: block;
     /* padding-bottom: 46px; */
     bottom: 0;
@@ -46,14 +61,7 @@
     position: absolute;
   }
 }
-
-.tryout-section {
-  height: 379px;
-  position: relative;
-  background: #fab900;
-}
-
-.tryout-section-box {
+.tryout-section >>> .wp-block-quote {
   position: absolute;
   width: 475px;
   height: 322px;
@@ -68,7 +76,7 @@
     height: 290px;
   }
 
-  .tryout-section-box {
+  .tryout-section >>> .wp-block-quote {
     top: 0;
     left: 0;
     width: 100%;
@@ -77,7 +85,7 @@
   }
 }
 
-.title {
+.tryout-section >>> .wp-block-quote p:first-child {
   color: #003867;
   text-align: left;
   font-size: 28px;
@@ -89,7 +97,7 @@
   padding-bottom: 40px;
 }
 
-.text {
+.tryout-section >>> .wp-block-quote p:not(:first-child) {
   color: #003867;
 
   font-size: 15px;
@@ -101,17 +109,19 @@
 }
 
 @media screen and (max-width: 390px) {
-  .title {
+  .tryout-section >>> .wp-block-quote p:first-child {
     font-size: 22px;
-    padding-bottom: 30px;
+    padding-bottom: 0;
   }
 
-  .text {
+  .tryout-section >>> .wp-block-quote p:not(:first-child) {
     padding-bottom: 30px;
+    width: 162px;
   }
 }
 
-.button {
+.tryout-section >>> .wp-block-button a,
+.tryout-section >>> .wp-block-button a:active {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;
@@ -122,5 +132,6 @@
   font-weight: 700;
   line-height: normal;
   width: 178px;
+  text-decoration: none;
 }
 </style>

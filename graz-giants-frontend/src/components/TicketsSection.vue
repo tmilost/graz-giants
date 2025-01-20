@@ -98,7 +98,8 @@ onMounted(() => {
   }
 }
 
-.tickets-section >>> .wp-block-buttons {
+.tickets-section >>> .wp-block-buttons a,
+.tickets-section >>> .wp-block-buttons a:active {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;
@@ -109,5 +110,6 @@ onMounted(() => {
   font-weight: 700;
   line-height: normal;
   width: 178px;
+  text-decoration: none;
 }
 </style>
