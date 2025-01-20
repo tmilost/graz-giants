@@ -1,7 +1,9 @@
 <template>
   <div class="footer">
     <div class="logo">
+      <router-link to="/">
       <img src="../assets/GiantsLogo.svg" alt="giants logo" />
+    </router-link>
     </div>
     <div class="footer-middle">
       <div class="content">
@@ -31,6 +33,19 @@
         <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
       </div>
     </div>
+    <div class="copyright-mobile">
+      <div class="copyright-top">Copyright © 2024 Thalheim Graz Giants</div>
+<div class="copyright-bottom">
+      <div class="copyright-left">
+        <a href="">Impressum</a>
+        <a href="">Datenschutz</a>
+      </div>
+      <div class="copyright-right">
+        <img src="../assets/FBIcon.svg" alt="FB Icon" />
+        <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
+      </div>
+    </div>
+    </div>
   </div>
 </template>
 
@@ -55,6 +70,12 @@
   display: flex;
   flex-direction: column;
   width: 290px;
+}
+
+@media screen and (max-width: 390px) {
+  .content {
+    margin-bottom: 30px;
+  }
 }
 
 .content p:first-child {
@@ -109,8 +130,6 @@
 
 .copyright {
   border-top: 1px solid #fff;
-  display: flex;
-  flex-direction: row;
 
   color: #fff;
   font-size: 12px;
@@ -130,6 +149,47 @@
   flex-direction: row;
   justify-content: space-between;
   padding-top: 30px;
+}
+
+@media screen and (max-width: 390px) {
+  .copyright {
+    display: none;
+  }
+}
+
+.copyright-mobile {
+  display: none;
+
+  border-top: 1px solid #fff;
+
+color: #fff;
+font-size: 12px;
+font-style: normal;
+font-weight: 400;
+line-height: 21px;
+/* 175% */
+text-decoration-line: underline;
+text-decoration-style: solid;
+text-decoration-skip-ink: none;
+text-decoration-thickness: auto;
+text-underline-offset: auto;
+text-underline-position: from-font;
+text-transform: uppercase;
+}
+
+@media screen and (max-width: 390px) {
+  .copyright-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .copyright-top {
+    margin: 20px 0;
+  }
+  .copyright-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 .copyright-right img {

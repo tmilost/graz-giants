@@ -3,6 +3,11 @@
     <button class="x-button" @click="changeNavBarMobileActive()">
       <img src="../assets/iconX.svg" alt="x button icon" />
     </button>
+    <router-link to="/">
+      <div class="mobile-sidebar-image">
+        <img  src="../assets/headerGiantsG.svg" alt="x button icon" />
+      </div>
+    </router-link>
     <div class="sidebar-text" v-html="navbarLinks" />
   </div>
 </template>
@@ -46,8 +51,16 @@ function changeNavBarMobileActive() {
   position: absolute;
   background-color: transparent;
   border: 0;
+  top: 0;
   right: 0;
   padding: 30px 40px 0 0;
+}
+
+.mobile-sidebar-image {
+  margin-top: 80px;
+  padding-left: auto;
+  display: flex;
+  justify-content: center;
 }
 
 .sidebar-text {
@@ -55,7 +68,7 @@ function changeNavBarMobileActive() {
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding: 80px;
+  padding: 52px;
   color: #fff;
   row-gap: 30px;
 }

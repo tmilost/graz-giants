@@ -1,8 +1,9 @@
 <template>
   <div class="nav-bar">
-    <div>
+    <router-link to="/">
+
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
-    </div>
+    </router-link>
 
     <div class="nav-bar-text" v-html="navbarLinks" />
     <div class="nav-bar-right-side">
