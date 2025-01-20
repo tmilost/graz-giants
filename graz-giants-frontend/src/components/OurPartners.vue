@@ -1,18 +1,24 @@
 <template>
-  <div class="our-partners">
-    <div class="our-partners-title">Unsere Partner</div>
-    <div class="our-partners-images">
-      <img src="../assets/partner1.svg" alt="Unsere Partner" />
-      <img src="../assets/partner2.svg" alt="Unsere Partner" />
-      <img src="../assets/partner3.svg" alt="Unsere Partner" />
-      <img src="../assets/partner4.svg" alt="Unsere Partner" />
-      <img src="../assets/partner5.svg" alt="Unsere Partner" />
-      <img src="../assets/partner6.svg" alt="Unsere Partner" />
-    </div>
-    <div class="our-partners-text">Werde jetzt Teil der Giants-Family</div>
-    <button class="our-partners-button">Jetzt Tickets kaufen</button>
-  </div>
+  <div class="our-partners" v-html="postContent"></div>
 </template>
+
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('OurPartners').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
 
 <style scoped>
 .our-partners {
@@ -23,22 +29,22 @@
   gap: 50px;
 }
 
-.our-partners-title {
+.our-partners >>> p:nth-child(1) {
   color: #003867;
   text-align: center;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
   line-height: 39.2px;
-  /* 140% */
   text-transform: uppercase;
 }
 
-img {
+.our-partners >>> img {
+  object-fit: contain;
   height: 90px;
 }
 
-.our-partners-images {
+.our-partners >>> .wp-block-gallery {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,7 +55,7 @@ img {
   margin: 10px;
 }
 
-.our-partners-text {
+.our-partners >>> p:nth-child(3) {
   color: #003867;
   text-align: center;
   font-size: 24px;
@@ -59,7 +65,8 @@ img {
   text-transform: uppercase;
 }
 
-.our-partners-button {
+.our-partners >>> .wp-block-buttons a,
+.our-partners >>> .wp-block-buttons a:active {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;
@@ -70,5 +77,6 @@ img {
   font-weight: 700;
   line-height: normal;
   width: 178px;
+  text-decoration: none;
 }
 </style>
