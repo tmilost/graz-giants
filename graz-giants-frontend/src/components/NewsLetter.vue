@@ -37,7 +37,8 @@
   line-height: 33.6px;
   /* 140% */
   text-transform: uppercase;
-  width: 400px;
+  text-wrap: wrap;
+  width: 390px;
 }
 
 .input-email {
@@ -60,15 +61,22 @@
 }
 
 .arow-right {
-  margin-right: 40px;
-  padding-top: 8px;
+  border: 0;
+  background-color: transparent;
+}
+
+.arow-right:active {
+  border: 0;
+  background-color: #003867;
+}
+
+.arow-right img {
   width: 20px;
   height: 15.094px;
   flex-shrink: 0;
   background-color: transparent;
   border: 0;
   display: flex;
-  margin: 0 0 15px 0;
 }
 
 .container {

@@ -151,6 +151,23 @@
   padding-top: 30px;
 }
 
+.copyright-left a {
+  color: #fff;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px; /* 175% */
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+  text-transform: uppercase;
+
+  padding-right: 5px;
+}
+
 @media screen and (max-width: 390px) {
   .copyright {
     display: none;

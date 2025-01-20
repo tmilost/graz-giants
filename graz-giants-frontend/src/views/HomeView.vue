@@ -8,6 +8,7 @@ import GameTable from '../components/GameTable.vue'
 import OurPartners from '../components/OurPartners.vue'
 import GiantsNews from '../components/GiantsNews.vue'
 import NewsLetter from '../components/NewsLetter.vue'
+import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
 </script>
 
 <template>
@@ -26,5 +27,7 @@ import NewsLetter from '../components/NewsLetter.vue'
     <GiantsNews />
     <ContentSpacing />
     <NewsLetter />
+    <ContentSpacing />
+    <GiantsSocialMedia />
   </main>
 </template>
