@@ -23,7 +23,7 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.tickets-section >>> img {
+.tickets-section:deep(img) {
   display: block;
   object-fit: cover;
   height: auto;
@@ -33,7 +33,7 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .tickets-section >>> img {
+  .tickets-section:deep(img) {
     display: none;
   }
 }
@@ -43,7 +43,7 @@ onMounted(() => {
   position: relative;
 }
 
-.tickets-section >>> .wp-block-quote {
+.tickets-section:deep(.wp-block-quote) {
   position: absolute;
   width: 475px;
   height: 329px;
@@ -58,7 +58,7 @@ onMounted(() => {
     align-items: center;
   }
 
-  .tickets-section >>> .wp-block-quote {
+  .tickets-section:deep(.wp-block-quote) {
     background: transparent;
     top: 0;
     right: 0;
@@ -69,7 +69,7 @@ onMounted(() => {
   }
 }
 
-.tickets-section >>> p:first-child {
+.tickets-section:deep(p:first-child) {
   color: #003867;
   text-align: left;
   font-size: 28px;
@@ -81,7 +81,7 @@ onMounted(() => {
   padding-bottom: 40px;
 }
 
-.tickets-section >>> p:not(:first-child) {
+.tickets-section:deep(p:not(:first-child)) {
   color: #003867;
 
   font-size: 15px;
@@ -93,13 +93,13 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .tickets-section >>> p {
+  .tickets-section:deep(p) {
     text-align: center;
   }
 }
 
-.tickets-section >>> .wp-block-buttons a,
-.tickets-section >>> .wp-block-buttons a:active {
+.tickets-section:deep(.wp-block-buttons a),
+.tickets-section:deep(.wp-block-buttons a:active) {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;

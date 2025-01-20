@@ -29,7 +29,7 @@ onMounted(() => {
   background: #fab900;
 }
 
-.tryout-section >>> figure:nth-child(1) img {
+.tryout-section:deep(figure:nth-child(1) img) {
   display: block;
   object-fit: cover;
   min-height: 379px;
@@ -40,12 +40,12 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .tryout-section >>> figure:nth-child(1) img {
+  .tryout-section:deep(figure:nth-child(1) img) {
     display: none;
   }
 }
 
-.tryout-section >>> figure:nth-child(2) img {
+.tryout-section:deep(figure:nth-child(2) img) {
   display: none;
   object-fit: cover;
   height: 337px;
@@ -53,7 +53,7 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .tryout-section >>> figure:nth-child(2) img {
+  .tryout-section:deep(figure:nth-child(2) img) {
     display: block;
     /* padding-bottom: 46px; */
     bottom: 0;
@@ -61,7 +61,7 @@ onMounted(() => {
     position: absolute;
   }
 }
-.tryout-section >>> .wp-block-quote {
+.tryout-section:deep(.wp-block-quote) {
   position: absolute;
   width: 475px;
   height: 322px;
@@ -76,7 +76,7 @@ onMounted(() => {
     height: 290px;
   }
 
-  .tryout-section >>> .wp-block-quote {
+  .tryout-section:deep(.wp-block-quote) {
     top: 0;
     left: 0;
     width: 100%;
@@ -85,7 +85,7 @@ onMounted(() => {
   }
 }
 
-.tryout-section >>> .wp-block-quote p:first-child {
+.tryout-section:deep(.wp-block-quote p:first-child) {
   color: #003867;
   text-align: left;
   font-size: 28px;
@@ -97,7 +97,7 @@ onMounted(() => {
   padding-bottom: 40px;
 }
 
-.tryout-section >>> .wp-block-quote p:not(:first-child) {
+.tryout-section:deep(.wp-block-quote p:not(:first-child)) {
   color: #003867;
 
   font-size: 15px;
@@ -109,19 +109,19 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .tryout-section >>> .wp-block-quote p:first-child {
+  .tryout-section:deep(.wp-block-quote p:first-child) {
     font-size: 22px;
     padding-bottom: 0;
   }
 
-  .tryout-section >>> .wp-block-quote p:not(:first-child) {
+  .tryout-section:deep(.wp-block-quote p:not(:first-child)) {
     padding-bottom: 30px;
     width: 162px;
   }
 }
 
-.tryout-section >>> .wp-block-button a,
-.tryout-section >>> .wp-block-button a:active {
+.tryout-section:deep(.wp-block-button a),
+.tryout-section:deep(.wp-block-button a:active) {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;

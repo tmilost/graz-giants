@@ -29,7 +29,7 @@ onMounted(() => {
   gap: 50px;
 }
 
-.our-partners >>> p:nth-child(1) {
+.our-partners:deep(p:nth-child(1)) {
   color: #003867;
   text-align: center;
   font-size: 28px;
@@ -39,12 +39,12 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-.our-partners >>> img {
+.our-partners:deep(img) {
   object-fit: contain;
   height: 90px;
 }
 
-.our-partners >>> .wp-block-gallery {
+.our-partners:deep(.wp-block-gallery) {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,7 +55,7 @@ onMounted(() => {
   margin: 10px;
 }
 
-.our-partners >>> p:nth-child(3) {
+.our-partners:deep(p:nth-child(3)) {
   color: #003867;
   text-align: center;
   font-size: 24px;
@@ -65,8 +65,8 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-.our-partners >>> .wp-block-buttons a,
-.our-partners >>> .wp-block-buttons a:active {
+.our-partners:deep(.wp-block-buttons a),
+.our-partners:deep(.wp-block-buttons a:active) {
   border: 0;
   border-radius: 20px;
   padding: 10px 20px;

@@ -25,7 +25,7 @@ onMounted(() => {
   margin: 0 80px;
 }
 
-.giants-news >>> p:first-child {
+.giants-news:deep(p:first-child) {
   color: #003867;
   font-size: 28px;
   font-style: normal;
@@ -43,23 +43,23 @@ onMounted(() => {
   justify-content: center;
 }
 
-.giants-news >>> .wp-block-quote {
+.giants-news:deep(.wp-block-quote) {
   width: 350px;
 }
 
-.giants-news >>> .wp-block-quote img {
+.giants-news:deep(.wp-block-quote img) {
   display: block;
   object-fit: cover;
   height: auto;
 }
 
 @media screen and (max-width: 390px) {
-  .giants-news >>> .wp-block-quote img {
+  .giants-news:deep(.wp-block-quote img) {
     width: 300px;
   }
 }
 
-.giants-news >>> .wp-block-quote p {
+.giants-news:deep(.wp-block-quote p) {
   color: #003867;
   font-size: 24px;
   font-style: normal;
@@ -72,12 +72,12 @@ onMounted(() => {
   min-height: 100px;
 }
 
-.giants-news >>> .wp-block-group {
+.giants-news:deep(.wp-block-group) {
   display: flex;
   flex-direction: row;
 }
 
-.giants-news >>> .wp-block-group p {
+.giants-news:deep(.wp-block-group p) {
   color: #003867;
   font-size: 15px;
   font-style: normal;
@@ -89,7 +89,7 @@ onMounted(() => {
   min-height: 10px;
 }
 
-.giants-news >>> .wp-block-group a {
+.giants-news:deep(.wp-block-group a) {
   color: #003867;
   text-align: right;
   font-size: 15px;

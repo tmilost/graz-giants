@@ -99,7 +99,7 @@ function changeNavBarMobileActive() {
   }
 }
 
-.nav-bar-text >>> p a {
+.nav-bar-text:deep(p a) {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
@@ -110,7 +110,7 @@ function changeNavBarMobileActive() {
   text-decoration: none;
 }
 
-.nav-bar-text >>> a:active {
+.nav-bar-text:deep(a:active) {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;

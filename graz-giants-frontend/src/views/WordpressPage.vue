@@ -27,12 +27,12 @@ async function getWordpressPage() {
 .wordpress-page {
   margin-top: 80px;
 }
-.wordpress-page >>> :not(:first-child) {
+.wordpress-page:deep(:not(:first-child)) {
   padding: 0 80px;
   word-wrap: break-word;
 }
 
-.wordpress-page >>> figure img {
+.wordpress-page:deep(figure img) {
   object-fit: cover;
   height: 350px;
   width: 100%;

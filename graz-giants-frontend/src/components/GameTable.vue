@@ -34,11 +34,11 @@ onMounted(() => {
   }
 }
 
-.game-table >>> .wp-block-quote {
+.game-table:deep(.wp-block-quote) {
   margin: 0 80px;
 }
 
-.game-table >>> p {
+.game-table:deep(p) {
   color: #fab900;
   text-align: center;
   font-size: 28px;
@@ -52,17 +52,17 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 790px) {
-  .game-table >>> p {
+  .game-table:deep(p) {
     margin: 20px 0 20px;
   }
 }
 
-.game-table >>> .wp-block-table {
+.game-table:deep(.wp-block-table) {
   border-collapse: collapse;
   margin-bottom: 20px;
 }
 
-.game-table >>> .wp-block-table tr:first-child {
+.game-table:deep(.wp-block-table tr:first-child) {
   color: #fab900;
   font-size: 24px;
   font-style: normal;
@@ -72,15 +72,15 @@ onMounted(() => {
   text-align: left;
 }
 
-.game-table >>> .wp-block-table table {
+.game-table:deep(.wp-block-table table) {
   border-collapse: collapse;
 }
 
-.game-table >>> .wp-block-table table tr {
+.game-table:deep(.wp-block-table table tr) {
   margin: 22px 22px 22px 22px;
 }
 
-.game-table >>> .wp-block-table tr:not(:first-child) {
+.game-table:deep(.wp-block-table tr:not(:first-child)) {
   color: #fff;
   font-size: 15px;
   font-style: normal;
@@ -89,23 +89,23 @@ onMounted(() => {
   border-bottom: 1px solid #fff;
 }
 
-.game-table >>> .wp-block-table tr {
+.game-table:deep(.wp-block-table tr) {
   text-align: left;
 }
 
-.game-table >>> .wp-block-table tr:first-child td:first-child {
+.game-table:deep(.wp-block-table tr:first-child td:first-child) {
   width: 400px;
 }
 
-.game-table >>> .wp-block-table tr:first-child td:not(:first-child) {
+.game-table:deep(.wp-block-table tr:first-child td:not(:first-child)) {
   width: 66px;
 }
 
-.game-table >>> .wp-block-table tr:first-child td:last-child {
+.game-table:deep(.wp-block-table tr:first-child td:last-child) {
   width: 38px;
 }
 
-.game-table >>> img {
+.game-table:deep(img) {
   display: block;
   object-fit: cover;
   min-height: 502px;
@@ -115,19 +115,19 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 790px) {
-  .game-table >>> img {
+  .game-table:deep(img) {
     display: none;
   }
 }
 
-.game-table >>> .wp-block-buttons {
+.game-table:deep(.wp-block-buttons) {
   display: none;
 }
 
 @media screen and (max-width: 790px) {
-  .game-table >>> .wp-block-buttons,
-  .game-table >>> .wp-block-buttons a,
-  .game-table >>> .wp-block-buttons a:active {
+  .game-table:deep(.wp-block-buttons),
+  .game-table:deep(.wp-block-buttons a),
+  .game-table:deep(.wp-block-buttons a:active) {
     display: block;
     padding-bottom: 20px;
 

@@ -73,7 +73,7 @@ function changeNavBarMobileActive() {
   row-gap: 30px;
 }
 
-.sidebar-text >>> p a {
+.sidebar-text:deep(p a) {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
@@ -84,7 +84,7 @@ function changeNavBarMobileActive() {
   text-decoration: none;
 }
 
-.sidebar-text >>> p a:active {
+.sidebar-text:deep(p a:active) {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;

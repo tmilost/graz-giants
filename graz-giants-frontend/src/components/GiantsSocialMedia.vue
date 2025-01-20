@@ -25,27 +25,27 @@ onMounted(() => {
   margin: 80px;
 }
 
-.giants-social-media >>> .wp-block-group {
+.giants-social-media:deep(.wp-block-group) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 
-.giants-social-media >>> .wp-block-group:first-child > p:nth-child(2) {
+.giants-social-media:deep(.wp-block-group:first-child > p:nth-child(2)) {
   display: none;
 }
 
 @media screen and (max-width: 390px) {
-  .giants-social-media >>> .wp-block-group {
+  .giants-social-media:deep(.wp-block-group) {
     flex-direction: column;
     align-items: center;
   }
-  .giants-social-media >>> .wp-block-group p:nth-child(2) {
+  .giants-social-media:deep(.wp-block-group p:nth-child(2)) {
     display: block;
   }
 }
 
-.giants-social-media >>> .wp-block-group p:nth-child(1) {
+.giants-social-media:deep(.wp-block-group p:nth-child(1)) {
   color: #003867;
   font-size: 28px;
   font-style: normal;
@@ -54,14 +54,14 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-.giants-social-media >>> .wp-block-group > .wp-block-group > p {
+.giants-social-media:deep(.wp-block-group > .wp-block-group > p) {
   display: flex;
   flex-direction: row;
   width: 120px;
   padding-left: 5px;
 }
-.giants-social-media >>> .wp-block-group > .wp-block-group > a,
-.giants-social-media >>> .wp-block-group > .wp-block-group > a:active {
+.giants-social-media:deep(.wp-block-group > .wp-block-group > a),
+.giants-social-media:deep(.wp-block-group > .wp-block-group > a:active) {
   color: #003867;
 
   font-size: 15px;
@@ -86,14 +86,14 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .giants-social-media >>> p {
+  .giants-social-media:deep(p) {
     margin-bottom: 30px;
   }
 
-  .giants-social-media >>> .wp-block-group:first-child > p:nth-child(2) {
+  .giants-social-media:deep(.wp-block-group:first-child > p:nth-child(2)) {
     display: block;
   }
-  .giants-social-media >>> p,
+  .giants-social-media:deep(p),
   a {
     text-align: center;
     justify-content: center;

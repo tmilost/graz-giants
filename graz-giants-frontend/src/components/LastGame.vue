@@ -25,7 +25,7 @@ onMounted(() => {
   padding: 0 80px;
 }
 
-.last-game >>> .wp-block-quote:first-child {
+.last-game:deep(.wp-block-quote:first-child) {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -42,13 +42,13 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
-  .last-game >>> .wp-block-quote:first-child {
+  .last-game:deep(.wp-block-quote:first-child) {
     flex-direction: column;
     text-align: center;
   }
 }
 
-.last-game >>> .wp-block-quote:not(:first-child) {
+.last-game:deep(.wp-block-quote:not(:first-child)) {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -59,19 +59,19 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 810px) {
-  .last-game >>> .wp-block-quote:not(:first-child) {
+  .last-game:deep(.wp-block-quote:not(:first-child)) {
     transform: scale(0.5);
   }
 }
 
 @media screen and (max-width: 390px) {
-  .last-game >>> .wp-block-quote:not(:first-child) {
+  .last-game:deep(.wp-block-quote:not(:first-child)) {
     transform: scale(0.4);
     margin: 0;
   }
 }
 
-.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(2) {
+.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(2)) {
   width: 150px;
   height: 150px;
   background: #003867;
@@ -92,7 +92,7 @@ onMounted(() => {
   margin-left: 80px;
 }
 
-.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(3) {
+.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(3)) {
   color: #003867;
 
   text-align: center;
@@ -104,7 +104,7 @@ onMounted(() => {
   padding: 0 50px;
 }
 
-.last-game >>> .wp-block-quote:not(:first-child) p:nth-child(4) {
+.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(4)) {
   width: 150px;
   height: 150px;
 
@@ -123,8 +123,8 @@ onMounted(() => {
   margin-right: 80px;
 }
 
-.last-game >>> .wp-block-button a,
-.last-game >>> .wp-block-button a:active {
+.last-game:deep(.wp-block-button a),
+.last-game:deep(.wp-block-button a:active) {
   color: #003867;
   text-align: center;
   font-size: 15px;
