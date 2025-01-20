@@ -1,52 +1,24 @@
 <template>
-  <div class="drop-down-menu">
-    <div>
-      <p>Football</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Cheerleading</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Powerlifting</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Gameday</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Giants</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Giants</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Partner</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Partner</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-    <div>
-      <p>Partner</p>
-      <RouterLink to="/">Kampfmannschaft</RouterLink>
-      <RouterLink to="/">Youth-Teams</RouterLink>
-    </div>
-  </div>
+  <div class="drop-down-menu" v-html="postContent"></div>
 </template>
+
+<script setup>
+import { onMounted, computed, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContent = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('DropDownMenuLinks').then((res) => {
+    postContent.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
 
 <style scoped>
 .drop-down-menu {
@@ -56,10 +28,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   animation: slideBottom 0.5s ease 0s 1 normal forwards;
 }
 
-.drop-down-menu div {
+.drop-down-menu:deep(.wp-block-quote) {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -76,7 +49,7 @@
   }
 }
 
-p {
+.drop-down-menu:deep(.wp-block-quote p:first-child) {
   color: #fab900;
   font-size: 15px;
   font-style: normal;
@@ -92,22 +65,13 @@ p {
   text-transform: uppercase;
 }
 
-.drop-down-menu a {
+.drop-down-menu:deep(.wp-block-quote a),
+.drop-down-menu:deep(.wp-block-quote a:active) {
   color: #fff;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 10px;
-  /* 83.333% */
   text-decoration: none;
-}
-
-.drop-down-menu a:active {
-  color: #fff;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 10px;
-  /* 83.333% */
 }
 </style>
