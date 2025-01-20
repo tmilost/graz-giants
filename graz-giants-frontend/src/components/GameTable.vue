@@ -72,13 +72,20 @@ onMounted(() => {
   text-align: left;
 }
 
+.game-table >>> .wp-block-table table {
+  border-collapse: collapse;
+}
+
+.game-table >>> .wp-block-table table tr {
+  margin: 22px 22px 22px 22px;
+}
+
 .game-table >>> .wp-block-table tr:not(:first-child) {
   color: #fff;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
-  line-height: 21px;
-
+  line-height: 27px;
   border-bottom: 1px solid #fff;
 }
 

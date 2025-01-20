@@ -24,6 +24,9 @@ async function getWordpressPage() {
 </script>
 
 <style scoped>
+.wordpress-page {
+  margin-top: 80px;
+}
 .wordpress-page >>> :not(:first-child) {
   padding: 0 80px;
   word-wrap: break-word;

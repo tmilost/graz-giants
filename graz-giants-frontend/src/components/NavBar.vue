@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-bar">
+  <div class="nav-bar" :class="$route.path === '/' ? 'nav-bar' : 'nav-bar-black'">
     <router-link to="/">
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </router-link>
@@ -17,7 +17,10 @@
     </div>
   </div>
 
-  <DropDownMenu class="drop-down-menu" v-if="isNavBarSideMenuDropdownActive" />
+  <DropDownMenu
+    :class="$route.path === '/' ? 'drop-down-menu' : 'drop-down-menu-black'"
+    v-if="isNavBarSideMenuDropdownActive"
+  />
 </template>
 
 <script setup>
@@ -48,6 +51,7 @@ function changeNavBarMobileActive() {
 
 <style scoped>
 .nav-bar {
+  padding: 21px 80px;
   height: 80px;
   width: 100%;
   display: flex;
@@ -58,8 +62,30 @@ function changeNavBarMobileActive() {
   z-index: 9;
 }
 
+.nav-bar-black {
+  padding: 21px 80px;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  z-index: 9;
+  background-color: #003867;
+}
+
+@media screen and (max-width: 390px) {
+  .nav-bar-black {
+    padding: 22px 40px;
+  }
+
+  .nav-bar-black a {
+    padding-top: 7px;
+  }
+}
+
 .nav-bar-text {
-  display: none;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   overflow: hidden;
@@ -67,9 +93,9 @@ function changeNavBarMobileActive() {
   padding: 0 40px;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (max-width: 900px) {
   .nav-bar-text {
-    display: flex;
+    display: none;
   }
 }
 
@@ -106,7 +132,7 @@ function changeNavBarMobileActive() {
   background: #fab900;
   border: 0;
   padding: 10px 20px;
-  display: none;
+  display: flex;
   text-wrap: nowrap;
 }
 
@@ -129,16 +155,27 @@ function changeNavBarMobileActive() {
 }
 
 .drop-down-menu {
-  display: none;
+  display: flex;
+  padding: 0 129px;
 }
 
-@media screen and (min-width: 391px) {
+.drop-down-menu-black {
+  display: flex;
+  background-color: #003867;
+  padding: 0 129px;
+}
+
+@media screen and (max-width: 391px) {
   .drop-down-menu {
-    display: flex;
+    display: none;
+  }
+
+  .drop-down-menu-black {
+    display: none;
   }
 
   .shop-button {
-    display: block;
+    display: none;
   }
 }
 </style>
