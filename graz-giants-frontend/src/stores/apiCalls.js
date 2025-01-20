@@ -3,7 +3,6 @@ import axios from 'axios'
 import { apiPaths } from '../config/apiPaths'
 
 export const useApiCalls = defineStore('apiCalls', () => {
-
   function retrieveNavbarLinks() {
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts/27`)
@@ -14,5 +13,16 @@ export const useApiCalls = defineStore('apiCalls', () => {
         return null
       })
   }
-  return { retrieveNavbarLinks }
+
+  function retrieveWordpressPage(pageSlug) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/pages?slug=${pageSlug}`)
+      .then((response) => {
+        return response.data[0].content.rendered
+      })
+      .catch(() => {
+        return null
+      })
+  }
+  return { retrieveNavbarLinks, retrieveWordpressPage }
 })

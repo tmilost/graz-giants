@@ -3,10 +3,8 @@
     <div>
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </div>
- 
-    <div class="nav-bar-text" v-html="navbarLinks">
 
-    </div>
+    <div class="nav-bar-text" v-html="navbarLinks" />
     <div class="nav-bar-right-side">
       <button class="hamburger-menu" @click="changeNavBarMobileActive()">
         <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
@@ -41,7 +39,6 @@ onMounted(() => {
   getNavbarLinks()
 })
 
-
 const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
 
 function changeNavBarMobileActive() {
@@ -61,7 +58,7 @@ function changeNavBarMobileActive() {
   z-index: 9;
 }
 
-.nav-bar-text  {
+.nav-bar-text {
   display: none;
   flex-direction: row;
   flex-wrap: wrap;
@@ -76,7 +73,7 @@ function changeNavBarMobileActive() {
   }
 }
 
-.nav-bar-text >>> p a{
+.nav-bar-text >>> p a {
   color: #ffffff;
   font-size: 15px;
   font-style: normal;
