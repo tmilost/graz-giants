@@ -64,7 +64,6 @@ img {
 .title {
   color: #003867;
   text-align: left;
-  font-family: 'Bree Serif-Giants';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -77,7 +76,6 @@ img {
 .text {
   color: #003867;
 
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -92,7 +90,6 @@ img {
   padding: 10px 20px;
   background: #003867;
   color: #fab900;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;

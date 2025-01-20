@@ -78,7 +78,6 @@
 
 p {
   color: #fab900;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -95,7 +94,6 @@ p {
 
 .drop-down-menu a {
   color: #fff;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -106,7 +104,6 @@ p {
 
 .drop-down-menu a:active {
   color: #fff;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

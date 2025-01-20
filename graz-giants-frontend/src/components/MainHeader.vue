@@ -27,7 +27,6 @@ p {
   position: absolute;
   padding: 0 0 80px 80px;
   color: #fab900;
-  font-family: 'Bree Serif-Giants';
   font-size: 72px;
   font-style: normal;
   font-weight: 400;

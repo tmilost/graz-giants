@@ -30,7 +30,6 @@
 
 .giants-news-tittle {
   color: #003867;
-  font-family: 'Bree Serif-Giants';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -60,7 +59,6 @@ img {
 
 .giants-news-text {
   color: #003867;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -73,7 +71,6 @@ img {
 
 .giants-news-date {
   color: #003867;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;

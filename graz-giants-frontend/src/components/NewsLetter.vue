@@ -31,7 +31,6 @@
 .text {
   color: #003867;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -78,7 +77,6 @@
   align-items: start;
 
   color: #003867;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

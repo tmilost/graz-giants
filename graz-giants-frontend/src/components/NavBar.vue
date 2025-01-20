@@ -112,7 +112,6 @@ function changeNavBarMobileActive() {
 
 .shop-button p {
   color: #003867;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;

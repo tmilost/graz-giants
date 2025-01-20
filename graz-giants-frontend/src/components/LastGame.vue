@@ -30,7 +30,6 @@
   color: #003867;
 
   text-align: right;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -61,7 +60,6 @@
 
   color: #fab900;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 7vw;
   font-style: normal;
   font-weight: 400;
@@ -75,7 +73,6 @@
   color: #003867;
 
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -95,7 +92,6 @@
 
   color: #003867;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 7vw;
   font-style: normal;
   font-weight: 400;
@@ -108,7 +104,6 @@
 .text a {
   color: #003867;
   text-align: center;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;

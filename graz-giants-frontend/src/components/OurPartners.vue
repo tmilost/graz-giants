@@ -26,7 +26,6 @@
 .our-partners-title {
   color: #003867;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -53,7 +52,6 @@ img {
 .our-partners-text {
   color: #003867;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -67,7 +65,6 @@ img {
   padding: 10px 20px;
   background: #003867;
   color: #fab900;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;

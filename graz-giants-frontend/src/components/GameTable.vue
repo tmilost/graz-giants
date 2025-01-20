@@ -71,7 +71,6 @@
 .title {
   color: #fab900;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -90,7 +89,6 @@ table {
 table tr:first-child {
   color: #fab900;
   text-align: center;
-  font-family: 'Bree Serif-Giants';
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -102,7 +100,6 @@ table tr:first-child {
 
 table tr:not(:first-child) {
   color: #fff;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;

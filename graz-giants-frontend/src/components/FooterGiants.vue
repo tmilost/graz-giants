@@ -60,7 +60,6 @@
 .content p:first-child {
   color: #fff;
   text-align: left;
-  font-family: 'Bree Serif-Giants';
   font-size: 18px;
   font-style: normal;
   font-weight: 400;
@@ -72,7 +71,6 @@
 
 .content p:not(:first-child) {
   color: #fff;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
@@ -82,7 +80,6 @@
 
 .content a {
   color: #fff;
-  font-family: Roboto;
   font-size: 15px;
   font-style: normal;
   font-weight: 700;
@@ -116,7 +113,6 @@
   flex-direction: row;
 
   color: #fff;
-  font-family: Roboto;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

@@ -26,6 +26,7 @@ async function getWordpressPage() {
 <style scoped>
 .wordpress-page >>> :not(:first-child) {
   padding: 0 80px;
+  word-wrap: break-word;
 }
 
 .wordpress-page >>> figure img {
