@@ -40,7 +40,7 @@ onMounted(() => {
 }
 
 .our-partners:deep(img) {
-  object-fit: contain;
+  object-fit: none;
   height: 90px;
 }
 

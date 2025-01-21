@@ -1,7 +1,5 @@
 <template>
-  <div class="tryout-section">
-    <div v-html="postContent"></div>
-  </div>
+  <div class="tryout-section" v-html="postContent" v-if="postContent"></div>
 </template>
 
 <script setup>

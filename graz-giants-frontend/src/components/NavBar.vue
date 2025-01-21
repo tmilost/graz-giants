@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-bar" :class="$route.path === '/' ? 'nav-bar' : 'nav-bar-black'">
+  <div :class="$route.path === '/' ? 'nav-bar' : 'nav-bar-black'">
     <router-link to="/">
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </router-link>
@@ -79,10 +79,15 @@ function changeNavBarMobileActive() {
 }
 
 @media screen and (max-width: 390px) {
+  .nav-bar {
+    padding: 22px 40px;
+  }
   .nav-bar-black {
     padding: 22px 40px;
   }
-
+  .nav-bar a {
+    padding-top: 7px;
+  }
   .nav-bar-black a {
     padding-top: 7px;
   }
