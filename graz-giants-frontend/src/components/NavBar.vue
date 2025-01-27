@@ -141,7 +141,7 @@ function changeNavBarMobileActive() {
   border-radius: 20px;
   background: #fab900;
   border: 0;
-  padding: 10px 20px;
+  padding: 9px 20px;
   display: flex;
   text-wrap: nowrap;
 

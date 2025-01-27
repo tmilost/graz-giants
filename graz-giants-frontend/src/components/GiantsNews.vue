@@ -54,8 +54,16 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 430px) {
+  .giants-news {
+    margin: 0 30px;
+    gap: 20px;
+  }
+  .giants-news:deep(.wp-block-quote) {
+    width: 150px;
+  }
   .giants-news:deep(.wp-block-quote img) {
-    width: 300px;
+    width: 150px;
+    height: auto;
   }
 }
 
@@ -102,5 +110,19 @@ onMounted(() => {
   text-decoration-thickness: auto;
   text-underline-offset: auto;
   text-underline-position: from-font;
+}
+
+@media screen and (max-width: 430px) {
+  .giants-news:deep(.wp-block-quote > p) {
+    min-height: 130px;
+  }
+  .giants-news:deep(.wp-block-group > .wp-block-buttons) {
+    margin-top: 7px;
+  }
+  .giants-news:deep(.wp-block-quote p) {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 22.4px;
+  }
 }
 </style>

@@ -35,10 +35,31 @@ onMounted(() => {
   display: none;
 }
 
+.giants-social-media:deep(a, a:active) {
+  color: #003867;
+}
+
+.giants-social-media:deep(.wp-block-group > .wp-block-group > .wp-block-image) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.giants-social-media:deep(.wp-block-group > .wp-block-group > p) {
+  margin: 0;
+  align-items: center;
+}
 @media screen and (max-width: 430px) {
+  .giants-social-media {
+    margin: 30px;
+  }
   .giants-social-media:deep(.wp-block-group) {
     flex-direction: column;
     align-items: center;
+  }
+
+  .giants-social-media:deep(.wp-block-group > .wp-block-group) {
+    display: flex;
+    flex-direction: row;
   }
   .giants-social-media:deep(.wp-block-group p:nth-child(2)) {
     display: block;
@@ -97,6 +118,13 @@ onMounted(() => {
   a {
     text-align: center;
     justify-content: center;
+  }
+  .giants-social-media:deep(.wp-block-gallery) {
+    gap: 20px;
+  }
+  .giants-social-media:deep(.wp-block-gallery img) {
+    width: 150px;
+    height: auto;
   }
 }
 </style>
