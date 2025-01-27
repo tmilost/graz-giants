@@ -32,6 +32,9 @@ onMounted(() => {
 }
 
 @media screen and (max-width: 390px) {
+  .main-header {
+    height: 350px;
+  }
   .main-header:deep(.wp-block-image > img) {
     height: 350px;
   }
