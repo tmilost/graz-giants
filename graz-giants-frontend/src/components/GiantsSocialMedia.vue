@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -35,7 +35,7 @@ onMounted(() => {
   display: none;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .giants-social-media:deep(.wp-block-group) {
     flex-direction: column;
     align-items: center;
@@ -85,7 +85,7 @@ onMounted(() => {
   justify-content: center;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .giants-social-media:deep(p) {
     margin-bottom: 30px;
   }

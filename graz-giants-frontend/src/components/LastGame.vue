@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -41,7 +41,7 @@ onMounted(() => {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .last-game:deep(.wp-block-quote:first-child) {
     flex-direction: column;
     text-align: center;
@@ -64,7 +64,7 @@ onMounted(() => {
   }
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .last-game:deep(.wp-block-quote:not(:first-child)) {
     transform: scale(0.4);
     margin: 0;

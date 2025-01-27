@@ -38,7 +38,7 @@
   /* 140% */
   text-transform: uppercase;
   text-wrap: wrap;
-  width: 390px;
+  padding: 0 30px;
 }
 
 .input-email {

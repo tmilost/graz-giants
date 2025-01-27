@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -53,7 +53,7 @@ onMounted(() => {
   height: auto;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .giants-news:deep(.wp-block-quote img) {
     width: 300px;
   }

@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { RouterLink } from 'vue-router'
 import DropDownMenu from '../components/DropDownMenu.vue'
 import { useApiCalls } from '../stores/apiCalls.js'
@@ -78,7 +78,7 @@ function changeNavBarMobileActive() {
   background-color: #003867;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .nav-bar {
     padding: 22px 40px;
   }

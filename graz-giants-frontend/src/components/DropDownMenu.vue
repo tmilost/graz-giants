@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -45,7 +45,7 @@ onMounted(() => {
   }
 
   100% {
-    transform: translateY(10px);
+    transform: translateY(9px);
   }
 }
 

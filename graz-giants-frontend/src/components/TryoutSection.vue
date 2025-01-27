@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -37,7 +37,7 @@ onMounted(() => {
   margin-right: 80px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tryout-section:deep(figure:nth-child(1) img) {
     display: none;
   }
@@ -50,7 +50,7 @@ onMounted(() => {
   margin-left: auto;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tryout-section:deep(figure:nth-child(2) img) {
     display: block;
     /* padding-bottom: 46px; */
@@ -68,7 +68,7 @@ onMounted(() => {
   padding: 30px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tryout-section {
     align-items: center;
     height: 290px;
@@ -106,7 +106,7 @@ onMounted(() => {
   padding-bottom: 40px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tryout-section:deep(.wp-block-quote p:first-child) {
     font-size: 22px;
     padding-bottom: 0;

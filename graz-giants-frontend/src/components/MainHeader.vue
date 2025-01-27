@@ -3,7 +3,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -31,7 +31,7 @@ onMounted(() => {
   width: 100%;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .main-header {
     height: 350px;
   }
@@ -56,7 +56,7 @@ onMounted(() => {
   color: #ffffff;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .main-header:deep(.wp-block-group) {
     top: 203px;
     padding: 0 0 0 80px;

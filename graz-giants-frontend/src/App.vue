@@ -33,6 +33,7 @@ function changeNavBarMobileDisabled() {
   </footer>
 </template>
 
+<script></script>
 <style scoped>
 .wrapper {
   position: absolute;
@@ -48,7 +49,7 @@ function changeNavBarMobileDisabled() {
   display: none;
 }
 
-@media (max-width: 390px) {
+@media (max-width: 430px) {
   .sidebar-bar {
     display: block;
   }

@@ -5,7 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted, computed, ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
@@ -32,7 +32,7 @@ onMounted(() => {
   width: 100%;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tickets-section:deep(img) {
     display: none;
   }
@@ -53,7 +53,7 @@ onMounted(() => {
   padding: 30px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tickets-section {
     align-items: center;
   }
@@ -92,7 +92,7 @@ onMounted(() => {
   padding-bottom: 40px;
 }
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 430px) {
   .tickets-section:deep(p) {
     text-align: center;
   }
