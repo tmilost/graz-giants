@@ -5,49 +5,32 @@
         <img src="../assets/GiantsLogo.svg" alt="giants logo" />
       </router-link>
     </div>
-    <div class="footer-middle">
-      <div class="content">
-        <p>Kontaktdaten</p>
-        <p>Adresse: Schloßstraße 20, 8020 Graz</p>
-
-        <p>E-Mail: office@grazgiants.at</p>
-
-        <a href="google.com">Weitere Kontaktdaten</a>
-      </div>
-      <div class="content">
-        <p>Extrene Links</p>
-        <div class="footer-logo">
-          <img src="../assets/FooterLogo1.svg" alt="ÖCCV logo" />
-          <img src="../assets/FooterLogo2.svg" alt="AFBÖ logo" />
-        </div>
-      </div>
-    </div>
-    <div class="copyright">
-      <div class="copyright-left">
-        <a href="">Impressum</a>
-        <a href="">Datenschutz</a>
-      </div>
-      <div class="copyright-middle">Copyright © 2024 Thalheim Graz Giants</div>
-      <div class="copyright-right">
-        <img src="../assets/FBIcon.svg" alt="FB Icon" />
-        <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
-      </div>
-    </div>
-    <div class="copyright-mobile">
-      <div class="copyright-top">Copyright © 2024 Thalheim Graz Giants</div>
-      <div class="copyright-bottom">
-        <div class="copyright-left">
-          <a href="">Impressum</a>
-          <a href="">Datenschutz</a>
-        </div>
-        <div class="copyright-right">
-          <img src="../assets/FBIcon.svg" alt="FB Icon" />
-          <img src="../assets/InstaIcon.svg" alt="Insta Icon" />
-        </div>
-      </div>
-    </div>
+    <div class="footer-middle" v-html="postContentMiddle"></div>
+    <div class="copyright" v-html="postContentBottom"></div>
   </div>
 </template>
+
+<script setup>
+import { onMounted, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
+
+const apiCalls = useApiCalls()
+const postContentMiddle = ref('')
+const postContentBottom = ref('')
+
+async function retrieveWordpressPost() {
+  await apiCalls.retrieveWordpressPost('FooterMiddle').then((res) => {
+    postContentMiddle.value = res
+  })
+  await apiCalls.retrieveWordpressPost('FooterBottom').then((res) => {
+    postContentBottom.value = res
+  })
+}
+
+onMounted(() => {
+  retrieveWordpressPost()
+})
+</script>
 
 <style scoped>
 .footer {
@@ -66,19 +49,20 @@
   flex-wrap: wrap;
 }
 
-.content {
+.footer-middle:deep(.wp-block-quote) {
   display: flex;
   flex-direction: column;
   width: 290px;
 }
 
 @media screen and (max-width: 430px) {
-  .content {
-    margin-bottom: 30px;
+  .logo {
+    padding-bottom: 30px;
+    text-align: center;
   }
 }
 
-.content p:first-child {
+.footer-middle:deep(.wp-block-quote > p:first-child) {
   color: #fff;
   text-align: left;
   font-size: 18px;
@@ -90,16 +74,35 @@
   margin-bottom: 30px;
 }
 
-.content p:not(:first-child) {
+.footer-middle:deep(.wp-block-quote > p:last-child) {
+  margin: 30px 0 80px 0;
+}
+
+@media screen and (max-width: 430px) {
+  .footer-middle:deep() {
+    margin-top: 30px;
+    flex-direction: column-reverse;
+  }
+  .footer-middle:deep(.wp-block-quote:nth-child(1)) {
+    margin-top: 40px;
+  }
+  .footer-middle:deep(.wp-block-quote:nth-child(2) > p) {
+    display: none;
+  }
+  .footer-middle:deep(.wp-block-quote > p:last-child) {
+    margin: 10px 0 30px 0;
+  }
+}
+
+.footer-middle:deep(p:not(:first-child)) {
   color: #fff;
   font-size: 15px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
-  /* 140% */
 }
 
-.content a {
+.footer-middle:deep(a) {
   color: #fff;
   font-size: 15px;
   font-style: normal;
@@ -116,15 +119,16 @@
   margin: 30px 0 80px 0;
 }
 
-.footer-logo {
+.footer-middle:deep(.wp-block-quote > .wp-block-quote) {
   width: 125px;
   height: 20px;
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
-.footer-logo img:first-child {
+.footer-middle:deep(.wp-block-quote > .wp-block-quote > .wp-block-image:first-child) {
   margin-right: 45px;
 }
 
@@ -136,28 +140,26 @@
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
-  /* 175% */
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
   text-transform: uppercase;
-
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding-top: 30px;
 }
 
-.copyright-left a {
+@media screen and (max-width: 430px) {
+  .copyright {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+.copyright:deep(.wp-block-quote, a, a:active, p) {
   color: #fff;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 21px;
-  /* 175% */
   text-decoration-line: underline;
   text-decoration-style: solid;
   text-decoration-skip-ink: none;
@@ -165,59 +167,32 @@
   text-underline-offset: auto;
   text-underline-position: from-font;
   text-transform: uppercase;
-
   padding-right: 5px;
 }
 
-@media screen and (max-width: 430px) {
-  .copyright {
-    display: none;
-  }
+.copyright:deep(.wp-block-quote:nth-child(1)) {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
-.copyright-mobile {
-  display: none;
-
-  border-top: 1px solid #fff;
-
-  color: #fff;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  /* 175% */
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-  text-transform: uppercase;
+.copyright:deep(.wp-block-quote:nth-child(3)) {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
 }
 
-@media screen and (max-width: 430px) {
-  .copyright-mobile {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .copyright-top {
-    margin: 20px 0;
-  }
-
-  .copyright-bottom {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-.copyright-right img {
+.copyright:deep(.wp-block-quote:nth-child(3) > img) {
   width: 20px;
   height: 20px;
 }
 
-.copyright-right img:first-child {
-  margin-right: 20px;
+@media screen and (max-width: 430px) {
+  .copyright:deep(.wp-block-quote:nth-child(2)) {
+    margin-top: 10px;
+  }
+  .copyright:deep(.wp-block-quote:nth-child(3)) {
+    margin-top: 10px;
+  }
 }
 </style>
