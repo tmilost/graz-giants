@@ -11,20 +11,22 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
-const postContentMiddle = ref('')
-const postContentBottom = ref('')
+
+const postContentMiddle = computed(() => {
+  return apiCalls.allWordpressPosts['FooterMiddle']
+})
+
+const postContentBottom = computed(() => {
+  return apiCalls.allWordpressPosts['FooterBottom']
+})
 
 async function retrieveWordpressPost() {
-  await apiCalls.retrieveWordpressPost('FooterMiddle').then((res) => {
-    postContentMiddle.value = res
-  })
-  await apiCalls.retrieveWordpressPost('FooterBottom').then((res) => {
-    postContentBottom.value = res
-  })
+  await apiCalls.retrieveWordpressPost('FooterMiddle')
+  await apiCalls.retrieveWordpressPost('FooterBottom')
 }
 
 onMounted(() => {

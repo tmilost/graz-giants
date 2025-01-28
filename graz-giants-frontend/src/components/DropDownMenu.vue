@@ -1,23 +1,24 @@
 <template>
-  <div class="drop-down-menu" v-html="postContent"></div>
+  <div class="drop-down-menu" v-html="wordpressPost" @click.prevent="click"></div>
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const apiCalls = useApiCalls()
-const postContent = ref('')
 
-async function retrieveWordpressPost() {
-  await apiCalls.retrieveWordpressPost('DropDownMenuLinks').then((res) => {
-    postContent.value = res
-  })
-}
-
-onMounted(() => {
-  retrieveWordpressPost()
+const wordpressPost = computed(() => {
+  return apiCalls.allWordpressPosts['DropDownMenuLinks']
 })
+
+function click(ev) {
+  if (ev.target.tagName === 'A') {
+    router.push(new URL(ev.target.href).pathname)
+  }
+}
 </script>
 
 <style scoped>

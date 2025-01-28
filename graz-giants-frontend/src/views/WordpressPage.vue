@@ -1,27 +1,37 @@
 <template>
-  <div class="wordpress-page" v-if="wordpressPage" v-html="wordpressPage" />
-  <Page404View v-else></Page404View>
+  <div class="wordpress-page" v-html="wordpressPage" />
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, computed, watch } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import { useRoute } from 'vue-router'
-import Page404View from '../views/Page404View.vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
+const router = useRouter()
 const apiCalls = useApiCalls()
-
-const wordpressPage = ref([])
 
 onMounted(() => {
   getWordpressPage()
 })
 
+watch(route, () => {
+  if (wordpressPage.value === undefined) {
+    getWordpressPage()
+  }
+})
+
+const wordpressPage = computed(() => {
+  return apiCalls.allWordpressPages[route.params.wordpressPage]
+})
+
 async function getWordpressPage() {
-  console.log(route.params.wordpressPage)
-  await apiCalls.retrieveWordpressPage(route.params.wordpressPage).then((res) => {
-    wordpressPage.value = res
+  await apiCalls.retrieveWordpressPage(route.params.wordpressPage).then((resp) => {
+    if (!resp) {
+      router.push({
+        name: '404Page',
+      })
+    }
   })
 }
 </script>

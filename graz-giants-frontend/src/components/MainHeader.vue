@@ -3,20 +3,13 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
-const postContent = ref('')
 
-async function retrieveWordpressPost() {
-  await apiCalls.retrieveWordpressPost('MainHeader').then((res) => {
-    postContent.value = res
-  })
-}
-
-onMounted(() => {
-  retrieveWordpressPost()
+const postContent = computed(() => {
+  return apiCalls.allWordpressPosts['MainHeader']
 })
 </script>
 

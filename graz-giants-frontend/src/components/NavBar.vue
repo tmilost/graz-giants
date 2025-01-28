@@ -4,7 +4,7 @@
       <img src="../assets/navBarLogo.svg" alt="Giants logo" />
     </router-link>
 
-    <div class="nav-bar-text" v-html="navbarLinks" />
+    <div class="nav-bar-text" v-html="navbarLinks" @click.prevent="click" />
     <div class="nav-bar-right-side">
       <button class="hamburger-menu" @click="changeNavBarMobileActive()">
         <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
@@ -20,33 +20,29 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 import DropDownMenu from '../components/DropDownMenu.vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import { useRouter } from 'vue-router'
 
+const router = useRouter()
 const apiCalls = useApiCalls()
-const navbarLinks = ref('')
-const buttonLink = ref('')
+const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
 
-async function getNavbarLinks() {
-  await apiCalls.retrieveWordpressPost('NavBarTabs').then((res) => {
-    navbarLinks.value = res
-  })
-}
-
-async function getButtonLink() {
-  await apiCalls.retrieveWordpressPost('ShopButton').then((res) => {
-    buttonLink.value = res
-  })
-}
-
-onMounted(() => {
-  getNavbarLinks()
-  getButtonLink()
+const navbarLinks = computed(() => {
+  return apiCalls.allWordpressPosts['NavBarTabs']
 })
 
-const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
+const buttonLink = computed(() => {
+  return apiCalls.allWordpressPosts['ShopButton']
+})
+
+function click(ev) {
+  if (ev.target.tagName === 'A') {
+    router.push(new URL(ev.target.href).pathname)
+  }
+}
 
 function changeNavBarMobileActive() {
   isNavBarSideMenuDropdownActive.value = !isNavBarSideMenuDropdownActive.value
@@ -173,7 +169,7 @@ function changeNavBarMobileActive() {
   padding: 0 129px;
 }
 
-@media screen and (max-width: 391px) {
+@media screen and (max-width: 430px) {
   .drop-down-menu {
     display: none;
   }

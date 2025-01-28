@@ -8,27 +8,28 @@
         <img src="../assets/headerGiantsG.svg" alt="x button icon" />
       </div>
     </router-link>
-    <div class="sidebar-text" v-html="navbarLinks" />
+    <div class="sidebar-text" v-html="postContent" @click.prevent="click" />
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue'
-const isNavBarMobileActive = defineModel('isNavBarMobileActive')
+import { computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import { useRouter } from 'vue-router'
 
 const apiCalls = useApiCalls()
-const navbarLinks = ref('')
+const isNavBarMobileActive = defineModel('isNavBarMobileActive')
+const router = useRouter()
 
-async function getNavbarLinks() {
-  await apiCalls.retrieveWordpressPost('NavBarTabs').then((res) => {
-    navbarLinks.value = res
-  })
-}
-
-onMounted(() => {
-  getNavbarLinks()
+const postContent = computed(() => {
+  return apiCalls.allWordpressPosts['NavBarTabs']
 })
+
+function click(ev) {
+  if (ev.target.tagName === 'A') {
+    router.push(new URL(ev.target.href).pathname)
+  }
+}
 
 function changeNavBarMobileActive() {
   isNavBarMobileActive.value = !isNavBarMobileActive.value

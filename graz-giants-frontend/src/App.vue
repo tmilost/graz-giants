@@ -45,6 +45,10 @@ function changeNavBarMobileDisabled() {
   z-index: 1;
 }
 
+.body {
+  min-height: 100vh;
+}
+
 .sidebar-bar {
   display: none;
 }

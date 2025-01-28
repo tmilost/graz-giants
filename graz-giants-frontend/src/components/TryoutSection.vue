@@ -3,20 +3,19 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
-const postContent = ref('')
 
-async function retrieveWordpressPost() {
-  await apiCalls.retrieveWordpressPost('TryoutSection').then((res) => {
-    postContent.value = res
-  })
-}
+const postContent = computed(() => {
+  return apiCalls.allWordpressPosts['TryoutSection']
+})
 
-onMounted(() => {
-  retrieveWordpressPost()
+onMounted(async () => {
+  if (postContent.value === undefined) {
+    await apiCalls.retrieveWordpressPost('TryoutSection')
+  }
 })
 </script>
 
