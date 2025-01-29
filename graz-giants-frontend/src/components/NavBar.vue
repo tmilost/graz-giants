@@ -1,7 +1,7 @@
 <template>
   <div :class="$route.path === '/' ? 'nav-bar' : 'nav-bar-black'">
     <router-link to="/">
-      <img src="../assets/navBarLogo.svg" alt="Giants logo" />
+      <img class="nav-bar-logo" src="../assets/navBarLogo.svg" alt="Giants logo" />
     </router-link>
 
     <div class="nav-bar-text" v-html="navbarLinks" @click.prevent="click" />
@@ -50,6 +50,10 @@ function changeNavBarMobileActive() {
 </script>
 
 <style scoped>
+.nav-bar-logo {
+  padding-top: 5px;
+}
+
 .nav-bar {
   padding: 21px 80px;
   height: 80px;
@@ -75,6 +79,9 @@ function changeNavBarMobileActive() {
 }
 
 @media screen and (max-width: 430px) {
+  .nav-bar-logo {
+    padding-top: 1.5px;
+  }
   .nav-bar {
     padding: 22px 40px;
   }
@@ -95,7 +102,7 @@ function changeNavBarMobileActive() {
   flex-wrap: wrap;
   overflow: hidden;
   gap: 40px;
-  padding: 0 40px;
+  padding: 2px 40px;
 }
 
 @media screen and (max-width: 900px) {
@@ -150,7 +157,7 @@ function changeNavBarMobileActive() {
 }
 .hamburger-menu {
   margin-right: 40px;
-  padding-top: 8px;
+  padding-top: 11px;
   width: 20px;
   height: 15.094px;
   flex-shrink: 0;
