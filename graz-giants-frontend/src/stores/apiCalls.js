@@ -30,7 +30,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
       })
   }
   function retrieveWordpressPost(postSlug) {
-    console.log({ postSlug })
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?slug=${postSlug}`)
       .then((response) => {
