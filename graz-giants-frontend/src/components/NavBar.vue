@@ -39,8 +39,8 @@ const buttonLink = computed(() => {
 })
 
 function click(ev) {
-  if (ev.target.tagName === 'A') {
-    router.push(new URL(ev.target.href).pathname)
+  if (ev.target.closest('a')) {
+    router.push(new URL(ev.target.closest('a').href).pathname)
   }
 }
 
