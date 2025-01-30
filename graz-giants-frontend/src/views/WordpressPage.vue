@@ -16,9 +16,7 @@ onMounted(() => {
 })
 
 watch(route, () => {
-  if (wordpressPage.value === undefined) {
-    getWordpressPage()
-  }
+  getWordpressPage()
 })
 
 const wordpressPage = computed(() => {
@@ -26,13 +24,20 @@ const wordpressPage = computed(() => {
 })
 
 async function getWordpressPage() {
-  await apiCalls.retrieveWordpressPage(route.params.wordpressPage).then((resp) => {
-    if (!resp) {
-      router.push({
-        name: '404Page',
-      })
-    }
-  })
+  if (typeof wordpressPage.value !== 'string') {
+    await apiCalls.retrieveWordpressPage(route.params.wordpressPage).then((resp) => {
+      if (!resp) {
+        router.push({
+          name: '404Page',
+        })
+      }
+    })
+  }
+  if (!wordpressPage.value || wordpressPage.value?.length === 0) {
+    router.push({
+      name: '404Page',
+    })
+  }
 }
 </script>
 
