@@ -1,6 +1,6 @@
 {
   "name": "graz-giants-frontend",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": true,
   "type": "module",
   "scripts": {
@@ -11,9 +11,9 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "axios": "^1.7.9",
+    "axios": "^1.13.6",
     "pinia": "^3.0.4",
-    "vue": "^3.5.13",
+    "vue": "^3.5.29",
     "vue-router": "^5.0.3"
   },
   "devDependencies": {
