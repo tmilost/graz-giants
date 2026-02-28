@@ -85,12 +85,15 @@ onMounted(() => {
     margin-top: 30px;
     flex-direction: column-reverse;
   }
+
   .footer-middle:deep(.wp-block-quote:nth-child(1)) {
     margin-top: 40px;
   }
+
   .footer-middle:deep(.wp-block-quote:nth-child(2) > p) {
     display: none;
   }
+
   .footer-middle:deep(.wp-block-quote > p:last-child) {
     margin: 10px 0 30px 0;
   }
@@ -127,7 +130,6 @@ onMounted(() => {
   flex-shrink: 0;
   display: flex;
   flex-direction: row;
-  align-items: center;
 }
 
 .footer-middle:deep(.wp-block-quote > .wp-block-quote > .wp-block-image:first-child) {
@@ -193,6 +195,7 @@ onMounted(() => {
   .copyright:deep(.wp-block-quote:nth-child(2)) {
     margin-top: 10px;
   }
+
   .copyright:deep(.wp-block-quote:nth-child(3)) {
     margin-top: 10px;
   }
