@@ -3,7 +3,7 @@
     <div class="relative h-[350px] sm:h-[800px] w-full">
       <img
         class="block h-full w-full object-cover"
-        src="@/assets/4c7af6b98931d7e8c78d7dfce9d258250b3fd5d0.jpg"
+        src="@/assets/HeroImage.jpg"
         alt="Main header image"
       />
       <div
