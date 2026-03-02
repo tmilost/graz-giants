@@ -1,6 +1,7 @@
 <script setup>
 import MainHeader from '../components/MainHeader.vue'
 import ContentSpacing from '../components/ContentSpacing.vue'
+import GiantsEventsSpacer from '../components/GiantEventsSpacer.vue'
 import TicketsSection from '../components/TicketsSection.vue'
 import TryoutSection from '../components/TryoutSection.vue'
 import LastGame from '../components/LastGame.vue'
@@ -14,7 +15,7 @@ import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
 <template>
   <main>
     <MainHeader />
-    <ContentSpacing />
+    <GiantsEventsSpacer />
     <TicketsSection />
     <ContentSpacing />
     <TryoutSection />
