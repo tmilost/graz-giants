@@ -1,5 +1,94 @@
 <template>
-  <div class="game-table" v-html="postContent"></div>
+  <div class="game-table flex flex-row justify-between bg-[#003867] h-[480px] max-[790px]:flex-col">
+    <div class="px-[80px] py-[50px]">
+      <p
+        class="py-[50px] text-left text-[28px] font-normal uppercase leading-[39.2px] text-[#FAB900] max-[790px]:my-[20px]"
+      >
+        Tabelle
+      </p>
+
+      <div class="mb-[20px]">
+        <table class="border-collapse">
+          <tr class="text-left text-[24px] font-normal uppercase leading-[33.6px] text-[#FAB900]">
+            <td class="w-[400px]">Team</td>
+            <td class="w-[66px]">W</td>
+            <td class="w-[66px]">L</td>
+            <td class="w-[66px]">P</td>
+            <td class="w-[38px]">%</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>AFC Vienna Vikings</td>
+            <td>10</td>
+            <td>9</td>
+            <td>1</td>
+            <td>0.900</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>Graz Giants</td>
+            <td>10</td>
+            <td>8</td>
+            <td>2</td>
+            <td>0.800</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>Danube Dragons</td>
+            <td>10</td>
+            <td>8</td>
+            <td>2</td>
+            <td>0.800</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>Tirol Raiders</td>
+            <td>10</td>
+            <td>7</td>
+            <td>3</td>
+            <td>0.700</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>Salzburg Ducks</td>
+            <td>10</td>
+            <td>6</td>
+            <td>4</td>
+            <td>0.600</td>
+          </tr>
+          <tr
+            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+          >
+            <td>Prag Black Panthers</td>
+            <td>10</td>
+            <td>5</td>
+            <td>5</td>
+            <td>0.500</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="hidden max-[790px]:block">
+        <a
+          class="block pb-[20px] text-center text-[15px] font-normal leading-[21px] text-[#FAB900] underline"
+          href="#"
+        >
+          Mehr anzeigen
+        </a>
+      </div>
+    </div>
+
+    <img
+      src="@/assets/GameTable.png"
+      alt="Game Table"
+      class="mr-[80px] block h-auto min-h-[480px] w-[359px] object-cover max-[790px]:hidden"
+    />
+  </div>
 </template>
 
 <script setup>
@@ -18,130 +107,3 @@ onMounted(async () => {
   }
 })
 </script>
-
-<style scoped>
-.game-table {
-  background: #003867;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-}
-
-@media screen and (max-width: 790px) {
-  .game-table {
-    flex-direction: column;
-  }
-}
-
-.game-table:deep(.wp-block-quote) {
-  margin: 0 80px;
-}
-
-.game-table:deep(p) {
-  color: #fab900;
-  text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 39.2px;
-  /* 140% */
-  text-transform: uppercase;
-  margin: 50px 0 50px;
-  text-align: left;
-}
-
-@media screen and (max-width: 790px) {
-  .game-table:deep(p) {
-    margin: 20px 0 20px;
-  }
-}
-
-.game-table:deep(.wp-block-table) {
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-.game-table:deep(.wp-block-table tr:first-child) {
-  color: #fab900;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 33.6px;
-  text-transform: uppercase;
-  text-align: left;
-}
-
-.game-table:deep(.wp-block-table table) {
-  border-collapse: collapse;
-}
-
-.game-table:deep(.wp-block-table table tr) {
-  margin: 22px 22px 22px 22px;
-}
-
-.game-table:deep(.wp-block-table tr:not(:first-child)) {
-  color: #fff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 27px;
-  border-bottom: 1px solid #fff;
-}
-
-.game-table:deep(.wp-block-table tr) {
-  text-align: left;
-}
-
-.game-table:deep(.wp-block-table tr:first-child td:first-child) {
-  width: 400px;
-}
-
-.game-table:deep(.wp-block-table tr:first-child td:not(:first-child)) {
-  width: 66px;
-}
-
-.game-table:deep(.wp-block-table tr:first-child td:last-child) {
-  width: 38px;
-}
-
-.game-table:deep(img) {
-  display: block;
-  object-fit: cover;
-  min-height: 502px;
-  width: 359px;
-  height: auto;
-  margin-right: 80px;
-}
-
-@media screen and (max-width: 790px) {
-  .game-table:deep(img) {
-    display: none;
-  }
-}
-
-.game-table:deep(.wp-block-buttons) {
-  display: none;
-}
-
-@media screen and (max-width: 790px) {
-  .game-table:deep(.wp-block-buttons),
-  .game-table:deep(.wp-block-buttons a),
-  .game-table:deep(.wp-block-buttons a:active) {
-    display: block;
-    padding-bottom: 20px;
-
-    color: #fab900;
-    text-align: center;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 21px; /* 140% */
-    text-decoration-line: underline;
-    text-decoration-style: solid;
-    text-decoration-skip-ink: none;
-    text-decoration-thickness: auto;
-    text-underline-offset: auto;
-    text-underline-position: from-font;
-  }
-}
-</style>
