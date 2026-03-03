@@ -1,14 +1,16 @@
 <template>
   <!-- <div class="giants-news" v-html="postContent"></div> -->
   <div
-    class="px-[80px] flex flex-row flex-wrap justify-center gap-[50px] max-[430px]:mx-[30px] max-[430px]:gap-[20px]"
+    class="px-[80px] flex flex-row flex-wrap justify-between gap-[50px] max-[430px]:mx-[30px] max-[430px]:gap-[20px]"
   >
     <p class="w-full text-[50px] font-normal uppercase leading-[39.2px] text-[#003867]">
       Giants News
     </p>
 
     <!-- Card 1 -->
-    <div class="w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]">
+    <div
+      class="flex justify-between flex-col w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
+    >
       <img
         src="@/assets/TicketImage.jpg"
         alt="News 1"
@@ -32,7 +34,9 @@
     </div>
 
     <!-- Card 2 -->
-    <div class="w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]">
+    <div
+      class="flex justify-between flex-col w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
+    >
       <img
         src="@/assets/TicketImage.jpg"
         alt="News 2"
@@ -56,7 +60,9 @@
     </div>
 
     <!-- Card 3 -->
-    <div class="w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]">
+    <div
+      class="flex justify-between flex-col w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
+    >
       <img
         src="@/assets/TicketImage.jpg"
         alt="News 3"
