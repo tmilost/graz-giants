@@ -1,13 +1,82 @@
 <template>
-  <div class="footer">
-    <div class="logo">
-      <router-link to="/">
-        <img src="../assets/GiantsLogo.svg" alt="giants logo" />
-      </router-link>
+  <footer class="mt-[75px] bg-[#003867] px-[80px] py-[40px]">
+    <!-- Logo -->
+    <div class="pb-[80px] max-[430px]:pb-[30px] max-[430px]:text-center">
+      <a href="/">
+        <img src="@/assets/GiantsLogo.svg" alt="Giants logo" />
+      </a>
     </div>
-    <div class="footer-middle" v-html="postContentMiddle"></div>
-    <div class="copyright" v-html="postContentBottom"></div>
-  </div>
+
+    <!-- Middle -->
+    <div class="flex flex-row flex-wrap gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse">
+      <!-- Column 1 -->
+      <div class="mr-[70px] flex flex-col gap-[10px]">
+        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
+          Kontaktdaten
+        </p>
+        <p class="text-[15px] font-normal leading-[21px] text-white">
+          Adresse: Schloßstraße 20, 8020 Graz
+        </p>
+        <a class="text-[15px] font-normal leading-[21px] text-white" href="#">
+          E-Mail: office@grazgiants.at
+        </a>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Weitere Kontaktdaten:</p>
+        <p class="text-[15px] font-normal leading-[21px] text-white underline">Presse</p>
+      </div>
+
+      <!-- Column 2 -->
+      <div class="flex  flex-col gap-[10px]">
+        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">Gameday</p>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Tickets</p>
+        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Stadion </a>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Livestream</p>
+        <p class="text-[15px] font-normal leading-[21px] text-white underline">Tabelle</p>
+        <p class="text-[15px] font-normal leading-[21px] text-white underline">Schedule</p>
+      </div>
+
+      <!-- Column 3 -->
+      <div class="flex  flex-col gap-[10px]">
+        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
+          Sponsoring
+        </p>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Booster Club</p>
+        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Kontaktperson </a>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Partner</p>
+        <p class="text-[15px] font-normal leading-[21px] text-white underline">Unterstützer</p>
+      </div>
+
+      <!-- Column 4 -->
+      <div class="flex  flex-col gap-[10px]">
+        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
+          Extrene Links
+        </p>
+        <p class="text-[15px] font-normal leading-[21px] text-white">Austrian Football League</p>
+        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Nachwuchs Season </a>
+        <p class="text-[15px] font-normal leading-[21px] text-white">ÖCCV</p>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div
+      class="mt-[30px] flex flex-row justify-between border-t border-white pt-[30px] text-[12px] font-normal uppercase leading-[21px] text-white max-[430px]:flex-wrap"
+    >
+      <div class="flex flex-row gap-[69px] w-[300px]">
+        <a class="underline" href="#">Datenschutz</a>
+        <a class="underline" href="#">Impressum</a>
+      </div>
+
+      <div class="max-[430px]:mt-[10px]">
+        <p class="underline">© {{ new Date().getFullYear() }} Graz Giants</p>
+      </div>
+
+      <div class="flex flex-row justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]">
+        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
+        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
+        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
+        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
+      </div>
+    </div>
+  </footer>
 </template>
 
 <script setup>
@@ -33,171 +102,3 @@ onMounted(() => {
   retrieveWordpressPost()
 })
 </script>
-
-<style scoped>
-.footer {
-  margin-top: 75px;
-  padding: 40px 80px;
-  background: #003867;
-}
-
-.logo {
-  padding-bottom: 80px;
-}
-
-.footer-middle {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.footer-middle:deep(.wp-block-quote) {
-  display: flex;
-  flex-direction: column;
-  width: 290px;
-}
-
-@media screen and (max-width: 430px) {
-  .logo {
-    padding-bottom: 30px;
-    text-align: center;
-  }
-}
-
-.footer-middle:deep(.wp-block-quote > p:first-child) {
-  color: #fff;
-  text-align: left;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  /* 116.667% */
-  text-transform: uppercase;
-  margin-bottom: 30px;
-}
-
-.footer-middle:deep(.wp-block-quote > p:last-child) {
-  margin: 30px 0 80px 0;
-}
-
-@media screen and (max-width: 430px) {
-  .footer-middle:deep() {
-    margin-top: 30px;
-    flex-direction: column-reverse;
-  }
-
-  .footer-middle:deep(.wp-block-quote:nth-child(1)) {
-    margin-top: 40px;
-  }
-
-  .footer-middle:deep(.wp-block-quote:nth-child(2) > p) {
-    display: none;
-  }
-
-  .footer-middle:deep(.wp-block-quote > p:last-child) {
-    margin: 10px 0 30px 0;
-  }
-}
-
-.footer-middle:deep(p:not(:first-child)) {
-  color: #fff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-}
-
-.footer-middle:deep(a) {
-  color: #fff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px;
-  /* 140% */
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-
-  margin: 30px 0 80px 0;
-}
-
-.footer-middle:deep(.wp-block-quote > .wp-block-quote) {
-  width: 125px;
-  height: 20px;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-}
-
-.footer-middle:deep(.wp-block-quote > .wp-block-quote > .wp-block-image:first-child) {
-  margin-right: 45px;
-}
-
-.copyright {
-  border-top: 1px solid #fff;
-
-  color: #fff;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-top: 30px;
-}
-
-@media screen and (max-width: 430px) {
-  .copyright {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
-}
-
-.copyright:deep(.wp-block-quote, a, a:active, p) {
-  color: #fff;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-  text-transform: uppercase;
-  padding-right: 5px;
-}
-
-.copyright:deep(.wp-block-quote:nth-child(1)) {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
-
-.copyright:deep(.wp-block-quote:nth-child(3)) {
-  display: flex;
-  flex-direction: row;
-  gap: 30px;
-}
-
-.copyright:deep(.wp-block-quote:nth-child(3) > img) {
-  width: 20px;
-  height: 20px;
-}
-
-@media screen and (max-width: 430px) {
-  .copyright:deep(.wp-block-quote:nth-child(2)) {
-    margin-top: 10px;
-  }
-
-  .copyright:deep(.wp-block-quote:nth-child(3)) {
-    margin-top: 10px;
-  }
-}
-</style>
