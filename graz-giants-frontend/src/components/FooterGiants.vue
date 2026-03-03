@@ -8,7 +8,9 @@
     </div>
 
     <!-- Middle -->
-    <div class="flex flex-row flex-wrap gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse">
+    <div
+      class="flex flex-row flex-wrap gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse"
+    >
       <!-- Column 1 -->
       <div class="mr-[70px] flex flex-col gap-[10px]">
         <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
@@ -25,7 +27,7 @@
       </div>
 
       <!-- Column 2 -->
-      <div class="flex  flex-col gap-[10px]">
+      <div class="flex flex-col gap-[10px]">
         <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">Gameday</p>
         <p class="text-[15px] font-normal leading-[21px] text-white">Tickets</p>
         <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Stadion </a>
@@ -35,7 +37,7 @@
       </div>
 
       <!-- Column 3 -->
-      <div class="flex  flex-col gap-[10px]">
+      <div class="flex flex-col gap-[10px]">
         <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
           Sponsoring
         </p>
@@ -46,7 +48,7 @@
       </div>
 
       <!-- Column 4 -->
-      <div class="flex  flex-col gap-[10px]">
+      <div class="flex flex-col gap-[10px]">
         <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
           Extrene Links
         </p>
