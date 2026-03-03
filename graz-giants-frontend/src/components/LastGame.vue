@@ -1,5 +1,51 @@
 <template>
-  <div v-if="postContent" class="last-game" v-html="postContent"></div>
+  <div class="last-game flex h-[333px] flex-col px-20">
+    <!-- First row -->
+    <div
+      class="flex flex-row justify-between text-right text-[24px] font-normal uppercase leading-[33.6px] text-[#003867] max-[430px]:flex-col max-[430px]:text-center"
+    >
+      <p>Letztes Spiel</p>
+      <p>AFL Gameweek 7</p>
+    </div>
+
+    <!-- Score row -->
+    <div
+      class="flex flex-1 items-center justify-center max-[810px]:scale-50 max-[430px]:m-0 max-[430px]:scale-[0.4]"
+    >
+      <div class="pr-[80px]">
+        <img
+          src="@/assets/HelmetAImage.png"
+          alt="Team A Logo"
+          class="mr-[80px] h-[150px] w-[150px] object-cover"
+        />
+      </div>
+      <p
+        class="ml-[80px] flex h-[150px] w-[150px] items-center justify-center bg-[#003867] p-[21px] text-center text-[90px] font-normal uppercase leading-[90px] text-[#FAB900]"
+      >
+        24
+      </p>
+      <p class="px-[50px] text-center text-[24px] font-normal text-[#003867]">VS</p>
+      <p
+        class="mr-[80px] flex h-[150px] w-[150px] items-center justify-center border-2 border-[#FAB900] text-center text-[90px] font-normal uppercase leading-[90px] text-[#003867]"
+      >
+        17
+      </p>
+      <div class="pl-[80px]">
+        <img
+          src="@/assets/HelmetBImage.png"
+          alt="Team B Logo"
+          class="h-[150px] w-[150px] object-cover"
+        />
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="mt-auto flex justify-center">
+      <a class="text-[15px] font-normal leading-[21px] text-[#003867] underline" href="#">
+        Zum Spielbericht
+      </a>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,128 +64,3 @@ onMounted(async () => {
   }
 })
 </script>
-
-<style scoped>
-.last-game {
-  padding: 0 80px;
-}
-
-.last-game:deep(.wp-block-quote:first-child) {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-
-  color: #003867;
-
-  text-align: right;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 33.6px;
-  /* 140% */
-  text-transform: uppercase;
-}
-
-@media screen and (max-width: 430px) {
-  .last-game:deep(.wp-block-quote:first-child) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-.last-game:deep(.wp-block-quote:not(:first-child)) {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: center;
-  align-items: center;
-  margin: 80px 0 50px 0;
-}
-
-@media screen and (max-width: 810px) {
-  .last-game:deep(.wp-block-quote:not(:first-child)) {
-    transform: scale(0.5);
-  }
-}
-
-@media screen and (max-width: 430px) {
-  .last-game:deep(.wp-block-quote:not(:first-child)) {
-    transform: scale(0.4);
-    margin: 0;
-  }
-}
-
-.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(2)) {
-  width: 150px;
-  height: 150px;
-  background: #003867;
-
-  padding: 21px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #fab900;
-  text-align: center;
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90px;
-  /* 100% */
-  text-transform: uppercase;
-  margin-left: 80px;
-}
-
-.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(3)) {
-  color: #003867;
-
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-
-  padding: 0 50px;
-}
-
-.last-game:deep(.wp-block-quote:not(:first-child) p:nth-child(4)) {
-  width: 150px;
-  height: 150px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  color: #003867;
-  text-align: center;
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 90px;
-  /* 100% */
-  text-transform: uppercase;
-  margin-right: 80px;
-}
-
-.last-game:deep(.wp-block-button a),
-.last-game:deep(.wp-block-button a:active) {
-  color: #003867;
-  text-align: center;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 21px;
-  /* 140% */
-  text-decoration-line: underline;
-  text-decoration-style: solid;
-  text-decoration-skip-ink: none;
-  text-decoration-thickness: auto;
-  text-underline-offset: auto;
-  text-underline-position: from-font;
-
-  display: flex;
-  justify-content: center;
-  margin-bottom: 80px;
-}
-</style>

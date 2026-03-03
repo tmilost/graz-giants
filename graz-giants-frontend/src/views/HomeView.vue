@@ -20,10 +20,12 @@ import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
     <TicketsSection />
     <ContentSpacing />
     <SeasonKarte />
-    <ContentSpacing />
-    <TryoutSection />
+    <!-- <ContentSpacing /> -->
+    <!-- <TryoutSection /> -->
     <ContentSpacing />
     <LastGame />
+    <ContentSpacing />
+
     <GameTable />
     <ContentSpacing />
     <OurPartners />
