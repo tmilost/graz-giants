@@ -1,5 +1,38 @@
 <template>
-  <div class="our-partners" v-html="postContent"></div>
+  <div class="our-partners flex flex-col">
+    <p
+      class="pl-[80px] pb-[50px] text-center flex text-[28px] font-normal uppercase leading-[39.2px] text-[#003867]"
+    >
+      Unsere Partner
+    </p>
+
+    <div
+      class="pb-[30px] our-partners flex flex-row flex-wrap items-center justify-center gap-[24px] m-[10px]"
+    >
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 1" class="h-[90px] object-none" />
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 2" class="h-[90px] object-none" />
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
+      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
+    </div>
+
+    <p
+      class="pb-[30px] text-center text-[24px] font-normal uppercase leading-[33.6px] text-[#003867]"
+    >
+      Werde jetzt Teil <br />
+      der Giants-Family
+    </p>
+
+    <div class="flex justify-center">
+      <button
+        class="inline-flex h-[38px] items-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900] sm:mt-auto"
+        type="button"
+      >
+        Zum Sponsoring Kontakt
+      </button>
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -18,64 +51,3 @@ onMounted(async () => {
   }
 })
 </script>
-
-<style scoped>
-.our-partners {
-  display: flex;
-  align-items: center;
-  flex-shrink: 0;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.our-partners:deep(p:nth-child(1)) {
-  color: #003867;
-  text-align: center;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 39.2px;
-  text-transform: uppercase;
-}
-
-.our-partners:deep(img) {
-  object-fit: none;
-  height: 90px;
-}
-
-.our-partners:deep(.wp-block-gallery) {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-shrink: 0;
-  gap: 24px;
-  flex-direction: row;
-  flex-wrap: wrap;
-  margin: 10px;
-}
-
-.our-partners:deep(p:nth-child(3)) {
-  color: #003867;
-  text-align: center;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 33.6px;
-  text-transform: uppercase;
-}
-
-.our-partners:deep(.wp-block-buttons a),
-.our-partners:deep(.wp-block-buttons a:active) {
-  border: 0;
-  border-radius: 20px;
-  padding: 10px 20px;
-  background: #003867;
-  color: #fab900;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  width: 178px;
-  text-decoration: none;
-}
-</style>
