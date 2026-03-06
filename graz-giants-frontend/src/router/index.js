@@ -5,6 +5,7 @@ import Page404View from '../views/Page404View.vue'
 import SponsorsView from '../views/SponsorsView.vue'
 import TicketsView from '@/views/TicketsView.vue'
 import TeamsView from '@/views/TeamsView.vue'
+import GameDayView from '@/views/GameDayView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -73,6 +74,26 @@ const router = createRouter({
       path: '/teams',
       name: 'teams',
       component: TeamsView,
+      meta: {
+        title: 'Graz Giants',
+        metaTags: [
+          {
+            name: 'description',
+            content:
+              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+          },
+        ],
+      },
+    },
+    {
+      path: '/GameDay',
+      name: 'gameDay',
+      component: GameDayView,
       meta: {
         title: 'Graz Giants',
         metaTags: [

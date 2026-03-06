@@ -3,9 +3,9 @@
     class="nav-bar h-[80px] w-[100%] flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)] z-9"
   >
     <div class="navbar-left-side flex flex-row flex-nowrap px-[60px] gap-[60px]">
-      <div class="nav-bar-links text-white underline" @click.prevent="click">Teams</div>
-      <div class="nav-bar-links text-white underline" @click.prevent="click">Gameday</div>
-      <div class="nav-bar-links text-white underline" @click.prevent="click">NEWS</div>
+      <router-link class="nav-bar-links text-white underline" to="/teams">Teams</router-link>
+      <router-link class="nav-bar-links text-white underline" to="/gameDay">Gameday</router-link>
+      <router-link class="nav-bar-links text-white underline" to="/news">NEWS</router-link>
     </div>
     <div class="logo flex-none">
       <router-link to="/">
@@ -13,9 +13,11 @@
       </router-link>
     </div>
     <div class="navbar-right-side flex flex-row flex-nowrap px-[60px] gap-[60px]">
-      <div class="nav-bar-links text-white underline" @click.prevent="click">Verein</div>
-      <div class="nav-bar-links text-white underline" @click.prevent="click">Sponsoring</div>
-      <div class="nav-bar-links text-white underline" @click.prevent="click">Shop</div>
+      <router-link class="nav-bar-links text-white underline" to="/verein">Verein</router-link>
+      <router-link class="nav-bar-links text-white underline" to="/sponsoring"
+        >Sponsoring</router-link
+      >
+      <router-link class="nav-bar-links text-white underline" to="/shop">Shop</router-link>
     </div>
     <button class="hamburger-menu right-[40px] absolute" @click="changeNavBarMobileActive()">
       <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
