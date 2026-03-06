@@ -9,7 +9,7 @@
       <div
         class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] from-[-7.32%] to-black to-[102%]"
       ></div>
-      <div class="absolute inset-0 z-10 flex items-center justify-center">
+      <div class="absolute inset-0 z-0 flex items-center justify-center">
         <div class="flex flex-row flex-wrap items-center justify-center gap-[30px]">
           <TeamsCard />
           <TeamsCard />
