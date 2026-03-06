@@ -1,5 +1,5 @@
 <template>
-  <footer class="mt-[75px] bg-[#003867] px-[80px] py-[40px]">
+  <footer class="bg-[#003867] px-[80px] py-[40px]">
     <!-- Logo -->
     <div class="pb-[80px] max-[430px]:pb-[30px] max-[430px]:text-center">
       <a href="/">
