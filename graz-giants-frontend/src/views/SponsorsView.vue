@@ -46,12 +46,9 @@
         emotional, authentisch und zielgruppengenau zu präsentieren. Unsere Heimspiele, Events und
         digitalen Kanäle erreichen Fans weit über Graz hinaus.
       </p>
-      <button
-        class="mt-[30px] inline-flex h-[38px] w-fit items-center justify-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900]"
-        type="button"
-      >
-        Seasonkarte Bestellen
-      </button>
+      <div class="w-fit mt-[30px]">
+        <BlueButton :text="'Seasonkarte Bestellen'" href="#" />
+      </div>
     </div>
   </div>
 </template>
@@ -59,4 +56,5 @@
 <script setup>
 import PageHeroImage from '@/assets/PageHeroImage.png'
 import PageHero from '../components/PageHero.vue'
+import BlueButton from '@/components/ui/BlueButton.vue'
 </script>
