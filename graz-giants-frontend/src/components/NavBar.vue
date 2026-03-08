@@ -14,7 +14,7 @@
     </div>
     <div class="navbar-right-side flex flex-row flex-nowrap px-[60px] gap-[60px]">
       <router-link class="nav-bar-links text-white underline" to="/association">Verein</router-link>
-      <router-link class="nav-bar-links text-white underline" to="/sponsoring"
+      <router-link class="nav-bar-links text-white underline" to="/sponsors"
         >Sponsoring</router-link
       >
       <router-link class="nav-bar-links text-white underline" to="/shop">Shop</router-link>
