@@ -34,6 +34,8 @@ import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
     <ContentSpacing />
     <NewsLetter />
     <ContentSpacing />
-    <GiantsSocialMedia />
+    <div class="pb-[80px]">
+      <GiantsSocialMedia />
+    </div>
   </main>
 </template>
