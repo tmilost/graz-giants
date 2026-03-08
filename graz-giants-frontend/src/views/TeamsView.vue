@@ -22,5 +22,5 @@
 </template>
 
 <script setup>
-import TeamsCard from '@/components/TeamsCard.vue'
+import TeamsCard from '@/components/ui/TeamsCard.vue'
 </script>

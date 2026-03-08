@@ -7,7 +7,7 @@
 <script setup>
 import { onMounted, computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import TicketCard from './TicketCard.vue'
+import TicketCard from '@/components/ui/TicketCard.vue'
 
 const apiCalls = useApiCalls()
 
