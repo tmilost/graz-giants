@@ -51,5 +51,22 @@ export const useApiCalls = defineStore('apiCalls', () => {
     }
   }
 
-  return { retrieveWordpressPage, retrieveWordpressPost, allWordpressPages, allWordpressPosts }
+  function retrieveHomePageSection(pageSlug) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/homepage?acf_format=standard&slug=${pageSlug}`)
+      .then((response) => {
+        return response.data[0].acf
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
+  return {
+    retrieveWordpressPage,
+    retrieveWordpressPost,
+    allWordpressPages,
+    allWordpressPosts,
+    retrieveHomePageSection,
+  }
 })
