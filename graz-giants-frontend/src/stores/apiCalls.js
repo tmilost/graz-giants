@@ -66,7 +66,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&per_page=${totalNews}&order=desc`)
       .then((response) => {
-        console.log(response.data)
         return response.data
       })
       .catch(() => {

@@ -1,6 +1,10 @@
 <template>
-  <div class="card-image-text relative h-[220px] w-[350px]">
-    <img class="block h-full w-full object-cover" :src="imageUrl" alt="Main header image" />
+  <div class="card-image-text relative h-[220px] w-[350px]" @click="$router.push(url)">
+    <img
+      class="block h-full w-full object-cover"
+      :src="imageUrl || CardTextImage"
+      alt="Main header image"
+    />
     <div
       class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] from-[-7.32%] to-black to-[102%]"
     ></div>
@@ -17,6 +21,7 @@
 </template>
 
 <script setup>
+import CardTextImage from '@/assets/CardTextImage.png'
 const props = defineProps({
   imageUrl: {
     type: String,

@@ -30,13 +30,6 @@ import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 import TeamsCard from '@/components/ui/TeamsCard.vue'
 
-const props = defineProps({
-  postSlug: {
-    type: String,
-    required: true,
-  },
-})
-
 const apiCalls = useApiCalls()
 const postContent = ref({})
 
