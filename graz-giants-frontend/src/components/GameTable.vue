@@ -4,7 +4,7 @@
       <p
         class="py-[50px] text-left text-[28px] font-normal uppercase leading-[39.2px] text-[#FAB900] max-[790px]:my-[20px]"
       >
-        Tabelle
+        {{ postContent?.tittle }}
       </p>
 
       <div class="mb-[20px]">
@@ -19,56 +19,56 @@
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>AFC Vienna Vikings</td>
-            <td>10</td>
-            <td>9</td>
-            <td>1</td>
-            <td>0.900</td>
+            <td>{{ postContent?.team_1?.team }}</td>
+            <td>{{ postContent?.team_1?.w }}</td>
+            <td>{{ postContent?.team_1?.l }}</td>
+            <td>{{ postContent?.team_1?.p }}</td>
+            <td>{{ postContent?.team_1?.['%'] }}</td>
           </tr>
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>Graz Giants</td>
-            <td>10</td>
-            <td>8</td>
-            <td>2</td>
-            <td>0.800</td>
+            <td>{{ postContent?.team_2?.team }}</td>
+            <td>{{ postContent?.team_2?.w }}</td>
+            <td>{{ postContent?.team_2?.l }}</td>
+            <td>{{ postContent?.team_2?.p }}</td>
+            <td>{{ postContent?.team_2?.['%'] }}</td>
           </tr>
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>Danube Dragons</td>
-            <td>10</td>
-            <td>8</td>
-            <td>2</td>
-            <td>0.800</td>
+            <td>{{ postContent?.team_3?.team }}</td>
+            <td>{{ postContent?.team_3?.w }}</td>
+            <td>{{ postContent?.team_3?.l }}</td>
+            <td>{{ postContent?.team_3?.p }}</td>
+            <td>{{ postContent?.team_3?.['%'] }}</td>
           </tr>
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>Tirol Raiders</td>
-            <td>10</td>
-            <td>7</td>
-            <td>3</td>
-            <td>0.700</td>
+            <td>{{ postContent?.team_4?.team }}</td>
+            <td>{{ postContent?.team_4?.w }}</td>
+            <td>{{ postContent?.team_4?.l }}</td>
+            <td>{{ postContent?.team_4?.p }}</td>
+            <td>{{ postContent?.team_4?.['%'] }}</td>
           </tr>
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>Salzburg Ducks</td>
-            <td>10</td>
-            <td>6</td>
-            <td>4</td>
-            <td>0.600</td>
+            <td>{{ postContent?.team_5?.team }}</td>
+            <td>{{ postContent?.team_5?.w }}</td>
+            <td>{{ postContent?.team_5?.l }}</td>
+            <td>{{ postContent?.team_5?.p }}</td>
+            <td>{{ postContent?.team_5?.['%'] }}</td>
           </tr>
           <tr
             class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
           >
-            <td>Prag Black Panthers</td>
-            <td>10</td>
-            <td>5</td>
-            <td>5</td>
-            <td>0.500</td>
+            <td>{{ postContent?.team_6?.team }}</td>
+            <td>{{ postContent?.team_6?.w }}</td>
+            <td>{{ postContent?.team_6?.l }}</td>
+            <td>{{ postContent?.team_6?.p }}</td>
+            <td>{{ postContent?.team_6?.['%'] }}</td>
           </tr>
         </table>
       </div>
@@ -84,7 +84,7 @@
     </div>
 
     <img
-      src="@/assets/GameTable.png"
+      :src="postContent?.image"
       alt="Game Table"
       class="mr-[80px] block h-auto min-h-[480px] w-[359px] object-cover max-[790px]:hidden"
     />
@@ -92,18 +92,13 @@
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['GameTable']
-})
+const postContent = ref({})
 
 onMounted(async () => {
-  if (postContent.value === undefined) {
-    await apiCalls.retrieveWordpressPost('GameTable')
-  }
+  postContent.value = await apiCalls.retrieveHomePageSection('GameTable')
 })
 </script>
