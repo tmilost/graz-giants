@@ -1,12 +1,8 @@
 <template>
   <div
-    class="news-card flex justify-between flex-col w-[365px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
+    class="news-card flex justify-between flex-col w-[365px] h-[537px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
   >
-    <img
-      src="@/assets/TicketImage.jpg"
-      alt="News 1"
-      class="block h-auto object-cover max-[430px]:w-[150px]"
-    />
+    <img :src="imageSrc" alt="News 1" class="block object-fill w-[365px] h-[350px]" />
     <p
       class="py-[25px] pl-[8px] pr-[30px] min-h-[100px] max-w-full text-[24px] font-normal uppercase leading-[33.6px] text-[#003867] max-[430px]:my-[10px] max-[430px]:min-h-[130px] max-[430px]:text-[16px] max-[430px]:leading-[22.4px]"
     >
