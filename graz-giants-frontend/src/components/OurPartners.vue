@@ -7,47 +7,46 @@
     </p>
 
     <div
-      class="pb-[30px] our-partners flex flex-row flex-wrap items-center justify-center gap-[24px] m-[10px]"
+      class="pb-[30px] flex flex-row flex-wrap items-center justify-center justify-around m-[10px]"
     >
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 1" class="h-[90px] object-none" />
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 2" class="h-[90px] object-none" />
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
-      <img src="@/assets/NavBarIcon.svg" alt="Partner 3" class="h-[90px] object-none" />
+      <div v-for="(value, index) in postContent?.images" :key="index">
+        <img :src="value" :alt="`Partner ${index + 1}`" class="h-[90px] object-none" />
+      </div>
     </div>
 
     <p
       class="pb-[30px] text-center text-[24px] font-normal uppercase leading-[33.6px] text-[#003867]"
     >
-      Werde jetzt Teil <br />
-      der Giants-Family
+      {{ postContent?.text }}
     </p>
 
     <div class="flex justify-center">
       <button
         class="inline-flex h-[38px] items-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900] sm:mt-auto"
         type="button"
+        @click="handleButtonClick(postContent?.button?.url)"
       >
-        Zum Sponsoring Kontakt
+        {{ postContent?.button?.title }}
       </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import router from '@/router/index.js'
 
 const apiCalls = useApiCalls()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['OurPartners']
-})
+const postContent = ref({})
 
 onMounted(async () => {
-  if (postContent.value === undefined) {
-    await apiCalls.retrieveWordpressPost('OurPartners')
-  }
+  postContent.value = await apiCalls.retrieveHomePageSection('OurPartners')
 })
+
+function handleButtonClick(link) {
+  if (link) {
+    router.push(link)
+  }
+}
 </script>
