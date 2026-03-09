@@ -1,23 +1,24 @@
 <template>
   <div class="tickets-section">
-    <TicketCard />
+    <TicketCard
+      :image="postContent?.image"
+      :title="postContent?.tittle"
+      :text_area="postContent?.text_area"
+      :buttonText="postContent?.button?.title"
+      :buttonLink="postContent?.button?.url"
+    />
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 import TicketCard from '@/components/ui/TicketCard.vue'
 
 const apiCalls = useApiCalls()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['ticketsection']
-})
+const postContent = ref({})
 
 onMounted(async () => {
-  if (postContent.value === undefined) {
-    await apiCalls.retrieveWordpressPost('ticketsection')
-  }
+  postContent.value = await apiCalls.retrieveHomePageSection('tickets')
 })
 </script>
