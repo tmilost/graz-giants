@@ -5,7 +5,7 @@
       class="flex flex-row justify-between text-right text-[24px] font-normal uppercase leading-[33.6px] text-[#003867] max-[430px]:flex-col max-[430px]:text-center"
     >
       <p>Letztes Spiel</p>
-      <p>AFL Gameweek 7</p>
+      <p>{{ postContent?.text_top_right }}</p>
     </div>
 
     <!-- Score row -->
@@ -14,7 +14,7 @@
     >
       <div class="pr-[80px]">
         <img
-          src="@/assets/HelmetAImage.png"
+          :src="postContent?.image_left"
           alt="Team A Logo"
           class="mr-[80px] h-[150px] w-[150px] object-cover"
         />
@@ -22,17 +22,17 @@
       <p
         class="ml-[80px] flex h-[150px] w-[150px] items-center justify-center bg-[#003867] p-[21px] text-center text-[90px] font-normal uppercase leading-[90px] text-[#FAB900]"
       >
-        24
+        {{ postContent?.score_left }}
       </p>
       <p class="px-[50px] text-center text-[24px] font-normal text-[#003867]">VS</p>
       <p
         class="mr-[80px] flex h-[150px] w-[150px] items-center justify-center border-2 border-[#FAB900] text-center text-[90px] font-normal uppercase leading-[90px] text-[#003867]"
       >
-        17
+        {{ postContent?.score_right }}
       </p>
       <div class="pl-[80px]">
         <img
-          src="@/assets/HelmetBImage.png"
+          :src="postContent?.image_right"
           alt="Team B Logo"
           class="h-[150px] w-[150px] object-cover"
         />
@@ -41,26 +41,24 @@
 
     <!-- Button -->
     <div class="mt-auto flex justify-center">
-      <a class="text-[15px] font-normal leading-[21px] text-[#003867] underline" href="#">
-        Zum Spielbericht
+      <a
+        class="text-[15px] font-normal leading-[21px] text-[#003867] underline"
+        :href="postContent?.link_bottom?.url"
+      >
+        {{ postContent?.link_bottom?.title }}
       </a>
     </div>
   </div>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['LastGame']
-})
+const postContent = ref({})
 
 onMounted(async () => {
-  if (postContent.value === undefined) {
-    await apiCalls.retrieveWordpressPost('LastGame')
-  }
+  postContent.value = await apiCalls.retrieveHomePageSection('LastGame')
 })
 </script>
