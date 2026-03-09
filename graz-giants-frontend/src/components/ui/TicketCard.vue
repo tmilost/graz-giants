@@ -1,5 +1,5 @@
 <template>
-  <div class="ticket-card">
+  <div class="ticket-card cursor-pointer">
     <div class="relative h-[350px] sm:h-[320px] w-full">
       <img class="block h-full w-full object-cover" :src="image" alt="Main header image" />
       <div

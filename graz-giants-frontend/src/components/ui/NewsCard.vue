@@ -1,6 +1,6 @@
 <template>
   <div
-    class="news-card flex justify-between flex-col w-[365px] h-[537px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
+    class="news-card cursor-pointer flex justify-between flex-col w-[365px] h-[537px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px]"
   >
     <img :src="imageSrc" alt="News 1" class="block object-fill w-[365px] h-[350px]" />
     <p

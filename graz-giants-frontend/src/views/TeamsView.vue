@@ -3,7 +3,7 @@
     <div class="relative h-[100vh] w-full">
       <img
         class="block h-full w-full object-cover"
-        src="@/assets/TeamsPageImage.png"
+        :src="postContent?.image"
         alt="Main header image"
       />
       <div
@@ -11,10 +11,14 @@
       ></div>
       <div class="absolute inset-0 z-0 flex items-center justify-center">
         <div class="flex flex-row flex-wrap items-center justify-center gap-[30px]">
-          <TeamsCard />
-          <TeamsCard />
-          <TeamsCard />
-          <TeamsCard />
+          <div v-for="(card, index) in postContent?.cards" :key="index">
+            <TeamsCard
+              :image="card.image"
+              :tittle="card.tittle"
+              :text="card.text"
+              :url="card?.link?.url"
+            />
+          </div>
         </div>
       </div>
     </div>
@@ -22,5 +26,21 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
 import TeamsCard from '@/components/ui/TeamsCard.vue'
+
+const props = defineProps({
+  postSlug: {
+    type: String,
+    required: true,
+  },
+})
+
+const apiCalls = useApiCalls()
+const postContent = ref({})
+
+onMounted(async () => {
+  postContent.value = await apiCalls.retrievePage('teams')
+})
 </script>

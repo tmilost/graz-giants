@@ -75,9 +75,19 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrieveNewsPost(postSlug) {
-    console.log(postSlug)
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&slug=${postSlug}`)
+      .then((response) => {
+        return response.data[0]?.acf
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
+  function retrievePage(pageSlug) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/pages?acf_format=standard&slug=${pageSlug}`)
       .then((response) => {
         return response.data[0]?.acf
       })
@@ -94,5 +104,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
     retrieveHomePageSection,
     retrieveNews,
     retrieveNewsPost,
+    retrievePage,
   }
 })
