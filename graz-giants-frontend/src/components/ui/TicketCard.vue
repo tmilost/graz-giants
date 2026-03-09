@@ -10,14 +10,11 @@
       >
         <div class="flex flex-col items-center gap-6 text-center">
           <h2 class="text-[32px] font-normal sm:text-[28px]">{{ title }}</h2>
-          <textarea
-            class="resize-none overflow-hidden text-[18px] w-[300px] font-normal normal-case text-center leading-[21px] sm:text-[15px] sm:leading-[21px]"
-            rows="5"
-            readonly
+          <p
+            class="whitespace-pre-wrap text-[18px] w-[300px] font-normal normal-case text-center leading-[21px] sm:text-[15px] sm:leading-[21px]"
           >
-           {{ text_area }}
-          </textarea>
-
+            {{ text_area }}
+          </p>
           <button
             class="inline-flex h-[38px] items-center rounded-[20px] bg-[#FAB900] px-[20px] text-[15px] font-bold uppercase text-[#003867]"
             type="button"

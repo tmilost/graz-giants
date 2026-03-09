@@ -74,6 +74,18 @@ export const useApiCalls = defineStore('apiCalls', () => {
       })
   }
 
+  function retrieveNewsPost(postSlug) {
+    console.log(postSlug)
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&slug=${postSlug}`)
+      .then((response) => {
+        return response.data[0]?.acf
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
   return {
     retrieveWordpressPage,
     retrieveWordpressPost,
@@ -81,5 +93,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
     allWordpressPosts,
     retrieveHomePageSection,
     retrieveNews,
+    retrieveNewsPost,
   }
 })
