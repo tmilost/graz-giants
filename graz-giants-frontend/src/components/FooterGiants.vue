@@ -12,49 +12,106 @@
       class="flex flex-row flex-wrap gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse"
     >
       <!-- Column 1 -->
-      <div class="mr-[70px] flex flex-col gap-[10px]">
+      <div
+        v-for="(value, index) in postContent?.footer_top"
+        :key="index"
+        class="mr-[70px] flex flex-col gap-[10px]"
+      >
         <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
-          Kontaktdaten
+          {{ value?.tittle }}
         </p>
-        <p class="text-[15px] font-normal leading-[21px] text-white">
-          Adresse: Schloßstraße 20, 8020 Graz
+
+        <p
+          v-if="value?.link_1?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_1?.title }}
         </p>
-        <a class="text-[15px] font-normal leading-[21px] text-white" href="#">
-          E-Mail: office@grazgiants.at
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_1?.url"
+        >
+          {{ value?.link_1?.title }}
         </a>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Weitere Kontaktdaten:</p>
-        <p class="text-[15px] font-normal leading-[21px] text-white underline">Presse</p>
-      </div>
 
-      <!-- Column 2 -->
-      <div class="flex flex-col gap-[10px]">
-        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">Gameday</p>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Tickets</p>
-        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Stadion </a>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Livestream</p>
-        <p class="text-[15px] font-normal leading-[21px] text-white underline">Tabelle</p>
-        <p class="text-[15px] font-normal leading-[21px] text-white underline">Schedule</p>
-      </div>
+        <a
+          v-if="value?.email"
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="`mailto:${value?.email}`"
+        >
+          E-Mail: {{ value?.email }}
+        </a>
 
-      <!-- Column 3 -->
-      <div class="flex flex-col gap-[10px]">
-        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
-          Sponsoring
+        <p
+          v-if="value?.link_2?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_2?.title }}
         </p>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Booster Club</p>
-        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Kontaktperson </a>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Partner</p>
-        <p class="text-[15px] font-normal leading-[21px] text-white underline">Unterstützer</p>
-      </div>
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_2?.url"
+        >
+          {{ value?.link_2?.title }}
+        </a>
 
-      <!-- Column 4 -->
-      <div class="flex flex-col gap-[10px]">
-        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
-          Extrene Links
+        <p
+          v-if="value?.link_3?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_3?.title }}
         </p>
-        <p class="text-[15px] font-normal leading-[21px] text-white">Austrian Football League</p>
-        <a class="text-[15px] font-normal leading-[21px] text-white" href="#"> Nachwuchs Season </a>
-        <p class="text-[15px] font-normal leading-[21px] text-white">ÖCCV</p>
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_3?.url"
+        >
+          {{ value?.link_3?.title }}
+        </a>
+
+        <p
+          v-if="value?.link_4?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_4?.title }}
+        </p>
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_4?.url"
+        >
+          {{ value?.link_4?.title }}
+        </a>
+
+        <p
+          v-if="value?.link_5?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_5?.title }}
+        </p>
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_5?.url"
+        >
+          {{ value?.link_5?.title }}
+        </a>
+
+        <p
+          v-if="value?.link_6?.url === '/'"
+          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+        >
+          {{ value?.link_6?.title }}
+        </p>
+        <a
+          v-else
+          class="text-[15px] font-normal leading-[21px] text-white"
+          :href="value?.link_6?.url"
+        >
+          {{ value?.link_6?.title }}
+        </a>
       </div>
     </div>
 
@@ -63,8 +120,9 @@
       class="mt-[30px] flex flex-row justify-between border-t border-white pt-[30px] text-[12px] font-normal uppercase leading-[21px] text-white max-[430px]:flex-wrap"
     >
       <div class="flex flex-row gap-[69px] w-[300px]">
-        <a class="underline" href="#">Datenschutz</a>
-        <a class="underline" href="#">Impressum</a>
+        <div v-for="(value, index) in postContent?.footer_bottom?.left_links" :key="index">
+          <a class="underline" :href="value?.link_1?.url">{{ value?.title }}</a>
+        </div>
       </div>
 
       <div class="max-[430px]:mt-[10px]">
@@ -72,35 +130,24 @@
       </div>
 
       <div class="flex flex-row justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]">
-        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
-        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
-        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
-        <img src="@/assets/InstaIconWhite.svg" alt="Icon" class="h-[20px] w-[20px]" />
+        <div v-for="(value, index) in postContent?.footer_bottom?.right_social" :key="index">
+          <a :href="value?.link?.url"
+            ><img :src="value?.image" alt="Icon" class="h-[20px] w-[20px]" />
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 
 const apiCalls = useApiCalls()
+const postContent = ref({})
 
-const postContentMiddle = computed(() => {
-  return apiCalls.allWordpressPosts['FooterMiddle']
-})
-
-const postContentBottom = computed(() => {
-  return apiCalls.allWordpressPosts['FooterBottom']
-})
-
-async function retrieveWordpressPost() {
-  await apiCalls.retrieveWordpressPost('FooterMiddle')
-  await apiCalls.retrieveWordpressPost('FooterBottom')
-}
-
-onMounted(() => {
-  retrieveWordpressPost()
+onMounted(async () => {
+  postContent.value = await apiCalls.retrieveHomePageSection('Footer')
 })
 </script>
