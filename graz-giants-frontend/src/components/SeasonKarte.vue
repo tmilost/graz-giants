@@ -3,7 +3,7 @@
     <div class="relative h-[350px] sm:h-[210px] w-full">
       <img
         class="block h-full w-full object-cover"
-        src="@/assets/SeasonKarteImage.jpg"
+        :src="postContent?.image"
         alt="Main header image"
       />
       <div
@@ -17,31 +17,32 @@
             class="absolute right-1/2 pr-[50px] flex h-full flex-col items-center justify-between sm:items-start sm:text-left"
           >
             <h2
-              class="text-[24px] font-normal sm:text-[28px] text-[#003867] leading-[30px] text-left sm:leading-[36px]"
+              class="w-[250px] text-[28px] font-normal sm:text-[28px] text-[#003867] leading-[30px] text-left sm:leading-[36px]"
             >
-              Erlebe Graz<br />
-              Giants Football
+              {{ postContent?.left_side?.text }}
             </h2>
             <button
-              class="inline-flex h-[38px] items-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900] sm:mt-auto"
+              class="flex h-[38px] w-full items-center justify-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900] sm:mt-auto"
               type="button"
+              @click="handleButtonClick(postContent?.left_side?.button?.url)"
             >
-              Seasonkarte Bestellen
+              {{ postContent?.left_side?.button?.title }}
             </button>
           </div>
           <div
             class="absolute right-[71px] flex h-full flex-col items-center justify-between sm:items-end sm:text-right"
           >
-            <h2 class="text-[24px] font-normal sm:text-[28px] text-[#FFF] leading-[30px] text-left">
-              Mehr Football.<br />
-              Mehr Komfort.<br />
-              VIP.
+            <h2
+              class="w-[250px] text-[28px] font-normal sm:text-[28px] text-[#FFF] leading-[30px] text-left"
+            >
+              {{ postContent?.right_side?.text }}
             </h2>
             <button
-              class="inline-flex h-[38px] items-center rounded-[20px] bg-[#FAB900] px-[20px] text-[15px] font-bold uppercase text-[#003867] sm:mt-auto"
+              class="flex h-[38px] w-full items-center justify-center rounded-[20px] bg-[#FAB900] px-[20px] text-[15px] font-bold uppercase text-[#003867] sm:mt-auto"
               type="button"
+              @click="handleButtonClick(postContent?.right_side?.button?.url)"
             >
-              VIP-SEasonkarte Ordern
+              {{ postContent?.right_side?.button?.title }}
             </button>
           </div>
         </div>
@@ -51,18 +52,21 @@
 </template>
 
 <script setup>
-import { onMounted, computed } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 const apiCalls = useApiCalls()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['ticketsection']
-})
+const postContent = ref({})
 
 onMounted(async () => {
-  if (postContent.value === undefined) {
-    await apiCalls.retrieveWordpressPost('ticketsection')
-  }
+  postContent.value = await apiCalls.retrieveHomePageSection('SeasonKarte')
 })
+
+function handleButtonClick(link) {
+  if (link) {
+    router.push(link)
+  }
+}
 </script>
