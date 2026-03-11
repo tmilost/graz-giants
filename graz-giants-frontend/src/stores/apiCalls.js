@@ -95,6 +95,17 @@ export const useApiCalls = defineStore('apiCalls', () => {
       })
   }
 
+  function retrievePeople(PostType) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/${PostType}?acf_format=standard&_fields=acf&`)
+      .then((response) => {
+        return response.data
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
   return {
     retrieveWordpressPage,
     retrieveWordpressPost,
@@ -104,5 +115,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
     retrieveNews,
     retrieveNewsPost,
     retrievePage,
+    retrievePeople,
   }
 })

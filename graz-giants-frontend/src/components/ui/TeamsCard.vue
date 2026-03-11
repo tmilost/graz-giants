@@ -1,6 +1,7 @@
 <template>
   <div
     class="teams-card cursor-pointer cursor-pointer relative h-[361px] w-[270px]"
+    :class="url ? ' cursor-pointer' : ''"
     @click="$router.push(url)"
   >
     <img class="block h-full w-full object-cover" :src="image" alt="Main header image" />
