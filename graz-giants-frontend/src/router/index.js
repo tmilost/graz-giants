@@ -12,6 +12,7 @@ import KampfmannschaftView from '@/views/KampfmannschaftView.vue'
 import KampfmannschaftRosterView from '@/views/KampfmannschaftRosterView.vue'
 import KampfmannschaftCoachingStaffView from '@/views/KampfmannschaftCoachingStaffView.vue'
 import RegelwerkView from '@/views/RegelwerkView.vue'
+import NachwuchsView from '@/views/NachwuchsView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -237,7 +238,26 @@ const router = createRouter({
         ],
       },
     },
-
+    {
+      path: '/nachwuchs',
+      name: 'Nachwuchs',
+      component: NachwuchsView,
+      meta: {
+        title: 'Graz Giants',
+        metaTags: [
+          {
+            name: 'description',
+            content:
+              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+          },
+        ],
+      },
+    },
     {
       path: '/news/:postSlug',
       props: true,
