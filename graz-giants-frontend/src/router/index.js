@@ -22,6 +22,7 @@ import PowerliftingRosterView from '@/views/PowerliftingRosterView.vue'
 import CheerView from '@/views/CheerView.vue'
 import CheerRosterView from '@/views/CheerRosterView.vue'
 import CheerCoachingStaffView from '@/views/CheerCoachingStaffView.vue'
+import FlagFootballView from '@/views/FlagFootballView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -447,7 +448,26 @@ const router = createRouter({
         ],
       },
     },
-
+    {
+      path: '/flag-football',
+      name: 'FlagFootball',
+      component: FlagFootballView,
+      meta: {
+        title: 'Graz Giants',
+        metaTags: [
+          {
+            name: 'description',
+            content:
+              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+          },
+        ],
+      },
+    },
     {
       path: '/news/:postSlug',
       props: true,
