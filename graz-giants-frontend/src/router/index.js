@@ -17,6 +17,7 @@ import NachwuchsRosterView from '@/views/NachwuchsRosterView.vue'
 import NachwuchsCoachingStaffView from '@/views/NachwuchsCoachingStaffView.vue'
 import NachwuchsPhilosophieView from '@/views/NachwuchsPhilosophieView.vue'
 import AcademyView from '@/views/AcademyView.vue'
+import PowerliftingView from '@/views/PowerliftingView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -342,7 +343,26 @@ const router = createRouter({
         ],
       },
     },
-
+    {
+      path: '/powerlifting',
+      name: 'Powerlifting',
+      component: PowerliftingView,
+      meta: {
+        title: 'Graz Giants',
+        metaTags: [
+          {
+            name: 'description',
+            content:
+              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+          },
+        ],
+      },
+    },
     {
       path: '/news/:postSlug',
       props: true,

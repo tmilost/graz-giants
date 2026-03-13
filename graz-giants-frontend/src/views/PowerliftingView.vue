@@ -1,5 +1,5 @@
 <template>
-  <div class="nachwuchs">
+  <div class="powerlifting">
     <PageHero :imageUrl="postContent?.image"></PageHero>
     <div class="px-[80px]">
       <h1
@@ -24,6 +24,24 @@
           :textBottom="postContent?.info_card?.text_bottom"
         />
       </div>
+      <div class="flex flex-col my-[30px] text-[#003867] gap-[30px]">
+        <div v-for="(info, index) in postContent?.info_text_group" :key="index">
+          <p class="text-[20px] font-normal leading-[20px] flex-1 min-w-[240px]">
+            {{ info?.tittle }}
+          </p>
+          <p
+            class="whitespace-pre-wrap text-[15px] font-normal leading-[20px] flex-1 min-w-[240px]"
+          >
+            {{ info?.text }}
+          </p>
+          <div class="underline">
+            <a :href="`tel:${info?.phone}`"> {{ info?.phone }}</a>
+          </div>
+          <div class="underline">
+            <a :href="`mailto:${info?.email}`"> {{ info?.email }}</a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -39,6 +57,6 @@ const apiCalls = useApiCalls()
 const postContent = ref({})
 
 onMounted(async () => {
-  postContent.value = await apiCalls.retrievePage('Nachwuchs')
+  postContent.value = await apiCalls.retrievePage('powerlifting')
 })
 </script>
