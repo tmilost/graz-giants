@@ -27,9 +27,7 @@
           :key="idx"
           class="h-3.5 w-3.5 rounded-full border-2"
           :style="currentPage === idx ? { borderColor: dotColor, backgroundColor: dotColor } : {}"
-          :class="
-            currentPage === idx ? '' : 'border-white bg-transparent'
-          "
+          :class="currentPage === idx ? '' : 'border-white bg-transparent'"
           @click="currentPage = idx"
         ></button>
       </div>
