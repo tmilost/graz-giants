@@ -40,8 +40,16 @@
               {{ card?.text }}
             </p>
             <div v-if="card?.cards" class="flex flex-row flex-wrap gap-[35px]">
-              <div v-for="(award, index) in card?.cards" :key="index">
-                <AwardCard v-if="hasValidData(award)" :tittle="award?.tittle" :cardData="award" />
+              <div v-for="(award, awardIndex, index) in card?.cards" :key="awardIndex">
+                <AwardCard 
+                  v-if="hasValidData(award)" 
+                  :tittle="award?.tittle" 
+                  :cardData="award"
+                  :bgColor="index % 3 === 0 ? '#003867' : index % 3 === 1 ? '#FAB900' : '#BDBCBC'"
+                  :textColor="index % 3 === 0 ? '#FFFFFF' : '#003867'"
+                  :tittleColor="index % 3 === 0 ? '#FAB900' : '#003867'"
+                  :dotColor="index % 3 === 0 ? '#FAB900' : '#003867'"
+                />
               </div>
             </div>
           </div>
