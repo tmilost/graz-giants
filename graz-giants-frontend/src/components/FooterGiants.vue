@@ -9,115 +9,53 @@
 
     <!-- Middle -->
     <div
-      class="flex flex-row flex-wrap gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse"
+      class="flex flex-row flex-wrap gap-[30px] md:gap-[50px] max-[430px]:mt-[30px] max-[430px]:flex-col-reverse"
     >
       <!-- Column 1 -->
       <div
-        v-for="(value, index) in postContent?.footer_top"
+        v-for="(sections, index) in postContent?.footer_top"
         :key="index"
-        class="mr-[70px] flex flex-col gap-[10px]"
+        class="mr-[70px] flex flex-col gap-0 md:gap-[10px]"
       >
-        <p class="text-left text-[18px] font-normal uppercase leading-[21px] text-white">
-          {{ value?.tittle }}
-        </p>
-
-        <p
-          v-if="value?.link_1?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_1?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_1?.url"
-        >
-          {{ value?.link_1?.title }}
-        </a>
-
-        <a
-          v-if="value?.email"
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="`mailto:${value?.email}`"
-        >
-          E-Mail: {{ value?.email }}
-        </a>
-
-        <p
-          v-if="value?.link_2?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_2?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_2?.url"
-        >
-          {{ value?.link_2?.title }}
-        </a>
-
-        <p
-          v-if="value?.link_3?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_3?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_3?.url"
-        >
-          {{ value?.link_3?.title }}
-        </a>
-
-        <p
-          v-if="value?.link_4?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_4?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_4?.url"
-        >
-          {{ value?.link_4?.title }}
-        </a>
-
-        <p
-          v-if="value?.link_5?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_5?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_5?.url"
-        >
-          {{ value?.link_5?.title }}
-        </a>
-
-        <p
-          v-if="value?.link_6?.url === '/'"
-          class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
-        >
-          {{ value?.link_6?.title }}
-        </p>
-        <a
-          v-else
-          class="text-[15px] font-normal leading-[21px] text-white"
-          :href="value?.link_6?.url"
-        >
-          {{ value?.link_6?.title }}
-        </a>
+        <div v-for="(item, index) in sections">
+          <div
+            v-if="index === 'tittle'"
+            class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+          >
+            {{ item }}
+          </div>
+          <div v-if="index === 'adress'" class="text-[15px] font-normal leading-[21px] text-white">
+            {{ item }}
+          </div>
+          <a
+            v-if="index === 'email'"
+            :href="`mailto:${item}`"
+            class="text-[15px] font-normal leading-[21px] text-white"
+          >
+            E-Mail: {{ item }}
+          </a>
+          <div v-else>
+            <p
+              v-if="item.url === '/'"
+              class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"
+            >
+              {{ item.title }}
+            </p>
+            <a
+              v-else
+              class="text-[15px] font-normal underline leading-[21px] text-white"
+              :href="item.url"
+            >
+              {{ item.title }}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Copyright -->
     <div
-      class="mt-[30px] flex flex-row justify-between border-t border-white pt-[30px] text-[12px] font-normal uppercase leading-[21px] text-white max-[430px]:flex-wrap"
+      class="mt-[30px] flex flex-row justify-center md:justify-between border-t border-white pt-[30px] text-[12px] font-normal uppercase leading-[21px] text-white max-[430px]:flex-wrap"
     >
       <div class="flex flex-row gap-[69px] w-[300px]">
         <div v-for="(value, index) in postContent?.footer_bottom?.left_links" :key="index">
@@ -129,7 +67,9 @@
         <p class="underline">© {{ new Date().getFullYear() }} Graz Giants</p>
       </div>
 
-      <div class="flex flex-row justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]">
+      <div
+        class="flex flex-row justify-center md:justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]"
+      >
         <div v-for="(value, index) in postContent?.footer_bottom?.right_social" :key="index">
           <a :href="value?.link?.url"
             ><img :src="value?.image" alt="Icon" class="h-[20px] w-[20px]" />
