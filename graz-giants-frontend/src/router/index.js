@@ -53,8 +53,8 @@ const router = createRouter({
       },
     },
     {
-      path: '/sponsors',
-      name: 'sponsors',
+      path: '/sponsoring',
+      name: 'sponsoring',
       component: SponsorsView,
       meta: {
         title: 'Graz Giants',
@@ -113,7 +113,7 @@ const router = createRouter({
       },
     },
     {
-      path: '/GameDay',
+      path: '/gameday',
       name: 'gameDay',
       component: GameDayView,
       meta: {
@@ -153,8 +153,8 @@ const router = createRouter({
       },
     },
     {
-      path: '/association',
-      name: 'association',
+      path: '/verein',
+      name: 'verein',
       component: AssociationView,
       meta: {
         title: 'Graz Giants',

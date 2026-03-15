@@ -1,11 +1,18 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 import { RouterView } from 'vue-router'
 import NavBar from './components/Navbar.vue'
 import SidebarMobile from './components/SidebarMobile.vue'
 import FooterGiants from './components/FooterGiants.vue'
+import { useApiCalls } from '@/stores//apiCalls.js'
 
 const isNavBarSideMenuDropdownActive = ref(false)
+const apiCalls = useApiCalls()
+const navbarContent = ref({})
+
+onMounted(async () => {
+  navbarContent.value = await apiCalls.retrieveHomePageSection('navbar')
+})
 
 function changeNavBarMobileDisabled() {
   isNavBarSideMenuDropdownActive.value = false
@@ -15,7 +22,10 @@ function changeNavBarMobileDisabled() {
 <template>
   <header>
     <div class="wrapper">
-      <NavBar v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive" />
+      <NavBar
+        :navbardata="navbarContent"
+        v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive"
+      />
     </div>
   </header>
   <div
@@ -23,7 +33,10 @@ function changeNavBarMobileDisabled() {
     v-if="isNavBarSideMenuDropdownActive"
     @click="changeNavBarMobileDisabled()"
   >
-    <SidebarMobile v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive" />
+    <SidebarMobile
+      :navbardata="navbarContent"
+      v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive"
+    />
   </div>
   <div class="body" @click="changeNavBarMobileDisabled()">
     <RouterView />

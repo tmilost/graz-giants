@@ -1,23 +1,62 @@
 <template>
   <div
-    class="nav-bar h-[80px] w-[100%] flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)] z-9"
+    class="nav-bar h-[80px] w-[100%] text-[15px] leading-[30px] uppercase flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)] z-9"
   >
-    <div class="navbar-left-side flex flex-row flex-nowrap px-[60px] gap-[60px]">
-      <router-link class="nav-bar-links text-white underline" to="/teams">Teams</router-link>
-      <router-link class="nav-bar-links text-white underline" to="/gameDay">Gameday</router-link>
-      <router-link class="nav-bar-links text-white underline" to="/news">NEWS</router-link>
+    <!-- navbar items left -->
+    <div
+      class="navbar-left-side flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
+    >
+      <template v-for="(item, index) in leftSideItems" :key="index">
+        <div class="nav-bar-links-container">
+          <template
+            v-if="item.url && (item.url.startsWith('http://') || item.url.startsWith('https://'))"
+          >
+            <a
+              class="nav-bar-links text-white underline"
+              :href="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ item.title }}</a
+            >
+          </template>
+          <template v-else>
+            <router-link class="nav-bar-links text-white underline" :to="item.url">{{
+              item.title
+            }}</router-link>
+          </template>
+        </div>
+      </template>
     </div>
+    <!-- logo -->
     <div class="logo flex-none">
       <router-link to="/">
         <img class="nav-bar-logo" src="../assets/navBarIcon.svg" alt="Giants logo" />
       </router-link>
     </div>
-    <div class="navbar-right-side flex flex-row flex-nowrap px-[60px] gap-[60px]">
-      <router-link class="nav-bar-links text-white underline" to="/association">Verein</router-link>
-      <router-link class="nav-bar-links text-white underline" to="/sponsors"
-        >Sponsoring</router-link
-      >
-      <router-link class="nav-bar-links text-white underline" to="/shop">Shop</router-link>
+    <!-- navbar items right -->
+    <div
+      class="navbar-right-side flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
+    >
+      <template v-for="(item, index) in rightSideItems" :key="index">
+        <div class="nav-bar-links-container">
+          <template
+            v-if="item.url && (item.url.startsWith('http://') || item.url.startsWith('https://'))"
+          >
+            <a
+              class="nav-bar-links text-white underline"
+              :href="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ item.title }}</a
+            >
+          </template>
+          <template v-else>
+            <router-link class="nav-bar-links text-white underline" :to="item.url">{{
+              item.title
+            }}</router-link>
+          </template>
+        </div>
+      </template>
     </div>
     <button class="hamburger-menu right-[40px] absolute" @click="changeNavBarMobileActive()">
       <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
@@ -28,26 +67,37 @@
 <script setup>
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
-import { useApiCalls } from '../stores/apiCalls.js'
-import { useRouter } from 'vue-router'
 
-const router = useRouter()
-const apiCalls = useApiCalls()
+const props = defineProps({
+  navbardata: {
+    type: Object,
+    required: true,
+  },
+})
 const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
 
-const navbarLinks = computed(() => {
-  return apiCalls.allWordpressPosts['NavBarTabs']
+const filteredNavbarItems = computed(() => {
+  if (!props.navbardata?.navbar_items) return []
+
+  // Convert object to array
+  const itemsArray = Array.isArray(props.navbardata.navbar_items)
+    ? props.navbardata.navbar_items
+    : Object.values(props.navbardata.navbar_items)
+
+  return itemsArray.filter(
+    (item) => item?.url && item?.title && item.url.trim() !== '' && item.title.trim() !== '',
+  )
 })
 
-const buttonLink = computed(() => {
-  return apiCalls.allWordpressPosts['ShopButton']
+const leftSideItems = computed(() => {
+  const half = Math.ceil(filteredNavbarItems.value.length / 2)
+  return filteredNavbarItems.value.slice(0, half)
 })
 
-function click(ev) {
-  if (ev.target.closest('a')) {
-    router.push(new URL(ev.target.closest('a').href).pathname)
-  }
-}
+const rightSideItems = computed(() => {
+  const half = Math.ceil(filteredNavbarItems.value.length / 2)
+  return filteredNavbarItems.value.slice(half)
+})
 
 function changeNavBarMobileActive() {
   isNavBarSideMenuDropdownActive.value = !isNavBarSideMenuDropdownActive.value
