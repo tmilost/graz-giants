@@ -1,98 +1,59 @@
 <template>
-  <div class="mobile-sidebar">
-    <button class="x-button" @click="changeNavBarMobileActive()">
+  <div class="fixed w-[240px] bg-[#080405] top-0 right-0 h-full z-[2]">
+    <button
+      class="absolute bg-transparent border-0 top-0 right-0 pt-[30px] pr-[40px]"
+      @click="changeNavBarMobileActive()"
+    >
       <img src="../assets/iconX.svg" alt="x button icon" />
     </button>
     <router-link to="/">
-      <div class="mobile-sidebar-image">
-        <img src="../assets/headerGiantsG.svg" alt="x button icon" />
+      <div class="mt-[80px] flex justify-center">
+        <img src="@/assets/navBarIcon.svg" alt="Giants logo" />
       </div>
     </router-link>
-    <div class="sidebar-text" v-html="postContent" @click.prevent="click" />
+    <div
+      class="flex flex-col items-center h-full p-[52px] text-white gap-y-[30px] text-[15px] leading-[21px] uppercase"
+    >
+      <template v-for="(item, index) in filteredNavbarItems" :key="index">
+        <div>
+          <template
+            v-if="item.url && (item.url.startsWith('http://') || item.url.startsWith('https://'))"
+          >
+            <a
+              class="text-white text-[15px] font-bold leading-[21px] uppercase no-underline"
+              :href="item.url"
+              target="_blank"
+              rel="noopener noreferrer"
+              >{{ item.title }}</a
+            >
+          </template>
+          <template v-else>
+            <router-link
+              class="text-white text-[15px] font-bold leading-[21px] uppercase no-underline"
+              :to="item.url"
+              >{{ item.title }}</router-link
+            >
+          </template>
+        </div>
+      </template>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import { useRouter } from 'vue-router'
+
+const props = defineProps({
+  filteredNavbarItems: {
+    type: Array,
+    required: true,
+  },
+})
 
 const apiCalls = useApiCalls()
 const isNavBarMobileActive = defineModel('isNavBarMobileActive')
-const router = useRouter()
-
-const postContent = computed(() => {
-  return apiCalls.allWordpressPosts['NavBarTabs']
-})
-
-function click(ev) {
-  if (ev.target.closest('a')) {
-    router.push(new URL(ev.target.closest('a').href).pathname)
-  }
-}
 
 function changeNavBarMobileActive() {
   isNavBarMobileActive.value = !isNavBarMobileActive.value
 }
 </script>
-
-<style scoped>
-.mobile-sidebar {
-  position: fixed;
-  width: 240px;
-  background-color: #080405;
-  top: 0;
-  right: 0;
-  height: 100%;
-  z-index: 2;
-}
-
-.x-button {
-  position: absolute;
-  background-color: transparent;
-  border: 0;
-  top: 0;
-  right: 0;
-  padding: 30px 40px 0 0;
-}
-
-.mobile-sidebar-image {
-  margin-top: 80px;
-  padding-left: auto;
-  display: flex;
-  justify-content: center;
-}
-
-.sidebar-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  padding: 52px;
-  color: #fff;
-  row-gap: 30px;
-}
-
-.sidebar-text:deep(p a) {
-  color: #ffffff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px;
-  /* 140% */
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
-.sidebar-text:deep(p a:active) {
-  color: #ffffff;
-  font-size: 15px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 21px;
-  /* 140% */
-  /* 224% */
-  text-transform: uppercase;
-  text-decoration: none;
-}
-</style>

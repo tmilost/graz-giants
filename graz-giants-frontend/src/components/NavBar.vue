@@ -4,7 +4,7 @@
   >
     <!-- navbar items left -->
     <div
-      class="navbar-left-side flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
+      class="navbar-left-side hidden md:flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
     >
       <template v-for="(item, index) in leftSideItems" :key="index">
         <div class="nav-bar-links-container">
@@ -30,12 +30,12 @@
     <!-- logo -->
     <div class="logo flex-none">
       <router-link to="/">
-        <img class="nav-bar-logo" src="../assets/navBarIcon.svg" alt="Giants logo" />
+        <img class="nav-bar-logo" src="@/assets/navBarIcon.svg" alt="Giants logo" />
       </router-link>
     </div>
     <!-- navbar items right -->
     <div
-      class="navbar-right-side flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
+      class="navbar-right-side hidden md:flex flex-row flex-nowrap px-[20px] md:px-[40px] lg:px-[60px] gap-[20px] md:gap-[40px] lg:gap-[60px]"
     >
       <template v-for="(item, index) in rightSideItems" :key="index">
         <div class="nav-bar-links-container">
@@ -58,7 +58,10 @@
         </div>
       </template>
     </div>
-    <button class="hamburger-menu right-[40px] absolute" @click="changeNavBarMobileActive()">
+    <button
+      class="hamburger-menu right-[40px] absolute md:hidden"
+      @click="changeNavBarMobileActive()"
+    >
       <img src="../assets/hamburgerIcon.svg" alt="Hamburger menu icon" />
     </button>
   </div>
@@ -69,34 +72,21 @@ import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
 const props = defineProps({
-  navbardata: {
-    type: Object,
+  filteredNavbarItems: {
+    type: Array,
     required: true,
   },
 })
 const isNavBarSideMenuDropdownActive = defineModel('isNavBarSideMenuDropdownActive')
 
-const filteredNavbarItems = computed(() => {
-  if (!props.navbardata?.navbar_items) return []
-
-  // Convert object to array
-  const itemsArray = Array.isArray(props.navbardata.navbar_items)
-    ? props.navbardata.navbar_items
-    : Object.values(props.navbardata.navbar_items)
-
-  return itemsArray.filter(
-    (item) => item?.url && item?.title && item.url.trim() !== '' && item.title.trim() !== '',
-  )
-})
-
 const leftSideItems = computed(() => {
-  const half = Math.ceil(filteredNavbarItems.value.length / 2)
-  return filteredNavbarItems.value.slice(0, half)
+  const half = Math.ceil(props.filteredNavbarItems.length / 2)
+  return props.filteredNavbarItems.slice(0, half)
 })
 
 const rightSideItems = computed(() => {
-  const half = Math.ceil(filteredNavbarItems.value.length / 2)
-  return filteredNavbarItems.value.slice(half)
+  const half = Math.ceil(props.filteredNavbarItems.length / 2)
+  return props.filteredNavbarItems.slice(half)
 })
 
 function changeNavBarMobileActive() {
