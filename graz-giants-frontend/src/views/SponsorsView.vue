@@ -22,8 +22,9 @@
       </p>
       <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">Kontaktperson</p>
       <div class="flex flex-row">
+        <!-- // to do list -->
         <img
-          src="@/assets/sponsorImage.jpg"
+          src="@/assets/hamburgerIcon.svg"
           alt="sponsor image"
           class="w-[220px] h-[261px] object-cover mr-[30px]"
         />

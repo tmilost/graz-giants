@@ -18,8 +18,10 @@
         <div
           class="relative flex flex-col justify-between items-center w-[365px] h-[361px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[150px] py-[20px]"
         >
+          <!-- // to do list -->
+
           <img
-            src="@/assets/TicketImage.jpg"
+            src="@/assets/hamburgerIcon.svg"
             alt="News 1"
             class="absolute inset-0 h-full w-full object-cover"
           />
@@ -40,7 +42,7 @@
             03.03.2026
           </p>
           <img
-            src="@/assets/HoldingGrazLogo.svg"
+            src="@/assets/hamburgerIcon.svg"
             alt="Holding Graz Logo"
             class="relative z-10 h-[50px] w-auto mt-[20px]"
           />

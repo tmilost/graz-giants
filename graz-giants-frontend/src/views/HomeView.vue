@@ -4,7 +4,6 @@ import ContentSpacing from '../components/ui/ContentSpacing.vue'
 import GiantsEventsSpacer from '../components/GiantsEventsSpacer.vue'
 import TicketsSection from '../components/TicketsSection.vue'
 import SeasonKarte from '../components/SeasonKarte.vue'
-import TryoutSection from '../components/TryoutSection.vue'
 import LastGame from '../components/LastGame.vue'
 import GameTable from '../components/GameTable.vue'
 import OurPartners from '../components/OurPartners.vue'
@@ -20,8 +19,6 @@ import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
     <TicketsSection />
     <ContentSpacing />
     <SeasonKarte />
-    <!-- <ContentSpacing /> -->
-    <!-- <TryoutSection /> -->
     <ContentSpacing />
     <LastGame />
     <ContentSpacing />
