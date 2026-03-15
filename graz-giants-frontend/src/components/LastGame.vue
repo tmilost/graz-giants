@@ -1,5 +1,5 @@
 <template>
-  <div class="last-game flex h-[333px] flex-col px-20">
+  <div class="last-game flex flex-col px-20 gap-[20px] md:gap-[80px]">
     <!-- First row -->
     <div
       class="flex flex-row justify-between text-right text-[24px] font-normal uppercase leading-[33.6px] text-[#003867] max-[430px]:flex-col max-[430px]:text-center"
@@ -9,32 +9,30 @@
     </div>
 
     <!-- Score row -->
-    <div
-      class="flex flex-1 items-center justify-center max-[810px]:scale-50 max-[430px]:m-0 max-[430px]:scale-[0.4]"
-    >
-      <div class="pr-[80px]">
+    <div class="flex flex-1 flex-col md:flex-row items-center justify-center gap-[20px] md:gap-0">
+      <div class="md:mr-[80px]">
         <img
           :src="postContent?.image_left"
           alt="Team A Logo"
-          class="mr-[80px] h-[150px] w-[150px] object-cover"
+          class="h-[150px] min-w-[150px] object-cover"
         />
       </div>
       <p
-        class="ml-[80px] flex h-[150px] w-[150px] items-center justify-center bg-[#003867] p-[21px] text-center text-[90px] font-normal uppercase leading-[90px] text-[#FAB900]"
+        class="md:ml-[80px] flex h-[150px] w-[150px] items-center justify-center bg-[#003867] p-[21px] text-center text-[90px] font-normal uppercase leading-[90px] text-[#FAB900]"
       >
         {{ postContent?.score_left }}
       </p>
-      <p class="px-[50px] text-center text-[24px] font-normal text-[#003867]">VS</p>
+      <p class="md:px-[50px] text-center text-[24px] font-normal text-[#003867]">VS</p>
       <p
-        class="mr-[80px] flex h-[150px] w-[150px] items-center justify-center border-2 border-[#FAB900] text-center text-[90px] font-normal uppercase leading-[90px] text-[#003867]"
+        class="md:mr-[80px] flex h-[150px] w-[150px] items-center justify-center border-2 border-[#FAB900] p-[21px] text-center text-[90px] font-normal uppercase leading-[90px] text-[#003867]"
       >
         {{ postContent?.score_right }}
       </p>
-      <div class="pl-[80px]">
+      <div class="md:ml-[80px]">
         <img
           :src="postContent?.image_right"
           alt="Team B Logo"
-          class="h-[150px] w-[150px] object-cover"
+          class="h-[150px] min-w-[150px] object-cover"
         />
       </div>
     </div>

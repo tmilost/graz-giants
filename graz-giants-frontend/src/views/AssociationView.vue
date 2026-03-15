@@ -32,4 +32,5 @@ import PageHero from '@/components/PageHero.vue'
 import PageHeroImage from '@/assets/PageHeroImage.png'
 import CardImageText from '@/components/ui/CardImageText.vue'
 import image from '@/assets/hamburgerIcon.svg'
+// to do list
 </script>

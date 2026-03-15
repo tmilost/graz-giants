@@ -7,7 +7,7 @@
     </p>
 
     <div
-      class="pb-[30px] flex flex-row flex-wrap items-center justify-center justify-around m-[10px]"
+      class="pb-[30px] flex flex-row flex-wrap items-center justify-center justify-around m-[10px] gap-[20px] md:gap-0"
     >
       <div v-for="(value, index) in postContent?.images" :key="index">
         <img :src="value" :alt="`Partner ${index + 1}`" class="h-[90px] object-none" />

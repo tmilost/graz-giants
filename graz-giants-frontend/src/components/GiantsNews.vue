@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="giants-news px-[80px] flex flex-row flex-wrap justify-evenly gap-[50px] max-[430px]:mx-[30px] max-[430px]:gap-[20px]"
-  >
+  <div class="giants-news px-[30px] md:px-[80px] flex flex-row flex-wrap justify-center gap-[50px]">
     <p class="w-full text-[50px] font-normal uppercase leading-[39.2px] text-[#003867]">
       Giants News
     </p>

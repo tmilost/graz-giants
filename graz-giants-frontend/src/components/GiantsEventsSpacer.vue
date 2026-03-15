@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex h-[138px] w-full flex-col pt-[50px] ps-[80px] text-left text-[50px] font-normal uppercase leading-[70px] text-[#003867]"
+    class="flex h-auto md:h-[138px] w-full flex-col pt-[30px] md:pt-[50px] ps-[20px] md:ps-[80px] text-left text-[30px] md:text-[50px] font-normal uppercase leading-[40px] md:leading-[70px] text-[#003867]"
   >
     {{ returnText }}
   </div>

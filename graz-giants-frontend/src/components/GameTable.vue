@@ -1,8 +1,8 @@
 <template>
-  <div class="game-table flex flex-row justify-between bg-[#003867] h-[480px] max-[790px]:flex-col">
-    <div class="px-[80px] py-[50px]">
+  <div class="game-table flex flex-row justify-center bg-[#003867] h-[480px] max-[790px]:flex-col">
+    <div class="px-[80px] py-0 md:py-[50px]">
       <p
-        class="py-[50px] text-left text-[28px] font-normal uppercase leading-[39.2px] text-[#FAB900] max-[790px]:my-[20px]"
+        class="py-0 md:py-[50px] text-left text-[28px] font-normal uppercase leading-[39.2px] text-[#FAB900] max-[790px]:my-[20px]"
       >
         {{ postContent?.tittle }}
       </p>
