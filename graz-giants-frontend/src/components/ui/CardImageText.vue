@@ -1,5 +1,9 @@
 <template>
-  <div class="card-image-text relative h-[220px] w-[350px]" @click="$router.push(url)">
+  <div
+    class="card-image-text relative h-[220px] w-[350px]"
+    @click="$router.push(url)"
+    :class="url ? 'cursor-pointer' : ''"
+  >
     <img
       class="block h-full w-full object-cover"
       :src="imageUrl || CardTextImage"
