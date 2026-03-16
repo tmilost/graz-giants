@@ -3,7 +3,7 @@
     <PageHero :imageUrl="heroContent?.image"></PageHero>
     <div class="px-[80px]">
       <h1
-        class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px]"
+        class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px] break-words"
       >
         {{ heroContent?.tittle }}
       </h1>

@@ -1,10 +1,10 @@
 <template>
   <div class="nachwuchs-philosophie pb-[50px]">
     <PageHero :imageUrl="postContent?.image"></PageHero>
-    <div class="px-[80px]">
+    <div class="px-[30px] md:px-[80px]">
       <div class="pt-[30px]">
         <h1
-          class="text-left text-[50px] font-normal uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px]"
+          class="text-left text-[50px] font-normal uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px] break-words"
         >
           {{ postContent?.tittle }}
         </h1>
@@ -19,7 +19,7 @@
           {{ postContent?.card_tittle }}
         </p>
       </div>
-      <div class="flex flex-wrap flex-row gap-[80px]">
+      <div class="flex flex-wrap flex-row justify-center md:justify-between gap-[80px]">
         <div
           class="philosophie-cards pt-[30px]"
           v-for="(card, index, array) in postContent?.cards"
@@ -39,7 +39,10 @@
         {{ postContent?.text_bottom }}
       </p>
 
-      <div class="flex flex-wrap flex-row gap-[30px] mt-[30px]" v-if="postContent?.cards_bottom">
+      <div
+        class="flex flex-wrap flex-row justify-center md:justify-between gap-[30px] mt-[30px]"
+        v-if="postContent?.cards_bottom"
+      >
         <div
           class="philosophie-cards pt-[30px]"
           v-for="(card, index) in postContent?.cards_bottom"

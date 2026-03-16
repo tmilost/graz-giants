@@ -1,42 +1,53 @@
 <template>
   <div class="game-day-page">
-    <PageHero :imageUrl="PageHeroImage" />
+    <PageHero :imageUrl="postContent?.image" />
     <div class="game-day-top px-[80px] py-[30px] flex flex-col items-start">
-      <h1 class="text-[50px] font-bold text-[#003867] mt-[40px] mb-[20px]">Giants Gameday</h1>
-      <p class="text-[15px] text-[#003867] mb-[40px]">
-        Ein Gameday bei den Graz Giants ist mehr als nur ein Spiel – er ist ein Erlebnis! In der
-        Actionberg-Atmosphäre trifft Giants-Football auf eine mitreißende gute Stimmung, die vom
-        ersten Kickoff bis zum letzten Play durchgehend pulsiert. Hier spürst du den echten
-        Giants-Spirit: eine Gemeinschaft, die als Giants-Family zusammenhält, anfeuert und jeden
-        Touchdown feiert. Ob du eingefleischter Fan bist oder einfach nur gute Football-Action
-        suchst – beim Heimspiel bist du mitten drin, statt nur dabei.
+      <h1
+        v-if="postContent?.tittle"
+        class="text-[50px] font-bold uppercase text-[#003867] mt-[40px] mb-[20px]"
+      >
+        {{ postContent?.tittle }}
+      </h1>
+      <p v-if="postContent?.text" class="text-[15px] text-[#003867] mb-[40px]">
+        {{ postContent?.text }}
       </p>
-      <BlueButton />
-      <h2 class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]">
-        Das erwartet dich bei einem Giants Gameday
+      <BlueButton
+        v-if="postContent?.button?.title && postContent?.button?.url"
+        :text="postContent?.button?.title"
+        :href="postContent?.button?.url"
+      />
+      <h2
+        v-if="postContent?.tittle_2"
+        class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]"
+      >
+        {{ postContent?.tittle_2 }}
       </h2>
-      <p class="text-[15px] text-[#003867] mb-[40px]">
-        Hier könnte was stehen <br />
-        Hier könnte was stehen <br />
-        Hier könnte was stehen <br />
-        Hier könnte was stehen <br />
-        Hier könnte was stehen <br />
+      <p
+        v-if="postContent?.text_2"
+        class="text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
+      >
+        {{ postContent?.text_2 }}
       </p>
     </div>
     <SeasonKarte />
-    <div class="game-day-bottom px-[80px]">
-      <h2 class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]">
-        Das erwartet dich bei einem Giants Gameday
+    <div class="game-day-bottom px-[80px] pb-[30px]">
+      <h2
+        v-if="postContent?.tittle_map"
+        class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]"
+      >
+        {{ postContent?.tittle_map }}
       </h2>
-      <p class="text-[15px] text-[#003867] mb-[40px]">
-        Der Giants Gameday hat ein Zuhause: das ASKÖ Stadion Eggenberg. In der Schlossstraße 20,
-        8020 Graz trifft sich die Giants Family, um Football, Emotionen und echten Giants-Spirit zu
-        erleben.
+      <p
+        v-if="postContent?.text_map"
+        class="text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
+      >
+        {{ postContent?.text_map }}
       </p>
       <img
-        src="@/assets/PageHeroImage.png"
-        alt="Stadion Image"
-        class="w-full h-auto object-cover mb-[40px]"
+        v-if="postContent?.image_map"
+        :src="postContent?.image_map"
+        alt="Stadion location Image"
+        class="w-[464px] h-auto object-cover mb-[40px]"
       />
       <LastGame />
     </div>
@@ -44,9 +55,17 @@
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue'
+import { useApiCalls } from '../stores/apiCalls.js'
 import PageHero from '@/components/PageHero.vue'
-import PageHeroImage from '@/assets/PageHeroImage.png'
 import BlueButton from '@/components/ui/BlueButton.vue'
 import SeasonKarte from '@/components/SeasonKarte.vue'
 import LastGame from '@/components/LastGame.vue'
+
+const apiCalls = useApiCalls()
+const postContent = ref({})
+
+onMounted(async () => {
+  postContent.value = await apiCalls.retrievePage('gameday')
+})
 </script>

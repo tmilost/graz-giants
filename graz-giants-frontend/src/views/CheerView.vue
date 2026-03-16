@@ -1,9 +1,9 @@
 <template>
   <div class="nachwuchs">
     <PageHero :imageUrl="postContent?.image"></PageHero>
-    <div class="px-[80px]">
+    <div class="px-[30px] md:px-[80px]">
       <h1
-        class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px]"
+        class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px] break-words"
       >
         {{ postContent?.tittle }}
       </h1>
@@ -13,9 +13,13 @@
         {{ postContent?.text }}
       </p>
       <!-- Cards -->
-      <div class="flex flex-row flex-wrap my-[30px] gap-[30px]">
+      <div class="flex flex-row flex-wrap justify-center md:justify-between my-[30px] gap-[30px]">
         <div v-for="(card, index) in postContent?.cards" :key="index">
-          <CardImageText :text="card?.text" :url="card?.link?.url" />
+          <CardImageText
+            v-if="card?.text || card?.link?.url"
+            :text="card?.text"
+            :url="card?.link?.url"
+          />
         </div>
         <TextCard
           :tittleTop="postContent?.info_card?.tittle_top"

@@ -15,7 +15,11 @@
       <!-- Cards -->
       <div class="flex flex-row flex-wrap my-[30px] gap-[30px]">
         <div v-for="(card, index) in postContent?.cards" :key="index">
-          <CardImageText :text="card?.text" :url="card?.link?.url" />
+          <CardImageText
+            v-if="card?.text || card?.link?.url"
+            :text="card?.text"
+            :url="card?.link?.url"
+          />
         </div>
         <TextCard
           :tittleTop="postContent?.info_card?.tittle_top"

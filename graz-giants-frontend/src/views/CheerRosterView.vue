@@ -1,11 +1,11 @@
 <template>
   <div class="cheer-roster">
-    <PageHero :imageUrl="postContent?.image"></PageHero>
+    <PageHero :imageUrl="heroContent?.image"></PageHero>
     <div class="px-[80px]">
       <h1
         class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px]"
       >
-        {{ postContent?.tittle }} Giants Roster
+        {{ heroContent?.tittle }}
       </h1>
       <!-- Cards -->
       <div class="flex flex-row flex-wrap my-[30px] gap-[30px]">
@@ -33,8 +33,10 @@ import RosterCard from '@/components/ui/RosterCard.vue'
 
 const apiCalls = useApiCalls()
 const postContent = ref({})
+const heroContent = ref({})
 
 onMounted(async () => {
   postContent.value = await apiCalls.retrievePeople('cheerroster')
+  heroContent.value = await apiCalls.retrievePage('cheerroster')
 })
 </script>
