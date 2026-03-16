@@ -1,7 +1,7 @@
 <template>
-  <div class="game-day-page py-[30px]">
+  <div class="game-day-page">
     <PageHero :imageUrl="PageHeroImage" />
-    <div class="game-day-top px-[80px] flex flex-col items-start">
+    <div class="game-day-top px-[80px] py-[30px] flex flex-col items-start">
       <h1 class="text-[50px] font-bold text-[#003867] mt-[40px] mb-[20px]">Giants Gameday</h1>
       <p class="text-[15px] text-[#003867] mb-[40px]">
         Ein Gameday bei den Graz Giants ist mehr als nur ein Spiel – er ist ein Erlebnis! In der
