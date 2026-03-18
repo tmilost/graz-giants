@@ -1,10 +1,8 @@
 <template>
   <footer class="bg-[#003867] px-[80px] py-[40px]">
     <!-- Logo -->
-    <div class="pb-[80px] max-[430px]:pb-[30px] max-[430px]:text-center">
-      <a href="/">
-        <img src="@/assets/GiantsLogo.svg" alt="Giants logo" />
-      </a>
+    <div class="pb-[80px] max-[430px]:pb-[30px] max-[430px]:text-center cursor-pointer">
+      <img src="@/assets/GiantsLogo.svg" alt="Giants logo" @click="$router.push('/')" />
     </div>
 
     <!-- Middle -->
@@ -24,7 +22,10 @@
           >
             {{ item }}
           </div>
-          <div v-if="index === 'adress'" class="text-[15px] font-normal leading-[21px] text-white">
+          <div
+            v-if="index === 'adress'"
+            class="text-[15px] font-normal leading-[21px] text-white cursor-pointer"
+          >
             {{ item }}
           </div>
           <a
