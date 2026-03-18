@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed w-[240px] bg-[#080405] top-0 right-0 h-full z-[2]">
+  <div class="fixed w-[240px] bg-[#080405] top-0 right-0 h-full z-[99]">
     <button
       class="absolute bg-transparent border-0 top-0 right-0 pt-[30px] pr-[40px]"
       @click="changeNavBarMobileActive()"
