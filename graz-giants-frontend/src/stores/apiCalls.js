@@ -73,6 +73,29 @@ export const useApiCalls = defineStore('apiCalls', () => {
       })
   }
 
+  function retrieveNewsByTag(tagId) {
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&tags=${tagId}&order=desc`)
+      .then((response) => {
+        return response.data
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
+  function retrieveTagsId(tagSlug) {
+    const slugs = Array.isArray(tagSlug) ? tagSlug.join(',') : tagSlug
+    return axios
+      .get(`${apiPaths.BASE_API_PATH}/tags?acf_format=standard&slug=${slugs}`)
+      .then((response) => {
+        return response.data
+      })
+      .catch(() => {
+        return null
+      })
+  }
+
   function retrieveNewsPost(postSlug) {
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&slug=${postSlug}`)
@@ -116,5 +139,7 @@ export const useApiCalls = defineStore('apiCalls', () => {
     retrieveNewsPost,
     retrievePage,
     retrievePeople,
+    retrieveNewsByTag,
+    retrieveTagsId,
   }
 })
