@@ -11,9 +11,9 @@ const route = useRoute()
 const router = useRouter()
 const apiCalls = useApiCalls()
 // TO DO REMOVE
-// 
-// 
-// 
+//
+//
+//
 onMounted(() => {
   getWordpressPage()
 })
