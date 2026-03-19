@@ -13,7 +13,7 @@
         {{ postContent?.text }}
       </p>
       <!-- Cards -->
-      <div class="flex flex-row flex-wrap my-[30px] gap-[30px]">
+      <div class="flex flex-row flex-wrap justify-around my-[30px] gap-[30px]">
         <div v-for="(card, index) in postContent?.cards" :key="index">
           <CardImageText
             v-if="card?.text || card?.link?.url"
@@ -21,12 +21,21 @@
             :url="card?.link?.url"
           />
         </div>
-        <TextCard
-          :tittleTop="postContent?.info_card?.tittle_top"
-          :textTop="postContent?.info_card?.text_top"
-          :tittleBottom="postContent?.info_card?.tittle_bottom"
-          :textBottom="postContent?.info_card?.text_bottom"
-        />
+        <div
+          v-if="
+            postContent?.info_card?.text_top ||
+            postContent?.info_card?.text_bottom ||
+            postContent?.info_card?.tittle_top ||
+            postContent?.info_card?.tittle_bottom
+          "
+        >
+          <TextCard
+            :tittleTop="postContent?.info_card?.tittle_top"
+            :textTop="postContent?.info_card?.text_top"
+            :tittleBottom="postContent?.info_card?.tittle_bottom"
+            :textBottom="postContent?.info_card?.text_bottom"
+          />
+        </div>
       </div>
     </div>
   </div>

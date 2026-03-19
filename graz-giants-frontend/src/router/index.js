@@ -152,8 +152,9 @@ const router = createRouter({
         ],
       },
     },
+    // TO DO
     {
-      path: '/verein',
+      path: '/vereinasd',
       name: 'verein',
       component: AssociationView,
       meta: {

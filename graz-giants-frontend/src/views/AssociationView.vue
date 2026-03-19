@@ -1,5 +1,6 @@
 <template>
   <div class="association-page">
+    <!-- TO DO -->
     <PageHero :imageUrl="PageHeroImage" />
     <div class="association-body px-[80px]">
       <h1 class="text-[50px] font-bold text-[#003867] mt-[40px] mb-[20px]">Giants Gameday</h1>
