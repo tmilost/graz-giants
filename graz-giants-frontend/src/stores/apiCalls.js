@@ -4,58 +4,20 @@ import axios from 'axios'
 import { apiPaths } from '../config/apiPaths'
 
 export const useApiCalls = defineStore('apiCalls', () => {
-  const allWordpressPages = ref({})
-  const allWordpressPosts = ref({})
+  // Simple in-memory cache object
+  const apiCache = {}
 
-  onMounted(async () => {
-    await retrieveWordpressPost('DropDownMenuLinks')
-    getUnsignedWordpressPost('MainHeader')
-    getUnsignedWordpressPost('NavBarTabs')
-    getUnsignedWordpressPost('ShopButton')
-  })
-
-  function retrieveWordpressPage(pageSlug) {
-    return axios
-      .get(`${apiPaths.BASE_API_PATH}/pages?slug=${pageSlug}`)
-      .then((response) => {
-        if (response.data[0]) {
-          allWordpressPages.value[pageSlug] = response.data[0].content.rendered
-        } else {
-          allWordpressPages.value[pageSlug] = ''
-        }
-        return response.data[0].content.rendered
-      })
-      .catch(() => {
-        return null
-      })
-  }
-  function retrieveWordpressPost(postSlug) {
-    return axios
-      .get(`${apiPaths.BASE_API_PATH}/posts?slug=${postSlug}`)
-      .then((response) => {
-        if (response.data[0]) {
-          allWordpressPosts.value[postSlug] = response.data[0].content.rendered
-        } else {
-          allWordpressPosts.value[postSlug] = ''
-        }
-        return response.data[0].content.rendered
-      })
-      .catch(() => {
-        return null
-      })
-  }
-
-  async function getUnsignedWordpressPost(post) {
-    if (allWordpressPosts.value[post] === undefined) {
-      await retrieveWordpressPost(post)
-    }
-  }
+  onMounted(async () => {})
 
   function retrieveHomePageSection(pageSlug) {
+    const cacheKey = `retrieveHomePageSection:${pageSlug}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/homepage?acf_format=standard&slug=${pageSlug}`)
       .then((response) => {
-        return response.data[0].acf
+        const data = response.data[0].acf
+        apiCache[cacheKey] = data
+        return data
       })
       .catch(() => {
         return null
@@ -63,9 +25,12 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrieveNews(totalNews) {
+    const cacheKey = `retrieveNews:${totalNews}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&per_page=${totalNews}&order=desc`)
       .then((response) => {
+        apiCache[cacheKey] = response.data
         return response.data
       })
       .catch(() => {
@@ -74,9 +39,12 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrieveNewsByTag(tagId) {
+    const cacheKey = `retrieveNewsByTag:${tagId}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&tags=${tagId}&order=desc`)
       .then((response) => {
+        apiCache[cacheKey] = response.data
         return response.data
       })
       .catch(() => {
@@ -86,9 +54,12 @@ export const useApiCalls = defineStore('apiCalls', () => {
 
   function retrieveTagsIds(tagSlug) {
     const slugs = Array.isArray(tagSlug) ? tagSlug.join(',') : tagSlug
+    const cacheKey = `retrieveTagsIds:${slugs}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/tags?acf_format=standard&slug=${slugs}`)
       .then((response) => {
+        apiCache[cacheKey] = response.data
         return response.data
       })
       .catch(() => {
@@ -97,10 +68,14 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrieveNewsPost(postSlug) {
+    const cacheKey = `retrieveNewsPost:${postSlug}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&slug=${postSlug}`)
       .then((response) => {
-        return response.data[0]?.acf
+        const data = response.data[0]?.acf
+        apiCache[cacheKey] = data
+        return data
       })
       .catch(() => {
         return null
@@ -108,10 +83,14 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrievePage(pageSlug) {
+    const cacheKey = `retrievePage:${pageSlug}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/pages?acf_format=standard&slug=${pageSlug}`)
       .then((response) => {
-        return response.data[0]?.acf
+        const data = response.data[0]?.acf
+        apiCache[cacheKey] = data
+        return data
       })
       .catch(() => {
         return null
@@ -119,9 +98,12 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   function retrievePeople(PostType) {
+    const cacheKey = `retrievePeople:${PostType}`
+    if (apiCache[cacheKey]) return Promise.resolve(apiCache[cacheKey])
     return axios
       .get(`${apiPaths.BASE_API_PATH}/${PostType}?acf_format=standard&_fields=acf&`)
       .then((response) => {
+        apiCache[cacheKey] = response.data
         return response.data
       })
       .catch(() => {
@@ -130,10 +112,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
   }
 
   return {
-    retrieveWordpressPage,
-    retrieveWordpressPost,
-    allWordpressPages,
-    allWordpressPosts,
     retrieveHomePageSection,
     retrieveNews,
     retrieveNewsPost,
