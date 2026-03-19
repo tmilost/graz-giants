@@ -84,7 +84,7 @@ export const useApiCalls = defineStore('apiCalls', () => {
       })
   }
 
-  function retrieveTagsId(tagSlug) {
+  function retrieveTagsIds(tagSlug) {
     const slugs = Array.isArray(tagSlug) ? tagSlug.join(',') : tagSlug
     return axios
       .get(`${apiPaths.BASE_API_PATH}/tags?acf_format=standard&slug=${slugs}`)
@@ -140,6 +140,6 @@ export const useApiCalls = defineStore('apiCalls', () => {
     retrievePage,
     retrievePeople,
     retrieveNewsByTag,
-    retrieveTagsId,
+    retrieveTagsIds,
   }
 })
