@@ -17,8 +17,17 @@
           :key="person.year + person.names"
           class="flex flex-row whitespace-pre-wrap text-[15px] leading-[15px] border-b border-current pb-2.5 w-[200px]"
         >
-          <span class="font-semibold w-[50px] flex-shrink-0">{{ person.year }}</span>
-          <span>{{ person.names }}</span>
+          <span
+            v-if="person.year && person.year.trim() !== ''"
+            class="font-semibold w-[50px] flex-shrink-0"
+            >{{ person.year }}</span
+          >
+          <span
+            v-if="person.names"
+            :class="!person.year || person.year.trim() === '' ? 'mx-auto w-full text-center' : ''"
+          >
+            {{ person.names }}
+          </span>
         </div>
       </div>
       <div class="flex justify-center gap-2">
@@ -68,7 +77,7 @@ const persons = computed(() => {
   return Object.keys(props.cardData)
     .filter((k) => k.startsWith('person_'))
     .map((k) => props.cardData[k])
-    .filter((person) => person?.year && person?.names)
+    .filter((person) => person?.year || person?.names)
 })
 
 const pageCount = computed(() => Math.ceil(persons.value.length / 4))

@@ -28,6 +28,7 @@ import LeitbildView from '@/views/LeitbildView.vue'
 import GymView from '@/views/GymView.vue'
 import HallOfFameView from '@/views/HallOfFameView.vue'
 import VereinsgeschichteView from '@/views/VereinsgeschichteView.vue'
+import HelferVorstandView from '@/views/HelferVorstandView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -558,6 +559,26 @@ const router = createRouter({
       path: '/vereinsgeschichte',
       name: 'Vereinsgeschichte',
       component: VereinsgeschichteView,
+      meta: {
+        title: 'Graz Giants',
+        metaTags: [
+          {
+            name: 'description',
+            content:
+              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
+          },
+          {
+            name: 'keywords',
+            content:
+              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+          },
+        ],
+      },
+    },
+    {
+      path: '/helfer-vorstand',
+      name: 'HelferVorstand',
+      component: HelferVorstandView,
       meta: {
         title: 'Graz Giants',
         metaTags: [
