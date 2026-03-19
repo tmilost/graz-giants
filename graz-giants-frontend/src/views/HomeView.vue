@@ -14,24 +14,23 @@ import GiantsSocialMedia from '../components/GiantsSocialMedia.vue'
 
 <template>
   <main>
-    <MainHeader />
-    <GiantsEventsSpacer />
-    <TicketsSection />
-    <ContentSpacing />
-    <SeasonKarte />
-    <ContentSpacing />
-    <LastGame />
-    <ContentSpacing />
-
-    <GameTable />
-    <ContentSpacing />
-    <OurPartners />
-    <ContentSpacing />
-    <GiantsNews />
-    <ContentSpacing />
-    <NewsLetter />
-    <ContentSpacing />
     <div class="pb-[80px]">
+      <MainHeader />
+      <GiantsEventsSpacer />
+      <TicketsSection />
+      <ContentSpacing />
+      <SeasonKarte />
+      <ContentSpacing />
+      <LastGame />
+      <ContentSpacing />
+      <GameTable />
+      <ContentSpacing />
+      <OurPartners />
+      <ContentSpacing />
+      <GiantsNews />
+      <ContentSpacing />
+      <NewsLetter />
+      <ContentSpacing />
       <GiantsSocialMedia />
     </div>
   </main>

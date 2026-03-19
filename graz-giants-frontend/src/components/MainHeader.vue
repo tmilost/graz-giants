@@ -1,7 +1,37 @@
 <template>
   <div class="main-header">
     <div class="relative h-[350px] sm:h-[800px] w-full">
-      <img class="block h-full w-full object-cover" :src="returnImage" alt="Main header image" />
+      <div
+        class="block h-full w-full object-cover bg-gray-300 flex items-center justify-center"
+        style="position: absolute; z-index: 1"
+        v-if="!returnImage"
+      >
+        <svg
+          width="80"
+          height="80"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#bbb"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="feather feather-image"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <circle cx="8.5" cy="8.5" r="1.5"></circle>
+          <path d="M21 15l-5-5L5 21"></path>
+        </svg>
+      </div>
+      <img
+        class="block h-full w-full object-cover"
+        :src="returnImage"
+        alt="Graz Giants header image"
+        v-if="returnImage"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        sizes="100vw"
+      />
       <div
         class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] from-[-7.32%] to-black to-[102%]"
       ></div>
