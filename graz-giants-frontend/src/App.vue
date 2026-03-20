@@ -34,7 +34,7 @@ function changeNavBarMobileDisabled() {
 
 <template>
   <header>
-    <div class="absolute mx-auto top-0 left-0 right-0 z-[1]">
+    <div class="absolute mx-auto top-0 left-0 right-0 z-1">
       <NavBar
         :filteredNavbarItems="filteredNavbarItems"
         v-model:isNavBarSideMenuDropdownActive="isNavBarSideMenuDropdownActive"

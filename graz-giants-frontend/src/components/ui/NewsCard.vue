@@ -16,8 +16,9 @@
         <a
           class="text-[15px] font-normal leading-[15px] text-[#003867] underline"
           :href="readMoreLink"
-          >Read more</a
         >
+          News
+        </a>
       </div>
     </div>
   </div>
