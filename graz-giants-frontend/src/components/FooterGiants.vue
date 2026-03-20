@@ -72,8 +72,8 @@
         class="flex flex-row justify-center md:justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]"
       >
         <div v-for="(value, index) in postContent?.footer_bottom?.right_social" :key="index">
-          <a :href="value?.link?.url"
-            ><img :src="value?.image" alt="Icon" class="h-[20px] w-[20px]" />
+          <a :href="value?.link?.url">
+            <img :src="value?.image" alt="Icon min-w-[20px] h-[20px]" />
           </a>
         </div>
       </div>
