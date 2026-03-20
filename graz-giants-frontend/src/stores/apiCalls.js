@@ -40,11 +40,13 @@ export const useApiCalls = defineStore(
         })
     }
 
-    function retrieveNewsByTag(tagId) {
-      const cacheKey = `retrieveNewsByTag:${tagId}`
+    function retrieveNewsByTag(tagId, totalNews) {
+      const cacheKey = `retrieveNewsByTag:${tagId}:${totalNews}`
       if (apiCache.value[cacheKey]) return Promise.resolve(apiCache.value[cacheKey])
       return axios
-        .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&tags=${tagId}&order=desc`)
+        .get(
+          `${apiPaths.BASE_API_PATH}/posts?acf_format=standard&tags=${tagId}&per_page=${totalNews}&order=desc`,
+        )
         .then((response) => {
           apiCache.value[cacheKey] = response.data
           return response.data

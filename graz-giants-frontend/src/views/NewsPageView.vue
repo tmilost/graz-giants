@@ -44,6 +44,20 @@
         {{ newsContent?.no_news_message_text }}
       </p>
     </div>
+    <div class="mt-[38px] w-full" v-if="!allNewsLoaded">
+      <button
+        class="mx-auto flex items-center gap-[16px] text-[24px] font-normal uppercase leading-[15px] text-[#003867]"
+        @click="retrieveNewsByTag(currentTagName)"
+      >
+        <div
+          class="group flex items-center justify-center w-[31px] h-[31px] border-2 border-[#1a3a6d] rounded-full relative"
+        >
+          <div class="absolute w-[10px] h-[2px] bg-[#1a3a6d] rounded-full"></div>
+          <div class="absolute w-[2px] h-[10px] bg-[#1a3a6d] rounded-full"></div>
+        </div>
+        weitere News
+      </button>
+    </div>
   </div>
 </template>
 
@@ -58,6 +72,8 @@ const postContent = ref({})
 const newsContent = ref({})
 const tagsIds = ref({})
 const currentTagName = ref(null)
+const totalNews = ref(4)
+const allNewsLoaded = ref(false)
 
 onMounted(async () => {
   newsContent.value = await apiCalls.retrievePage('news')
@@ -68,16 +84,28 @@ onMounted(async () => {
   const firstTagId = firstTagObj?.id
   currentTagName.value = firstTagName
 
-  postContent.value = await apiCalls.retrieveNewsByTag(firstTagId)
+  await apiCalls.retrieveNewsByTag(firstTagId, totalNews.value).then((data) => {
+    postContent.value = data
+    checkAllNewsLoaded(data)
+  })
 })
 
 function retrieveNewsByTag(tagName) {
   const tagObj = tagsIds.value.find((tag) => tag.name === tagName)
   const tagId = tagObj?.id
   currentTagName.value = tagName
-  apiCalls.retrieveNewsByTag(tagId).then((data) => {
+  apiCalls.retrieveNewsByTag(tagId, totalNews.value).then((data) => {
     postContent.value = data
+    checkAllNewsLoaded(data)
   })
+}
+
+function checkAllNewsLoaded(data) {
+  if (Array.isArray(data) && data.length < totalNews.value) {
+    allNewsLoaded.value = true
+  } else {
+    allNewsLoaded.value = false
+  }
 }
 
 const formatDate = (iso) => iso?.slice(0, 10).replaceAll('-', '.')
