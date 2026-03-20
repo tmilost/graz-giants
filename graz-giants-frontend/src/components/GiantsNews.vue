@@ -18,7 +18,7 @@
       />
     </div>
   </div>
-  <div class="mt-[38px] w-full">
+  <div class="mt-[38px] w-full" v-if="!allNewsLoaded">
     <button
       class="mx-auto flex items-center gap-[16px] text-[24px] font-normal uppercase leading-[15px] text-[#003867]"
       @click="increaseNews()"
@@ -40,18 +40,31 @@ import { useApiCalls } from '../stores/apiCalls.js'
 import NewsCard from '@/components/ui/NewsCard.vue'
 
 const apiCalls = useApiCalls()
-const postContent = ref({})
+const postContent = ref([])
 const totalNews = ref(4)
+const allNewsLoaded = ref(false)
 
 onMounted(async () => {
-  postContent.value = await apiCalls.retrieveNews(totalNews.value)
+  const data = await apiCalls.retrieveNews(totalNews.value)
+  postContent.value = data
+  checkAllNewsLoaded(data)
 })
 
 function increaseNews() {
   totalNews.value = totalNews.value + 4
   apiCalls.retrieveNews(totalNews.value).then((data) => {
     postContent.value = data
+    checkAllNewsLoaded(data)
   })
 }
+
+function checkAllNewsLoaded(data) {
+  if (Array.isArray(data) && data.length < totalNews.value) {
+    allNewsLoaded.value = true
+  } else {
+    allNewsLoaded.value = false
+  }
+}
+
 const formatDate = (iso) => iso?.slice(0, 10).replaceAll('-', '.')
 </script>
