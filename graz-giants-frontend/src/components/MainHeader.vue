@@ -43,15 +43,17 @@
       <div
         class="absolute bottom-[70px] left-1/2 hidden -translate-x-1/2 items-center gap-5 sm:flex"
       >
-        <input
-          type="radio"
-          name="header-slide"
-          class="h-[20px] w-[20px] appearance-none rounded-full border border-white bg-white checked:bg-[radial-gradient(circle,_#FAB900_0_7px,_transparent_7px)]"
-          :checked="index === currentSlide"
-          v-for="(value, index) in returnTotalSlides"
-          :key="index"
-          @click="currentSlide = index"
-        />
+        <template v-for="(value, index) in returnTotalSlides" :key="index">
+          <input
+            type="radio"
+            :id="`header-slide-${index}`"
+            name="header-slide"
+            class="h-[20px] w-[20px] appearance-none rounded-full border border-white bg-white checked:bg-[radial-gradient(circle,_#FAB900_0_7px,_transparent_7px)]"
+            :checked="index === currentSlide"
+            @click="currentSlide = index"
+          />
+          <label :for="`header-slide-${index}`" class="sr-only">Go to slide {{ index + 1 }}</label>
+        </template>
       </div>
     </div>
   </div>
