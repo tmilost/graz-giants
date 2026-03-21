@@ -15,8 +15,6 @@
           <img
             class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500"
             :src="getImageObj(returnImage)?.url || returnImage"
-            :srcset="srcSet"
-            :sizes="sizes"
             alt="Graz Giants header image"
             loading="eager"
             decoding="async"
