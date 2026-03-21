@@ -32,7 +32,7 @@
       <div
         class="absolute left-1/2 bottom-1/7 flex h-auto w-[90%] -translate-x-1/2 -translate-y-1/2 flex-col justify-center text-center text-white uppercase leading-[36px] sm:left-20 sm:h-[144px] sm:w-[875px] sm:-translate-x-0 sm:text-left sm:leading-[70px]"
       >
-        <span class="text-[32px] font-normal sm:text-[72px]">{{ returnTitle }}</span>
+        <span class="text-[32px] font-normal sm:text-[72px]">{{ returnTitle || '&nbsp;' }}</span>
       </div>
       <div
         class="absolute bottom-[70px] left-1/2 hidden -translate-x-1/2 items-center gap-5 sm:flex"
