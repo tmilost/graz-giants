@@ -4,7 +4,7 @@
       <img
         v-if="imageUrl"
         class="block h-full w-full object-cover"
-        :src="imageUrl"
+        :src="getImageObj(imageUrl)?.url || imageUrl"
         alt="Main header image"
         loading="lazy"
         decoding="async"
@@ -33,4 +33,14 @@ const props = defineProps({
     required: true,
   },
 })
+
+// Helper to normalize image object or string
+function getImageObj(img) {
+  if (typeof img === 'object' && img !== null) return img
+  try {
+    return JSON.parse(img)
+  } catch {
+    return { url: img }
+  }
+}
 </script>
