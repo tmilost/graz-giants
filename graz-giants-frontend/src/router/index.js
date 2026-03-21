@@ -92,7 +92,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Tickets, American Football Tickets Graz, Buy Tickets Graz Giants, Graz Giants Eintrittskarten, Football Match Tickets Austria, Graz Giants Game Tickets, Graz Giants Ticketpreise, Graz Giants Spielplan, Graz Giants Sitzplätze, Graz Giants Ticketverkauf',
           },
         ],
       },
@@ -112,7 +112,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Teams, American Football Teams Graz, Graz Giants Roster, Cheerleading Graz, Youth Football Graz, Flag Football Graz, Powerlifting Graz, Graz Giants Spieler, Graz Giants Mannschaften, Graz Giants Cheerleader',
           },
         ],
       },
@@ -132,7 +132,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Game Day, American Football Events Graz, Graz Giants Spieltag, Game Day Schedule Graz, Graz Giants Fan Activities, Graz Giants Stadion, Graz Giants Anreise, Graz Giants Parken, Graz Giants Event Infos, Graz Giants Tagesablauf',
           },
         ],
       },
@@ -172,7 +172,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Kampfmannschaft, Kampfmannschaft Graz, American Football Team Graz, AFL Team Graz, Graz Giants Spieler, Kampfmannschaft Roster, Kampfmannschaft Stats, Kampfmannschaft Spielplan, Kampfmannschaft Ergebnisse, Kampfmannschaft Österreich',
           },
         ],
       },
@@ -192,7 +192,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Regelwerk, American Football Regeln Österreich, AFL Regelwerk, Football Regeln Graz, Graz Giants Spielregeln, American Football Regeln, Football Regeln Austria, Graz Giants Statuten, Graz Giants Vereinsregeln, Football Fair Play Austria',
           },
         ],
       },
@@ -213,7 +213,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Kampfmannschaft Roster, Kampfmannschaft Spieler Graz, American Football Roster Graz, AFL Roster Graz Giants, Graz Giants Spielerprofile, Kampfmannschaft Team Graz, Kampfmannschaft Spieler Österreich, Graz Giants Kader, Kampfmannschaft Stats, Kampfmannschaft Team Austria',
           },
         ],
       },
@@ -233,7 +233,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Kampfmannschaft Coaching Staff, Kampfmannschaft Coaches Graz, American Football Coaches Graz, AFL Coaching Staff Graz Giants, Graz Giants Trainerteam, Kampfmannschaft Trainer Graz, Coaching Staff Österreich, Graz Giants Head Coach, Kampfmannschaft Assistant Coaches, Football Coaching Austria',
           },
         ],
       },
@@ -253,7 +253,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Nachwuchs, Nachwuchs American Football Graz, Jugend Football Graz, Graz Giants Jugend, Nachwuchsprogramm Graz Giants, Nachwuchs Spieler Graz, Nachwuchs Team Graz, AFL Nachwuchs Graz, Graz Giants Youth Team, Nachwuchs Football Österreich',
           },
         ],
       },
@@ -273,7 +273,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Nachwuchs Roster, Nachwuchs Spieler Graz, Jugend Football Roster Graz, Graz Giants Jugendspieler, Nachwuchs Team Graz, Nachwuchs Kader Graz Giants, Nachwuchs Stats Graz, Nachwuchs Football Österreich, Graz Giants Youth Roster, Nachwuchs Talente Graz',
           },
         ],
       },
@@ -293,7 +293,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Nachwuchs Coaching Staff, Nachwuchs Coaches Graz, Jugend Football Trainer Graz, Graz Giants Jugendtrainer, Nachwuchs Trainerteam Graz, Nachwuchs Coaching Team Graz, Nachwuchs Head Coach Graz, Nachwuchs Assistant Coaches, Jugend Football Coaching Austria, Nachwuchs Football Trainer Österreich',
           },
         ],
       },
@@ -313,7 +313,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Nachwuchs Philosophie, Nachwuchs Werte Graz, Jugend Football Philosophie, Graz Giants Jugendphilosophie, Nachwuchs Entwicklung Graz, Nachwuchs Werteprogramm, Nachwuchs Football Werte, Graz Giants Nachwuchs Leitbild, Jugend Football Werte Österreich, Nachwuchs Football Philosophie Austria',
           },
         ],
       },
@@ -333,7 +333,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Academy, American Football Academy Graz, AFL Academy Graz Giants, Graz Giants Training, Football Training Graz, American Football Development Graz, Graz Giants Youth Academy, Football Skills Training Austria, Graz Giants Training Programs, American Football Coaching Austria',
           },
         ],
       },
@@ -353,7 +353,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Powerlifting, Powerlifting Graz, Strength Training Graz, AFL Powerlifting Graz Giants, Graz Giants Strength Program, Football Strength Training Austria, Graz Giants Powerlifting Team, Powerlifting Athletes Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -373,7 +373,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Powerlifting Roster, Powerlifting Athletes Graz, Strength Training Roster Graz, AFL Powerlifting Roster Graz Giants, Graz Giants Strength Athletes, Football Strength Training Austria, Graz Giants Powerlifting Team, Powerlifting Profiles Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -393,7 +393,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Cheer, Cheerleading Graz, AFL Cheer Graz Giants, Graz Giants Cheer Program, Football Cheer Training Austria, Graz Giants Cheer Team, Cheer Athletes Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -413,7 +413,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Cheer Roster, Cheer Athletes Graz, Cheerleading Roster Graz, AFL Cheer Roster Graz Giants, Graz Giants Cheer Athletes, Football Cheer Training Austria, Graz Giants Cheer Team, Cheer Profiles Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -433,7 +433,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Cheer Coaching Staff, Cheer Coaches Graz, AFL Cheer Coaches Graz Giants, Graz Giants Cheer Program, Football Cheer Training Austria, Graz Giants Cheer Team, Cheer Athletes Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -453,7 +453,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Flag Football, Flag Football Graz, AFL Flag Football Graz Giants, Graz Giants Flag Football Program, Football Flag Training Austria, Graz Giants Flag Football Team, Flag Football Athletes Graz, Football Conditioning Austria, Graz Giants Training Programs',
           },
         ],
       },
@@ -473,7 +473,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Verein, Graz Giants Club, American Football Club Graz, AFL Club Graz Giants, Graz Giants History, Graz Giants Mission, Graz Giants Values, Football Club Austria, Graz Giants Community, Support Graz Giants',
           },
         ],
       },
@@ -493,7 +493,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Leitbild, Graz Giants Mission, American Football Vision Graz, AFL Values Graz Giants, Graz Giants Goals, Football Club Austria, Graz Giants Community Impact, Support Graz Giants',
           },
         ],
       },
@@ -513,7 +513,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Gym, Gym Graz, AFL Gym Graz Giants, Graz Giants Training, Football Training Graz, American Football Development Graz, Graz Giants Youth Gym, Football Skills Training Austria, Graz Giants Training Programs, American Football Coaching Austria',
           },
         ],
       },
@@ -533,7 +533,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Hall of Fame, Graz Giants Legends, American Football Hall of Fame Graz, AFL Hall of Fame Graz Giants, Graz Giants Players, Graz Giants Coaches, Football History Austria, Graz Giants Legacy, Support Graz Giants',
           },
         ],
       },
@@ -553,7 +553,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Vereinsgeschichte, Graz Giants History, American Football History Graz, AFL History Graz Giants, Graz Giants Milestones, Football History Austria, Graz Giants Legacy, Support Graz Giants',
           },
         ],
       },
@@ -573,7 +573,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants Helfer, Graz Giants Board Members, AFL Helfer Graz Giants, Graz Giants Volunteers, Football Club Austria, Graz Giants Support Team, Graz Giants Community, Support Graz Giants',
           },
         ],
       },
@@ -593,7 +593,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants News, American Football News Graz, AFL News Graz Giants, Graz Giants Updates, Football News Austria, Graz Giants Match Reports, Team Announcements Graz Giants, Support Graz Giants',
           },
         ],
       },
@@ -614,7 +614,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants News, American Football News Graz, AFL News Graz Giants, Graz Giants Updates, Football News Austria, Graz Giants Match Reports, Team Announcements Graz Giants, Support Graz Giants',
           },
         ],
       },
@@ -634,7 +634,7 @@ const router = createRouter({
           {
             name: 'keywords',
             content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
+              'Graz Giants 404, Page Not Found Graz Giants, American Football 404 Graz, AFL 404 Graz Giants, Graz Giants Error Page, Football Club Austria, Support Graz Giants',
           },
         ],
       },
