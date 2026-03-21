@@ -126,10 +126,12 @@ export const useApiCalls = defineStore(
       apiCache,
     }
   },
+  // Persist the apiCache in sessionStorage to maintain it across page reloads,
+  // WARNING: it slow performance, use with caution, now disabled
   {
     persist: {
       storage: sessionStorage,
-      pick: ['apiCache'],
+      pick: ['apiCache-disabled'], // Disable persistence for apiCache
     },
   },
 )
