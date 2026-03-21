@@ -15,7 +15,7 @@
         :key="index"
         class="mr-[70px] flex flex-col gap-0 md:gap-[10px]"
       >
-        <div v-for="(item, index) in sections">
+        <div v-for="(item, index) in sections" :key="index">
           <div
             v-if="index === 'tittle'"
             class="text-left text-[18px] font-normal uppercase leading-[21px] text-white"

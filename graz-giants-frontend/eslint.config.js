@@ -4,6 +4,15 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
 export default [
   {
+    languageOptions: {
+      globals: {
+        window: 'readonly',
+        setInterval: 'readonly',
+        clearInterval: 'readonly',
+      },
+    },
+  },
+  {
     name: 'app/files-to-lint',
     files: ['**/*.{js,mjs,jsx,vue}'],
   },

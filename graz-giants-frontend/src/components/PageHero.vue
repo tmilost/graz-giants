@@ -27,7 +27,7 @@
 
 <script setup>
 import PageHeroImage from '@/assets/PageHeroImage.png'
-const props = defineProps({
+defineProps({
   imageUrl: {
     type: String,
     required: true,

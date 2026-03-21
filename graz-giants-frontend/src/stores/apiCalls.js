@@ -130,6 +130,7 @@ export const useApiCalls = defineStore(
   // WARNING: it slow performance, use with caution, now disabled
   {
     persist: {
+      // eslint-disable-next-line
       storage: sessionStorage,
       pick: ['apiCache-disabled'], // Disable persistence for apiCache
     },

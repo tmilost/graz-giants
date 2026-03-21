@@ -28,7 +28,7 @@
 </template>
 
 <script setup>
-const props = defineProps({
+defineProps({
   tittleTop: {
     type: String,
     required: false,

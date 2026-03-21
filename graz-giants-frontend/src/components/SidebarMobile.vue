@@ -41,16 +41,13 @@
 </template>
 
 <script setup>
-import { useApiCalls } from '../stores/apiCalls.js'
-
-const props = defineProps({
+defineProps({
   filteredNavbarItems: {
     type: Array,
     required: true,
   },
 })
 
-const apiCalls = useApiCalls()
 const isNavBarMobileActive = defineModel('isNavBarMobileActive')
 
 function changeNavBarMobileActive() {

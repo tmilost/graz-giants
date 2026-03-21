@@ -26,7 +26,7 @@
 
 <script setup>
 import CardTextImage from '@/assets/CardTextImage.png'
-const props = defineProps({
+defineProps({
   imageUrl: {
     type: String,
     required: true,

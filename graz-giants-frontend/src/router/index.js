@@ -32,7 +32,7 @@ import HelferVorstandView from '@/views/HelferVorstandView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to, from, savedPosition) {
+  scrollBehavior() {
     // always scroll to top
     return { top: 0 }
   },
@@ -643,16 +643,19 @@ const router = createRouter({
 })
 
 router.beforeResolve((to) => {
+  // eslint-disable-next-line
   document.title = to.meta.title || 'my default title'
   // eslint-disable-next-line
   if (to.meta.hasOwnProperty('metaTags')) {
     for (let x = 0; x < to.meta.metaTags.length; x++) {
+      // eslint-disable-next-line
       let oldMeta = document.getElementsByTagName('meta')
       for (let m = 0; m < oldMeta.length; m++) {
         if (oldMeta[m].name == to.meta.metaTags[x].name) {
           oldMeta[m].remove()
         }
       }
+      // eslint-disable-next-line
       let meta = document.createElement('meta')
       // eslint-disable-next-line
       if (to.meta.metaTags[x] && to.meta.metaTags[x].hasOwnProperty('name')) {
@@ -664,6 +667,7 @@ router.beforeResolve((to) => {
         meta.property = to.meta.metaTags[x].name
         meta.content = to.meta.metaTags[x].content
       }
+      // eslint-disable-next-line
       document.head.appendChild(meta)
     }
   }

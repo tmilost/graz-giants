@@ -64,7 +64,6 @@
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 import PageHero from '@/components/PageHero.vue'
-import BlueButton from '@/components/ui/BlueButton.vue'
 import PhilosophieCard from '@/components/ui/PhilosophieCard.vue'
 import ImageCard from '@/components/ui/ImageCard.vue'
 
