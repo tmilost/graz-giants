@@ -61,7 +61,7 @@
           </div>
 
           <div v-if="postContent?.card_preise?.button?.title" class="relative z-10 mt-auto">
-            <YelowButton
+            <YellowButton
               :text="postContent?.card_preise?.button?.title"
               :href="postContent?.card_preise?.button?.url"
             />
@@ -102,7 +102,7 @@
           </div>
 
           <div v-if="card?.button?.title" class="relative z-10 mt-auto">
-            <YelowButton :text="card?.button?.title" :href="card?.button?.url" />
+            <YellowButton :text="card?.button?.title" :href="card?.button?.url" />
           </div>
         </div>
       </div>
@@ -114,7 +114,7 @@
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 import PageHero from '@/components/PageHero.vue'
-import YelowButton from '@/components/ui/YelowButton.vue'
+import YellowButton from '@/components/ui/YellowButton.vue'
 
 const apiCalls = useApiCalls()
 const postContent = ref({})

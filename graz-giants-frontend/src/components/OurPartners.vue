@@ -35,8 +35,9 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import router from '@/router/index.js'
+import { useNavigation } from '@/composables/useNavigation'
 
+const { navigate } = useNavigation()
 const apiCalls = useApiCalls()
 const postContent = ref({})
 
@@ -45,8 +46,6 @@ onMounted(async () => {
 })
 
 function handleButtonClick(link) {
-  if (link) {
-    router.push(link)
-  }
+  navigate(link)
 }
 </script>

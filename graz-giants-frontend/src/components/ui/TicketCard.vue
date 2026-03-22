@@ -30,8 +30,9 @@
 </template>
 
 <script setup>
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import { useNavigation } from '@/composables/useNavigation'
+
+const { navigate } = useNavigation()
 
 const props = defineProps({
   image: {
@@ -58,8 +59,6 @@ const props = defineProps({
 })
 
 function handleButtonClick() {
-  if (props.buttonLink) {
-    router.push(props.buttonLink)
-  }
+  navigate(props.buttonLink)
 }
 </script>

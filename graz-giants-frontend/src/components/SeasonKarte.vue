@@ -23,13 +23,11 @@
             >
               {{ postContent?.left_side?.text }}
             </h2>
-            <button
-              class="flex h-[38px] w-full sm:w-auto items-center justify-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900]"
-              type="button"
-              @click="handleButtonClick(postContent?.left_side?.button?.url)"
-            >
-              {{ postContent?.left_side?.button?.title }}
-            </button>
+            <BlueButton
+              class="w-full"
+              :href="postContent?.left_side?.button?.url"
+              :text="postContent?.left_side?.button?.title"
+            />
           </div>
           <div
             class="sm:absolute sm:right-[71px] flex h-auto sm:h-full w-full sm:w-auto flex-col items-center justify-between sm:items-end sm:text-right gap-[15px]"
@@ -39,13 +37,11 @@
             >
               {{ postContent?.right_side?.text }}
             </h2>
-            <button
-              class="flex h-[38px] w-full sm:w-auto items-center justify-center rounded-[20px] bg-[#FAB900] px-[20px] text-[15px] font-bold uppercase text-[#003867]"
-              type="button"
-              @click="handleButtonClick(postContent?.right_side?.button?.url)"
-            >
-              {{ postContent?.right_side?.button?.title }}
-            </button>
+            <YellowButton
+              class="w-full"
+              :href="postContent?.right_side?.button?.url"
+              :text="postContent?.right_side?.button?.title"
+            />
           </div>
         </div>
       </div>
@@ -56,8 +52,8 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import BlueButton from '@/components/ui/BlueButton.vue'
+import YellowButton from '@/components/ui/YellowButton.vue'
 
 const apiCalls = useApiCalls()
 const postContent = ref({})
@@ -65,10 +61,4 @@ const postContent = ref({})
 onMounted(async () => {
   postContent.value = await apiCalls.retrieveHomePageSection('SeasonKarte')
 })
-
-function handleButtonClick(link) {
-  if (link) {
-    router.push(link)
-  }
-}
 </script>
