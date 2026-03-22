@@ -16,11 +16,11 @@ const { navigate } = useNavigation()
 const props = defineProps({
   href: {
     type: String,
-    required: true,
+    required: false,
   },
   text: {
     type: String,
-    required: true,
+    required: false,
   },
 })
 function handleClick() {
