@@ -27,12 +27,18 @@
           <p class="text-[#003867] text-[15px] font-normal leading-[20px]">
             {{ postContent?.card_kontaktperson?.position }}
           </p>
-          <p class="text-[#003867] text-[15px] font-normal leading-[20px]">
+          <a
+            :href="`tel:${postContent?.card_kontaktperson?.phone}`"
+            class="text-[#003867] text-[15px] font-normal leading-[20px] cursor-pointer"
+          >
             {{ postContent?.card_kontaktperson?.phone }}
-          </p>
-          <p class="text-[#003867] text-[15px] font-normal leading-[20px]">
+          </a>
+          <a
+            :href="`mailto:${postContent?.card_kontaktperson?.email}`"
+            class="text-[#003867] text-[15px] font-normal leading-[20px] cursor-pointer"
+          >
             {{ postContent?.card_kontaktperson?.email }}
-          </p>
+          </a>
         </div>
       </div>
       <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
