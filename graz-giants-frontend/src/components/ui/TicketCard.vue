@@ -1,5 +1,5 @@
 <template>
-  <div class="ticket-card cursor-pointer">
+  <div class="ticket-card">
     <div class="relative h-[350px] sm:h-[320px] w-full">
       <img class="block h-full w-full object-cover" :src="image" alt="Main header image" />
       <div
@@ -15,14 +15,7 @@
           >
             {{ text_area }}
           </p>
-          <button
-            class="inline-flex h-[38px] items-center rounded-[20px] bg-[#FAB900] px-[20px] text-[15px] font-bold uppercase text-[#003867]"
-            :class="buttonLink ? ' cursor-pointer' : ''"
-            type="button"
-            @click="handleButtonClick"
-          >
-            {{ buttonText }}
-          </button>
+          <YellowButton :href="buttonLink" :text="buttonText" />
         </div>
       </div>
     </div>
@@ -30,9 +23,7 @@
 </template>
 
 <script setup>
-import { useNavigation } from '@/composables/useNavigation'
-
-const { navigate } = useNavigation()
+import YellowButton from './YellowButton.vue'
 
 const props = defineProps({
   image: {
@@ -57,8 +48,4 @@ const props = defineProps({
     default: '#',
   },
 })
-
-function handleButtonClick() {
-  navigate(props.buttonLink)
-}
 </script>
