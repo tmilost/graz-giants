@@ -38,13 +38,14 @@
     </div>
 
     <!-- Button -->
-    <div class="mt-auto flex justify-center cursor-pointer">
-      <a
-        class="text-[15px] font-normal leading-[21px] text-[#003867] underline"
+    <div class="mt-auto flex justify-center">
+      <button
+        v-if="postContent?.link_bottom?.url"
+        class="text-[15px] font-normal leading-[21px] text-[#003867] underline cursor-pointer"
         @click.prevent="handleButtonClick(postContent?.link_bottom?.url)"
       >
         {{ postContent?.link_bottom?.title }}
-      </a>
+      </button>
     </div>
   </div>
 </template>
