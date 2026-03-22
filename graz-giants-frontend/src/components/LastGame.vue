@@ -38,10 +38,10 @@
     </div>
 
     <!-- Button -->
-    <div class="mt-auto flex justify-center">
+    <div class="mt-auto flex justify-center cursor-pointer">
       <a
         class="text-[15px] font-normal leading-[21px] text-[#003867] underline"
-        :href="postContent?.link_bottom?.url"
+        @click.prevent="handleButtonClick(postContent?.link_bottom?.url)"
       >
         {{ postContent?.link_bottom?.title }}
       </a>
@@ -52,11 +52,17 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import { useNavigation } from '@/composables/useNavigation.js'
 
 const apiCalls = useApiCalls()
 const postContent = ref({})
+const { navigate } = useNavigation()
 
 onMounted(async () => {
   postContent.value = await apiCalls.retrieveHomePageSection('LastGame')
 })
+
+function handleButtonClick(link) {
+  navigate(link)
+}
 </script>

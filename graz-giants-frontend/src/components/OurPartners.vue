@@ -10,7 +10,9 @@
       class="pb-[30px] flex flex-row flex-wrap items-center justify-center justify-around m-[10px] gap-[20px] md:gap-0"
     >
       <div v-for="(value, index) in postContent?.images" :key="index">
-        <img :src="value" :alt="`Partner ${index + 1}`" class="h-[90px] object-none" />
+        <div v-if="value">
+          <img :src="value" :alt="`Partner ${index + 1}`" class="h-[90px] object-none" />
+        </div>
       </div>
     </div>
 
@@ -21,13 +23,7 @@
     </p>
 
     <div class="flex justify-center">
-      <button
-        class="inline-flex h-[38px] items-center rounded-[20px] bg-[#003867] px-[20px] text-[15px] font-bold uppercase text-[#FAB900] sm:mt-auto"
-        type="button"
-        @click="handleButtonClick(postContent?.button?.url)"
-      >
-        {{ postContent?.button?.title }}
-      </button>
+      <BlueButton :href="postContent?.button?.url" :text="postContent?.button?.title" />
     </div>
   </div>
 </template>
@@ -35,17 +31,12 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-import { useNavigation } from '@/composables/useNavigation'
+import BlueButton from '@/components/ui/BlueButton.vue'
 
-const { navigate } = useNavigation()
 const apiCalls = useApiCalls()
 const postContent = ref({})
 
 onMounted(async () => {
   postContent.value = await apiCalls.retrieveHomePageSection('OurPartners')
 })
-
-function handleButtonClick(link) {
-  navigate(link)
-}
 </script>
