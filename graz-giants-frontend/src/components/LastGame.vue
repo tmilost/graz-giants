@@ -15,6 +15,8 @@
           :src="postContent?.image_left"
           alt="Team A Logo"
           class="h-[150px] min-w-[150px] object-cover"
+          width="150"
+          height="150"
         />
       </div>
       <p
@@ -33,6 +35,8 @@
           :src="postContent?.image_right"
           alt="Team B Logo"
           class="h-[150px] min-w-[150px] object-cover"
+          width="150"
+          height="150"
         />
       </div>
     </div>

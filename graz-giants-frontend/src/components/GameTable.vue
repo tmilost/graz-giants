@@ -87,6 +87,8 @@
       :src="postContent?.image"
       alt="Game Table"
       class="mr-[80px] block h-auto min-h-[480px] w-[359px] object-cover max-[790px]:hidden"
+      width="359"
+      height="480"
     />
   </div>
 </template>
