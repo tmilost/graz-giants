@@ -115,6 +115,20 @@ export const useApiCalls = defineStore(
         })
     }
 
+    function retrievePeopleByTag(PostType, tagId) {
+      const cacheKey = `retrievePeopleByTag:${tagId}`
+      if (apiCache.value[cacheKey]) return Promise.resolve(apiCache.value[cacheKey])
+      return axios
+        .get(`${apiPaths.BASE_API_PATH}/${PostType}?acf_format=standard&tags=${tagId}&order=desc`)
+        .then((response) => {
+          apiCache.value[cacheKey] = response.data
+          return response.data
+        })
+        .catch(() => {
+          return null
+        })
+    }
+
     return {
       retrieveHomePageSection,
       retrieveNews,
@@ -123,6 +137,7 @@ export const useApiCalls = defineStore(
       retrievePeople,
       retrieveNewsByTag,
       retrieveTagsIds,
+      retrievePeopleByTag,
       apiCache,
     }
   },
