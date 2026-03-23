@@ -1,6 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import WordpressPage from '../views/WordpressPage.vue'
 import Page404View from '../views/Page404View.vue'
 import SponsorsView from '../views/SponsorsView.vue'
 import TicketsView from '@/views/TicketsView.vue'
@@ -133,26 +132,6 @@ const router = createRouter({
             name: 'keywords',
             content:
               'Graz Giants Game Day, American Football Events Graz, Graz Giants Spieltag, Game Day Schedule Graz, Graz Giants Fan Activities, Graz Giants Stadion, Graz Giants Anreise, Graz Giants Parken, Graz Giants Event Infos, Graz Giants Tagesablauf',
-          },
-        ],
-      },
-    },
-    {
-      path: '/:wordpressPage',
-      name: 'wordpressPage',
-      component: WordpressPage,
-      meta: {
-        title: 'Graz Giants',
-        metaTags: [
-          {
-            name: 'description',
-            content:
-              'Experience the thrill of American Football in Graz! Follow the Graz Giants, a top Austrian team, and cheer them on to victory.',
-          },
-          {
-            name: 'keywords',
-            content:
-              'Graz Giants, Austrian American Football, AFL Austria, American Football Austria, Graz Sports, Sports Graz, Football Graz, Team Graz, Austrian Football League, Football Games Austria, American Football Tickets Austria, Graz Giants Schedule, Graz Giants Results, Graz Giants News, Join Graz Giants, Become a Graz Giant, Support Graz Giants',
           },
         ],
       },
