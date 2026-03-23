@@ -70,6 +70,7 @@ import NewsCard from '@/components/ui/NewsCard.vue'
 const apiCalls = useApiCalls()
 const postContent = ref({})
 const newsContent = ref({})
+const filteredTagsWithoutSpcesAndDashes = ref([])
 const tagsIds = ref({})
 const currentTagName = ref(null)
 const totalNews = ref(4)
@@ -77,7 +78,10 @@ const allNewsLoaded = ref(false)
 
 onMounted(async () => {
   newsContent.value = await apiCalls.retrievePage('news')
-  tagsIds.value = await apiCalls.retrieveTagsIds(Object.values(newsContent.value?.tags))
+  filteredTagsWithoutSpcesAndDashes.value = Object.values(newsContent.value?.tags)?.map((tag) =>
+    tag.replace(/\s+/g, '').replace(/-/g, ''),
+  )
+  tagsIds.value = await apiCalls.retrieveTagsIds(filteredTagsWithoutSpcesAndDashes.value)
 
   const firstTagName = Object.values(newsContent.value?.tags)[0]
   const firstTagObj = tagsIds.value.find((tag) => tag.name === firstTagName)
