@@ -24,14 +24,14 @@
           </div>
           <div
             v-if="index === 'adress'"
-            class="text-[15px] font-normal leading-[21px] text-white cursor-pointer"
+            class="text-[15px] font-normal leading-[21px] text-white cursor-pointer hover:text-[#FAB900] focus:text-[#BCBCBC]"
           >
             {{ item }}
           </div>
           <a
             v-if="index === 'email'"
             :href="`mailto:${item}`"
-            class="text-[15px] font-normal leading-[21px] text-white"
+            class="text-[15px] font-normal leading-[21px] text-white cursor-pointer hover:text-[#FAB900] focus:text-[#BCBCBC]"
           >
             E-Mail: {{ item }}
           </a>
@@ -44,7 +44,7 @@
             </p>
             <a
               v-else
-              class="text-[15px] font-normal underline leading-[21px] text-white"
+              class="text-[15px] font-normal underline leading-[21px] text-white cursor-pointer hover:text-[#FAB900] focus:text-[#BCBCBC]"
               :href="item.url"
             >
               {{ item.title }}
@@ -58,9 +58,13 @@
     <div
       class="mt-[30px] flex flex-row justify-center md:justify-between border-t border-white pt-[30px] text-[12px] font-normal uppercase leading-[21px] text-white max-[430px]:flex-wrap"
     >
-      <div class="flex flex-row gap-[69px] w-[300px]">
+      <div class="flex flex-row gap-[69px] w-[300px] cursor-pointer">
         <div v-for="(value, index) in postContent?.footer_bottom?.left_links" :key="index">
-          <a class="underline" :href="value?.link_1?.url">{{ value?.title }}</a>
+          <a
+            class="underline hover:text-[#FAB900] focus:text-[#BCBCBC]"
+            :href="value?.link_1?.url"
+            >{{ value?.title }}</a
+          >
         </div>
       </div>
 
@@ -84,7 +88,6 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
-
 const apiCalls = useApiCalls()
 const postContent = ref({})
 
