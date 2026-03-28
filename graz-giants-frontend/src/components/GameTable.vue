@@ -2,73 +2,75 @@
   <div class="game-table flex flex-row justify-center bg-[#003867] h-[480px] max-[790px]:flex-col">
     <div class="px-[80px] py-0 md:py-[50px]">
       <p
-        class="py-0 md:py-[50px] text-left text-[28px] font-normal uppercase leading-[39.2px] text-[#FAB900] max-[790px]:my-[20px]"
+        class="py-0 pb-0 md:pt-[6px] md:pb-[61px] text-left text-[28px] font-normal uppercase leading-[28px] text-[#FAB900] max-[790px]:my-[20px]"
       >
         {{ postContent?.tittle }}
       </p>
 
       <div class="mb-[20px]">
         <table class="border-collapse">
-          <tr class="text-left text-[24px] font-normal uppercase leading-[33.6px] text-[#FAB900]">
-            <td class="w-[400px]">Team</td>
-            <td class="w-[66px]">W</td>
-            <td class="w-[66px]">L</td>
-            <td class="w-[66px]">P</td>
-            <td class="w-[38px]">%</td>
+          <tr
+            class="text-left text-[24px] font-normal uppercase leading-[24px] text-[#FAB900] border-b-[1px] border-white"
+          >
+            <td class="w-[400px] pb-[15px]">Team</td>
+            <td class="w-[66px] pb-[15px]">W</td>
+            <td class="w-[66px] pb-[15px]">L</td>
+            <td class="w-[66px] pb-[15px]">P</td>
+            <td class="w-[38px] pb-[15px]">%</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_1?.team }}</td>
-            <td>{{ postContent?.team_1?.w }}</td>
-            <td>{{ postContent?.team_1?.l }}</td>
-            <td>{{ postContent?.team_1?.p }}</td>
-            <td>{{ postContent?.team_1?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_1?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_1?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_1?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_1?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_1?.['%'] }}</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_2?.team }}</td>
-            <td>{{ postContent?.team_2?.w }}</td>
-            <td>{{ postContent?.team_2?.l }}</td>
-            <td>{{ postContent?.team_2?.p }}</td>
-            <td>{{ postContent?.team_2?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_2?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_2?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_2?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_2?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_2?.['%'] }}</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_3?.team }}</td>
-            <td>{{ postContent?.team_3?.w }}</td>
-            <td>{{ postContent?.team_3?.l }}</td>
-            <td>{{ postContent?.team_3?.p }}</td>
-            <td>{{ postContent?.team_3?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_3?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_3?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_3?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_3?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_3?.['%'] }}</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_4?.team }}</td>
-            <td>{{ postContent?.team_4?.w }}</td>
-            <td>{{ postContent?.team_4?.l }}</td>
-            <td>{{ postContent?.team_4?.p }}</td>
-            <td>{{ postContent?.team_4?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_4?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_4?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_4?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_4?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_4?.['%'] }}</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_5?.team }}</td>
-            <td>{{ postContent?.team_5?.w }}</td>
-            <td>{{ postContent?.team_5?.l }}</td>
-            <td>{{ postContent?.team_5?.p }}</td>
-            <td>{{ postContent?.team_5?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_5?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_5?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_5?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_5?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_5?.['%'] }}</td>
           </tr>
           <tr
-            class="text-left text-[15px] font-normal leading-[27px] text-white border-b border-white"
+            class="font-roboto text-left text-[15px] font-normal leading-[20px] text-white border-b-[1px] border-white"
           >
-            <td>{{ postContent?.team_6?.team }}</td>
-            <td>{{ postContent?.team_6?.w }}</td>
-            <td>{{ postContent?.team_6?.l }}</td>
-            <td>{{ postContent?.team_6?.p }}</td>
-            <td>{{ postContent?.team_6?.['%'] }}</td>
+            <td class="py-[10px]">{{ postContent?.team_6?.team }}</td>
+            <td class="py-[10px]">{{ postContent?.team_6?.w }}</td>
+            <td class="py-[10px]">{{ postContent?.team_6?.l }}</td>
+            <td class="py-[10px]">{{ postContent?.team_6?.p }}</td>
+            <td class="py-[10px]">{{ postContent?.team_6?.['%'] }}</td>
           </tr>
         </table>
       </div>

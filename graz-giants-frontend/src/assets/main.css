@@ -1,5 +1,10 @@
 @import 'tailwindcss';
 
+/* Utility class for Roboto Regular font */
+.font-roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
 *,
 *::before,
 *::after {
