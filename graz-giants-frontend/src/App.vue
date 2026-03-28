@@ -33,7 +33,7 @@ function changeNavBarMobileDisabled() {
 </script>
 
 <template>
-  <header>
+  <header class="top-0 z-1 sticky">
     <div class="absolute mx-auto top-0 left-0 right-0 z-1">
       <NavBar
         :filteredNavbarItems="filteredNavbarItems"
