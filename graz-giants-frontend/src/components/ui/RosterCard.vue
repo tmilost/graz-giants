@@ -1,18 +1,18 @@
 <template>
   <div
-    class="card-image-text relative h-[361px] w-[270px]"
+    class="roster-card relative h-[361px] w-[270px] hover:shadow-[5px_5px_10px_rgba(250,185,0,0.30)]"
     :class="url ? ' cursor-pointer' : ''"
     @click="$router.push(url)"
   >
     <img class="block h-full w-full object-cover" :src="imageUrl" alt="Main header image" />
     <div
-      class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] from-[-7.32%] to-black to-[102%]"
+      class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,56,103,0)_25.97%,#003867_89.58%)]"
     ></div>
-    <div
-      class="absolute absolute bottom-0 left-0 px-[12px] py-[10px] text-white gap-[5px] flex flex-col"
-    >
-      <p class="text-[15px] leading-[20px] text-[#FAB900]">{{ number || position }}</p>
-      <p class="text-[24px] leading-[24px]">{{ name }}</p>
+    <div class="absolute bottom-0 left-0 px-[12px] py-[10px] text-white gap-[5px] flex flex-col">
+      <p class="font-roboto font-normal text-[15px] leading-[20px] text-[#FAB900]">
+        {{ number || position }}
+      </p>
+      <p class="text-[24px] font-bold leading-[24px]">{{ name }}</p>
       <p v-if="number" class="text-[15px] leading-[15px]">{{ position }}</p>
     </div>
   </div>
