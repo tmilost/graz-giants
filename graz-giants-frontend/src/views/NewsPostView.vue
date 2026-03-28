@@ -3,13 +3,13 @@
     <PageHero :imageUrl="image" />
     <div class="px-[80px] flex flex-col">
       <h1
-        class="py-[30px] text-left text-[50px] font-normal uppercase leading-[39.2px] text-[#003867] max-[790px]:my-[20px]"
+        class="py-[30px] md:w-3/4 text-left text-[50px] font-bold uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px]"
       >
         {{ postContent?.tittle }}
       </h1>
       <div class="flex w-full flex-row flex-wrap items-start gap-[30px] lg:flex-nowrap">
         <p
-          class="whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
+          class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867] flex-1 min-w-[240px]"
         >
           {{ postContent?.text }}
         </p>
@@ -17,7 +17,9 @@
           v-if="postContent?.image"
           :src="postContent?.image"
           alt="News image"
-          class="w-[264px] shrink-0"
+          class="w-[264px] h-[264px] shrink-0 object-cover"
+          height="264"
+          width="264"
         />
       </div>
     </div>
