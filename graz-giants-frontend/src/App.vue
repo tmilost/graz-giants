@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref, computed } from 'vue'
 import { RouterView } from 'vue-router'
-import NavBar from './components/Navbar.vue'
+import NavBar from './components/NavBar.vue'
 import SidebarMobile from './components/SidebarMobile.vue'
 import FooterGiants from './components/FooterGiants.vue'
 import { useApiCalls } from '@/stores//apiCalls.js'
