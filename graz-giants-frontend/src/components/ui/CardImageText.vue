@@ -1,8 +1,9 @@
 <template>
   <div
-    class="card-image-text relative h-[220px] w-[350px]"
+    class="card-image-text relative h-[220px] w-[350px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] hover:shadow-[5px_5px_10px_rgba(0,56,103,0.30)] focus:shadow-[5px_5px_10px_rgba(250,185,0,0.30)]"
     @click="$router.push(url)"
     :class="url ? 'cursor-pointer' : ''"
+    tabindex="0"
   >
     <img
       class="block h-full w-full object-cover"
