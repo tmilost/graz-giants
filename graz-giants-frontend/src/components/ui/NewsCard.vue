@@ -1,7 +1,8 @@
 <template>
   <div class="news-card" @click="handleReadMoreClick(readMoreLink)">
     <div
-      class="cursor-pointer flex justify-between flex-col mx-0 w-[365px] h-[537px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)]"
+      class="cursor-pointer flex justify-between flex-col mx-0 w-[365px] h-[537px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] hover:shadow-[5px_5px_10px_rgba(0,56,103,0.30)] focus:shadow-[5px_5px_10px_rgba(250,185,0,0.30)]"
+      tabindex="0"
     >
       <div class="w-[365px] h-[350px] overflow-hidden">
         <img :src="imageSrc" alt="News 1" class="block w-full h-full object-cover" />
