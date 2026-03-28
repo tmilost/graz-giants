@@ -20,17 +20,19 @@
             :key="index"
             class="flex items-center justify-center"
           >
-            <a :href="value?.link?.url" target="_blank" rel="noopener noreferrer">
-              <img :src="value?.image" alt="Icon" />
-            </a>
-
             <a
-              class="ps-[5px] text-[15px] font-normal leading-[21px] text-[#003867] underline hidden md:inline"
               :href="value?.link?.url"
               target="_blank"
               rel="noopener noreferrer"
+              tabindex="0"
+              class="flex flex-row items-center hover:filter-[brightness(0)_saturate(100%)_invert(64%)_sepia(89%)_saturate(1431%)_hue-rotate(3deg)_brightness(107%)_contrast(103%)] focus:filter-[brightness(0)_saturate(100%)_invert(89%)_sepia(0%)_saturate(1057%)_hue-rotate(183deg)_brightness(85%)_contrast(90%)]"
             >
-              {{ value?.link?.title }}
+              <img :src="value?.image" alt="Icon" />
+              <div
+                class="ps-[5px] text-[15px] font-normal leading-[21px] text-[#003867] underline hidden md:inline flex items-center"
+              >
+                {{ value?.link?.title }}
+              </div>
             </a>
           </div>
         </div>
