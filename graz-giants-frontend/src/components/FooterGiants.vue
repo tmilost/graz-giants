@@ -76,7 +76,10 @@
         class="flex flex-row justify-center md:justify-end gap-[10px] max-[430px]:mt-[10px] w-[300px]"
       >
         <div v-for="(value, index) in postContent?.footer_bottom?.right_social" :key="index">
-          <a :href="value?.link?.url">
+          <a
+            :href="value?.link?.url"
+            class="hover:filter-[brightness(0)_saturate(100%)_invert(64%)_sepia(89%)_saturate(1431%)_hue-rotate(3deg)_brightness(107%)_contrast(103%)] focus:filter-[brightness(0)_saturate(100%)_invert(89%)_sepia(0%)_saturate(1057%)_hue-rotate(183deg)_brightness(85%)_contrast(90%)]"
+          >
             <img :src="value?.image" alt="Icon min-w-[20px] h-[20px]" />
           </a>
         </div>
