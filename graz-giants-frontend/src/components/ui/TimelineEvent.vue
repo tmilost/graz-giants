@@ -2,7 +2,7 @@
   <div class="timeline-event relative flex gap-[30px]" :class="isRight ? 'flex-row-reverse' : ''">
     <!-- Content column -->
     <div class="flex-1 pt-[40px]" :class="isRight ? 'text-left' : 'text-right'">
-      <p v-if="year" class="text-[15px] font-bold text-[rgb(0,56,103)]">{{ year }}</p>
+      <p v-if="year" class="font-roboto text-[15px] font-bold text-[rgb(0,56,103)]">{{ year }}</p>
       <h3
         v-if="tittle"
         class="text-[24px] mb-[13px] font-bold uppercase leading-[20px] text-[#003867]"
@@ -11,7 +11,7 @@
       </h3>
       <p
         v-if="text"
-        class="pt-[5px] mb-[-20px] whitespace-pre-wrap text-[15px] leading-[20px] text-[#003867]"
+        class="font-roboto pt-[5px] mb-[-20px] whitespace-pre-wrap text-[15px] leading-[20px] text-[#003867]"
       >
         {{ text }}
       </p>

@@ -11,7 +11,10 @@
       >
         {{ cardData?.tittle }}
       </p>
-      <div v-if="pagedPersons?.length > 0" class="flex flex-col gap-2 w-full items-center">
+      <div
+        v-if="pagedPersons?.length > 0"
+        class="flex flex-col gap-2 w-full items-center font-roboto font-bold"
+      >
         <div
           v-for="person in pagedPersons"
           :key="person.year + person.names"

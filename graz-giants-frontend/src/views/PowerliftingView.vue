@@ -8,7 +8,7 @@
         {{ postContent?.tittle }}
       </h1>
       <p
-        class="whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
+        class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
       >
         {{ postContent?.text }}
       </p>
@@ -29,13 +29,11 @@
         />
       </div>
       <div class="flex flex-col my-[30px] text-[#003867] gap-[30px]">
-        <div v-for="(info, index) in postContent?.info_text_group" :key="index">
-          <p class="text-[20px] font-normal leading-[20px] flex-1 min-w-[240px]">
+        <div v-for="(info, index) in postContent?.info_text_group" :key="index" class="font-roboto">
+          <p class="text-[20px] font-bold leading-[20px] flex-1 min-w-[240px]">
             {{ info?.tittle }}
           </p>
-          <p
-            class="whitespace-pre-wrap text-[15px] font-normal leading-[20px] flex-1 min-w-[240px]"
-          >
+          <p class="whitespace-pre-wrap text-[15px] leading-[20px] flex-1 min-w-[240px]">
             {{ info?.text }}
           </p>
           <div class="underline">

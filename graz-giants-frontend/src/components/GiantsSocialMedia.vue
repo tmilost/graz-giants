@@ -29,7 +29,7 @@
             >
               <img :src="value?.image" alt="Icon" />
               <div
-                class="ps-[5px] text-[15px] font-normal leading-[21px] text-[#003867] underline hidden md:inline flex items-center"
+                class="font-roboto ps-[5px] text-[15px] font-normal leading-[21px] text-[#003867] underline hidden md:inline flex items-center"
               >
                 {{ value?.link?.title }}
               </div>

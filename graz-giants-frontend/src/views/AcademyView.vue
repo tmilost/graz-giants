@@ -10,7 +10,7 @@
       <div class="flex flex-row items-center flex-wrap sm:flex-nowrap">
         <img :src="postContent?.image_top" alt=" Academy Image" />
         <p
-          class="sm:ml-[40px] ml-0 whitespace-pre-wrap pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+          class="font-roboto sm:ml-[40px] ml-0 whitespace-pre-wrap pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
         >
           {{ postContent?.text_top }}
         </p>
@@ -23,7 +23,7 @@
             {{ postContent?.info_box?.tittle }}
           </p>
           <p
-            class="whitespace-pre-wrap pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+            class="font-roboto whitespace-pre-wrap pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
           >
             {{ postContent?.info_box?.text }}
           </p>
@@ -37,7 +37,7 @@
         <div class="sm:ml-[40px] ml-0 mt-[30px]">
           <img :src="postContent?.image_bottom" alt=" Academy Image" />
           <p
-            class="sm:pt-[30px] pt-0 text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+            class="font-roboto sm:pt-[30px] pt-0 text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
           >
             {{ postContent?.image_text }}
           </p>

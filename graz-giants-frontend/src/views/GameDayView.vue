@@ -4,11 +4,11 @@
     <div class="game-day-top px-[80px] py-[30px] flex flex-col items-start">
       <h1
         v-if="postContent?.tittle"
-        class="text-[50px] font-bold uppercase text-[#003867] mt-[40px] mb-[20px]"
+        class="text-[50px] font-normal uppercase text-[#003867] mt-[40px] mb-[20px]"
       >
         {{ postContent?.tittle }}
       </h1>
-      <p v-if="postContent?.text" class="text-[15px] text-[#003867] mb-[40px]">
+      <p v-if="postContent?.text" class="font-roboto text-[15px] text-[#003867] mb-[40px]">
         {{ postContent?.text }}
       </p>
       <BlueButton
@@ -24,7 +24,7 @@
       </h2>
       <p
         v-if="postContent?.text_2"
-        class="text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
+        class="font-roboto text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
       >
         {{ postContent?.text_2 }}
       </p>
@@ -39,7 +39,7 @@
       </h2>
       <p
         v-if="postContent?.text_map"
-        class="text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
+        class="font-roboto text-[15px] text-[#003867] mb-[40px] whitespace-pre-wrap"
       >
         {{ postContent?.text_map }}
       </p>

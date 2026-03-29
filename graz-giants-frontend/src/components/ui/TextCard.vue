@@ -1,5 +1,5 @@
 <template>
-  <div class="card-text h-[220px] w-[350px] bg-[#183264]">
+  <div class="card-text h-[220px] w-[350px] bg-[#183264] font-roboto">
     <div
       class="py-[10px] flex flex-col items-center justify-center text-center text-white leading-[36px]"
     >

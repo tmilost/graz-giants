@@ -8,7 +8,7 @@
         {{ heroContent?.tittle }}
       </h1>
       <!-- Tags -->
-      <div class="flex flex-row items-center gap-[10px] mb-[30px]">
+      <div class="font-roboto font-bold flex flex-row items-center gap-[10px] mb-[30px]">
         <div v-for="(tag, index) in heroContent?.tags" :key="index">
           <p
             class="text-[15px] font-normal uppercase leading-[15px] leading-[21px] text-[#003867] cursor-pointer"

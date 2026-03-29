@@ -8,12 +8,19 @@
         {{ postContent?.tittle }}
       </h1>
       <p
-        class="whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
+        class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
       >
         {{ postContent?.text }}
       </p>
       <!-- Cards -->
       <div class="flex flex-row flex-wrap my-[30px] gap-[30px]">
+        <TextCard
+          v-if="postContent?.info_card"
+          :tittleTop="postContent?.info_card?.tittle_top"
+          :textTop="postContent?.info_card?.text_top"
+          :tittleBottom="postContent?.info_card?.tittle_bottom"
+          :textBottom="postContent?.info_card?.text_bottom"
+        />
         <div v-for="(card, index) in postContent?.cards" :key="index">
           <CardImageText
             v-if="card?.text || card?.link?.url"
@@ -21,12 +28,6 @@
             :url="card?.link?.url"
           />
         </div>
-        <TextCard
-          :tittleTop="postContent?.info_card?.tittle_top"
-          :textTop="postContent?.info_card?.text_top"
-          :tittleBottom="postContent?.info_card?.tittle_bottom"
-          :textBottom="postContent?.info_card?.text_bottom"
-        />
       </div>
     </div>
   </div>

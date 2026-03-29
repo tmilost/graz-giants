@@ -13,7 +13,7 @@
         {{ number || position }}
       </p>
       <p class="text-[24px] font-bold leading-[24px]">{{ name }}</p>
-      <p v-if="number" class="text-[15px] leading-[15px]">{{ position }}</p>
+      <p v-if="number" class="font-roboto text-[15px] font-normal leading-[15px]">{{ position }}</p>
     </div>
   </div>
 </template>

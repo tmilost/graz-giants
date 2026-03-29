@@ -11,7 +11,7 @@
         <div class="flex flex-col items-center gap-6 text-center">
           <h2 class="text-[32px] font-normal sm:text-[28px]">{{ title }}</h2>
           <p
-            class="whitespace-pre-wrap text-[18px] w-[300px] font-normal normal-case text-center leading-[21px] sm:text-[15px] sm:leading-[21px]"
+            class="font-roboto whitespace-pre-wrap text-[18px] w-[300px] font-normal normal-case text-center leading-[21px] sm:text-[15px] sm:leading-[21px]"
           >
             {{ text_area }}
           </p>

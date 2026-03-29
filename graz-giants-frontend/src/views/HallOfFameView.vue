@@ -9,7 +9,7 @@
       </h1>
       <p
         v-if="postContent?.text"
-        class="pb-[30px] whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867]"
+        class="font-roboto pb-[30px] whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867]"
       >
         {{ postContent?.text }}
       </p>
@@ -17,7 +17,10 @@
         <div v-for="(card, index) in postContent?.cards" :key="index">
           <div class="flex flex-col gap-[10px]">
             <ImageCard :image="card?.image" v-if="card?.image" />
-            <p v-if="card?.text" class="text-[15px] font-normal leading-[20px] text-[#003867]">
+            <p
+              v-if="card?.text"
+              class="font-roboto text-[15px] font-normal leading-[20px] text-[#003867]"
+            >
               {{ card?.text }}
             </p>
           </div>
@@ -35,7 +38,7 @@
             </p>
             <p
               v-if="card?.text"
-              class="whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867]"
+              class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867]"
             >
               {{ card?.text }}
             </p>

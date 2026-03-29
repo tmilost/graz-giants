@@ -15,7 +15,10 @@
       >
         {{ value?.tittle }}
       </h1>
-      <p class="text-[15px] leading-[20px] text-[#003867] max-[790px]:my-[20px]" v-if="value?.text">
+      <p
+        class="font-roboto text-[15px] leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+        v-if="value?.text"
+      >
         {{ value?.text }}
       </p>
     </div>

@@ -2,7 +2,7 @@
   <div class="game-table flex flex-row justify-center bg-[#003867] h-[480px] max-[790px]:flex-col">
     <div class="px-[80px] py-0 md:py-[50px]">
       <p
-        class="py-0 pb-0 md:pt-[6px] md:pb-[61px] text-left text-[28px] font-bold uppercase leading-[28px] text-[#FAB900] max-[790px]:my-[20px]"
+        class="py-0 pb-0 md:pt-[6px] md:pb-[61px] text-left text-[28px] font-normal uppercase leading-[28px] text-[#FAB900] max-[790px]:my-[20px]"
       >
         {{ postContent?.tittle }}
       </p>

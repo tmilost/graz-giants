@@ -10,7 +10,7 @@
       </h2>
       <p
         v-if="postContent?.text"
-        class="text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap"
+        class="font-roboto text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap"
       >
         {{ postContent?.text }}
       </p>
@@ -24,7 +24,7 @@
             postContent?.card_preise?.preise ||
             postContent?.card_preise?.button
           "
-          class="relative flex flex-col justify-between items-center p-[27px] w-[270px] h-[361px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[361px]"
+          class="relative flex flex-col justify-between items-center p-[27px] w-[272px] h-[361px] shadow-[5px_5px_10px_rgba(0,0,0,0.30)] max-[430px]:w-[361px]"
         >
           <img
             :src="postContent?.card_preise?.image_background"
@@ -40,12 +40,12 @@
           </p>
 
           <div
-            class="relative z-10 m-0 w-full py-[10px] border-b-1 border-solid border-white"
+            class="font-roboto relative z-10 m-0 w-full py-[10px] border-b-1 border-solid border-white"
             v-for="(value, index) in postContent?.card_preise?.preise"
             :key="index"
           >
             <div
-              class="text-[15px] font-normal flex flex-row items-center justify-center gap-[10px] uppercase leading-[15px] text-[#FAB900]"
+              class="text-[15px] font-bold flex flex-row items-center justify-center gap-[10px] uppercase leading-[15px] text-[#FAB900]"
             >
               <p class="text-[#FFFFFF]">
                 {{ value?.tittle }}
@@ -88,7 +88,9 @@
             {{ card.tittle }}
           </p>
 
-          <div class="relative z-10 m-0 w-full py-[10px] flex flex-col justify-center h-full">
+          <div
+            class="font-roboto relative z-10 m-0 w-full py-[10px] flex flex-col justify-center h-full"
+          >
             <p
               v-if="card?.text"
               class="text-[#FFFFFF] text-[15px] text-center font-normal leading-[15px] whitespace-pre-wrap"

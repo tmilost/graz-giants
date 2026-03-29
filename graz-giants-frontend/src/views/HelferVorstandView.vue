@@ -7,7 +7,9 @@
       >
         {{ postContent?.tittle }}
       </h2>
-      <p class="text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap">
+      <p
+        class="font-roboto text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap"
+      >
         {{ postContent?.text }}
       </p>
       <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
@@ -21,10 +23,10 @@
               alt="sponsor image"
               class="w-[220px] h-[261px] object-cover mr-[30px]"
             />
-            <p class="text-[19px] mt-[10px]">
+            <p class="font-roboto font-bold text-[19px] mt-[10px]">
               {{ person?.name }}
             </p>
-            <p class="mt-[5px]">{{ person?.position }}</p>
+            <p class="font-roboto font-normal mt-[5px]">{{ person?.position }}</p>
           </div>
         </div>
       </div>

@@ -7,7 +7,9 @@
       >
         {{ postContent?.tittle }}
       </h2>
-      <p class="text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap">
+      <p
+        class="font-roboto text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap"
+      >
         {{ postContent?.text }}
       </p>
       <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
@@ -20,11 +22,11 @@
           alt="sponsor image"
           class="w-[220px] h-[261px] object-cover mr-[30px]"
         />
-        <div class="flex flex-col">
-          <p class="text-[#003867] text-[15px] font-normal leading-[20px]">
+        <div class="flex flex-col font-roboto">
+          <p class="text-[#003867] text-[15px] font-bold leading-[20px]">
             {{ postContent?.card_kontaktperson?.name }}
           </p>
-          <p class="text-[#003867] text-[15px] font-normal leading-[20px]">
+          <p class="text-[#003867] text-[15px] font-bold leading-[20px]">
             {{ postContent?.card_kontaktperson?.position }}
           </p>
           <a
@@ -44,7 +46,9 @@
       <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
         {{ postContent?.tittle_bottom }}
       </p>
-      <p class="text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap">
+      <p
+        class="font-roboto text-[#003867] text-[15px] font-normal leading-[20px] whitespace-pre-wrap"
+      >
         {{ postContent?.text_bottom }}
       </p>
       <div class="w-fit mt-[30px]">

@@ -24,7 +24,10 @@
             >
               {{ section?.tittle }}
             </p>
-            <p v-if="section?.text" class="text-[15px] font-normal leading-[20px] text-[#003867]">
+            <p
+              v-if="section?.text"
+              class="font-roboto text-[15px] font-normal leading-[20px] text-[#003867]"
+            >
               {{ section?.text }}
             </p>
           </div>

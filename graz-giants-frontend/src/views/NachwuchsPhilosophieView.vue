@@ -9,7 +9,7 @@
           {{ postContent?.tittle }}
         </h1>
         <p
-          class="pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+          class="font-roboto pt-[30px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
         >
           {{ postContent?.text }}
         </p>
@@ -34,7 +34,7 @@
       </div>
 
       <p
-        class="pt-[30px] text-[15px] font-normal uppercase leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+        class="font-roboto pt-[30px] text-[15px] font-normal uppercase leading-[20px] text-[#003867] max-[790px]:my-[20px]"
       >
         {{ postContent?.text_bottom }}
       </p>
@@ -50,7 +50,7 @@
         >
           <ImageCard :image="card?.image" />
           <p
-            class="pt-[10px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
+            class="font-roboto pt-[10px] text-[15px] font-normal leading-[20px] text-[#003867] max-[790px]:my-[20px]"
           >
             {{ card?.text }}
           </p>

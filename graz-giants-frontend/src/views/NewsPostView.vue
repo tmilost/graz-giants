@@ -3,7 +3,7 @@
     <PageHero :imageUrl="image" />
     <div class="px-[80px] flex flex-col">
       <h1
-        class="py-[30px] md:w-3/4 text-left text-[50px] font-bold uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px]"
+        class="py-[30px] md:w-3/4 text-left text-[50px] font-normal uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px]"
       >
         {{ postContent?.tittle }}
       </h1>

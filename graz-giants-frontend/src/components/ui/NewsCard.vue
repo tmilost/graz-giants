@@ -19,7 +19,9 @@
           {{ date }}
         </p>
         <div class="ml-auto max-[430px]:mt-[7px]">
-          <p class="text-[15px] font-normal leading-[15px] text-[#003867] underline">News</p>
+          <p class="font-roboto text-[15px] font-normal leading-[15px] text-[#003867] underline">
+            News
+          </p>
         </div>
       </div>
     </div>

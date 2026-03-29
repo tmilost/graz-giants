@@ -2,7 +2,7 @@
   <div class="news-letter">
     <div class="text">Abonniere unseren Newsletter und sei immer up-to-date!</div>
     <div class="input-email">
-      <div class="input">
+      <div class="input font-roboto text-[15px] font-normal leading-[15px]">
         <input type="email" id="email-input" name="emailInput" placeholder="Deine E-Mail Adresse" />
         <button class="arow-right">
           <img src="../assets/ArowRight.svg" alt="Arow Right" />
@@ -11,7 +11,7 @@
 
       <label class="container">
         <input type="checkbox" checked="checked" />
-        <span class="checkmark"
+        <span class="font-roboto checkmark text-[12px] font-normal leading-[16px]"
           >Ja, ich bin damit einverstanden, dass meine Daten gespeichert und zur Bearbeitung meines
           Anliegens weiterverwendet werden.</span
         >

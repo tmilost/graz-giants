@@ -8,7 +8,7 @@
         {{ postContent?.tittle }}
       </h1>
       <p
-        class="whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
+        class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[27px] text-[#003867] flex-1 min-w-[240px]"
       >
         {{ postContent?.text }}
       </p>
