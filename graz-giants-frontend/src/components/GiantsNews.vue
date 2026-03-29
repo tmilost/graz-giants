@@ -18,16 +18,16 @@
       />
     </div>
   </div>
-  <div class="mt-[38px] w-full" v-if="!allNewsLoaded">
+  <div class="mt-[38px] w-full font-roboto">
     <button
-      class="mx-auto flex items-center gap-[16px] text-[24px] font-normal uppercase leading-[15px] text-[#003867]"
-      @click="increaseNews()"
+      class="cursor-pointer mx-auto flex items-center gap-[16px] text-[24px] font-bold uppercase leading-[15px] text-[#003867] hover:filter-[brightness(0)_saturate(100%)_invert(64%)_sepia(89%)_saturate(1431%)_hue-rotate(3deg)_brightness(107%)_contrast(103%)] focus:filter-[brightness(0)_saturate(100%)_invert(89%)_sepia(0%)_saturate(1057%)_hue-rotate(183deg)_brightness(85%)_contrast(90%)]"
+      @click="$router.push('/news')"
     >
       <div
         class="group flex items-center justify-center w-[31px] h-[31px] border-2 border-[#1a3a6d] rounded-full relative"
       >
-        <div class="absolute w-[10px] h-[2px] bg-[#1a3a6d] rounded-full"></div>
-        <div class="absolute w-[2px] h-[10px] bg-[#1a3a6d] rounded-full"></div>
+        <div class="absolute w-[17px] h-[3px] bg-[#1a3a6d] rounded-full"></div>
+        <div class="absolute w-[3px] h-[15px] bg-[#1a3a6d] rounded-full"></div>
       </div>
       weitere News
     </button>
