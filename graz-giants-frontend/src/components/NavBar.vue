@@ -1,6 +1,6 @@
 <template>
   <div
-    class="nav-bar font-roboto h-[80px] w-[100%] text-[15px] leading-[30px] text-normal uppercase flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)]"
+    class="nav-bar font-roboto h-[80px] w-[100%] text-[15px] leading-[15px] font-bold uppercase flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)]"
   >
     <!-- navbar items left -->
     <div
