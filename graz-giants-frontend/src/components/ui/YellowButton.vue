@@ -4,7 +4,7 @@
     type="button"
     @click="handleClick"
   >
-    {{ props.text }}
+    {{ decodeHtml(props.text) }}
   </button>
 </template>
 
@@ -23,6 +23,15 @@ const props = defineProps({
     required: false,
   },
 })
+
+// Utility to decode HTML entities
+function decodeHtml(html) {
+  if (!html) return ''
+  const txt = document.createElement('textarea')
+  txt.innerHTML = html
+  return txt.value
+}
+
 function handleClick() {
   navigate(props.href)
 }
