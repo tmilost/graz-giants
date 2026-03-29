@@ -28,9 +28,17 @@
         class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[rgba(0,0,0,0)] from-[-7.32%] to-black to-[102%]"
       ></div>
       <div
-        class="absolute left-1/2 bottom-1/7 flex h-auto w-[90%] -translate-x-1/2 -translate-y-1/2 flex-col justify-center text-center text-white uppercase leading-[36px] sm:left-20 sm:h-[144px] sm:w-[875px] sm:-translate-x-0 sm:text-left sm:leading-[70px]"
+        class="absolute left-1/2 bottom-1/7 flex h-auto w-[90%] -translate-x-1/2 -translate-y-1/2 flex-col justify-center text-center uppercase leading-[36px] sm:left-20 sm:h-[144px] sm:w-[875px] sm:-translate-x-0 sm:text-left sm:leading-[70px]"
       >
-        <span class="text-[32px] font-normal sm:text-[72px]">{{ returnTitle || '&nbsp;' }}</span>
+        <div class="flex flex-col items-center sm:items-start gap-[30px]">
+          <div
+            class="text-[32px] font-normal sm:text-[72px]"
+            :class="returnTextColor ? `text-[${returnTextColor}]` : 'text-[#FFFFFF]'"
+          >
+            {{ returnTitle || '&nbsp;' }}
+          </div>
+          <WhiteButton v-if="returnButton" :text="returnButton?.title" :href="returnButton?.url" />
+        </div>
       </div>
       <div
         class="absolute bottom-[70px] left-1/2 hidden -translate-x-1/2 items-center gap-5 sm:flex"
@@ -54,6 +62,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref, computed } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
+import WhiteButton from '@/components/ui/WhiteButton.vue'
 
 const apiCalls = useApiCalls()
 const postContent = ref({})
@@ -95,6 +104,13 @@ function getImageObj(img) {
 const fullLoaded = ref(false)
 const returnTitle = computed(() => {
   return Object.values(postContent.value)[currentSlide.value]?.hero_text || ''
+})
+const returnButton = computed(() => {
+  return Object.values(postContent.value)[currentSlide.value]?.button || ''
+})
+
+const returnTextColor = computed(() => {
+  return Object.values(postContent.value)[currentSlide.value]?.text_color || ''
 })
 const returnTotalSlides = computed(() => {
   return Object.values(postContent.value).length
