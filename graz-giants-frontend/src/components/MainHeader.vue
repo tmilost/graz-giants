@@ -33,7 +33,7 @@
         <div class="flex flex-col items-center sm:items-start gap-[30px]">
           <div
             class="text-[32px] font-normal sm:text-[72px]"
-            :class="returnTextColor ? `text-[${returnTextColor}]` : 'text-[#FFFFFF]'"
+            :style="returnTextColor ? { color: returnTextColor } : { color: '#FFFFFF' }"
           >
             {{ returnTitle || '&nbsp;' }}
           </div>
