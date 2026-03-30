@@ -4,7 +4,7 @@
     <div class="game-day-top px-[80px] py-[30px] flex flex-col items-start">
       <h1
         v-if="postContent?.tittle"
-        class="text-[50px] font-normal uppercase text-[#003867] mt-[40px] mb-[20px]"
+        class="text-[50px] font-normal uppercase text-[#003867] mb-[20px]"
       >
         {{ postContent?.tittle }}
       </h1>

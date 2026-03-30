@@ -9,7 +9,7 @@
       <h1
         v-if="value?.tittle"
         :class="[
-          'py-[30px] text-left font-normal uppercase  text-[#003867] max-[790px]:my-[20px]',
+          'pb-[30px] text-left font-normal uppercase  text-[#003867] max-[790px]:my-[20px]',
           array === 0 ? 'text-[50px] leading-[50px]' : 'text-[28px] leading-[28px]',
         ]"
       >
