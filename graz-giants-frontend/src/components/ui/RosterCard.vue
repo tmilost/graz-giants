@@ -12,7 +12,7 @@
       <p class="font-roboto font-normal text-[15px] leading-[20px] text-[#FAB900]">
         {{ number || position }}
       </p>
-      <p class="text-[24px] font-bold leading-[24px]">{{ name }}</p>
+      <p class="text-[24px] font-bold leading-[24px] uppercase">{{ name }}</p>
       <p v-if="number" class="font-roboto text-[15px] font-normal leading-[15px]">{{ position }}</p>
     </div>
   </div>

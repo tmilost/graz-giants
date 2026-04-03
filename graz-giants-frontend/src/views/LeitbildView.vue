@@ -20,7 +20,7 @@
           <div class="flex flex-col justify-center py-[30px]">
             <p
               v-if="section?.tittle"
-              class="pb-[30px] text-[28px] font-normal leading-[28px] text-[#003867]"
+              class="pb-[30px] text-[28px] font-normal leading-[28px] uppercase text-[#003867]"
             >
               {{ section?.tittle }}
             </p>

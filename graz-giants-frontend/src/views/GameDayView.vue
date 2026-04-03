@@ -18,7 +18,7 @@
       />
       <h2
         v-if="postContent?.tittle_2"
-        class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]"
+        class="text-[28px] leading-[28px] uppercase font-bold text-[#003867] mt-[40px] mb-[20px]"
       >
         {{ postContent?.tittle_2 }}
       </h2>
@@ -33,7 +33,7 @@
     <div class="game-day-bottom px-[80px] pb-[30px]">
       <h2
         v-if="postContent?.tittle_map"
-        class="text-[28px] font-bold text-[#003867] mt-[40px] mb-[20px]"
+        class="text-[28px] leading-[28px] uppercase font-bold text-[#003867] mt-[40px] mb-[20px]"
       >
         {{ postContent?.tittle_map }}
       </h2>

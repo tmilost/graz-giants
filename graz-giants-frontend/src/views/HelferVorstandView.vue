@@ -12,12 +12,14 @@
       >
         {{ postContent?.text }}
       </p>
-      <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
+      <p class="text-[#003867] text-[28px] font-normal uppercase leading-[28px] my-[30px]">
         {{ postContent?.tittle_board }}
       </p>
-      <div class="flex flex-col md:flex-row mb-[30px] gap-[30px]">
+      <div class="flex flex-col md:flex-row justify-between mb-[30px] gap-[30px]">
         <div v-for="person in postContent?.cards_board" :key="person?.name">
-          <div class="flex flex-col text-[15px] font-normal leading-[20px] text-[#003867]">
+          <div
+            class="w-[220px] flex flex-col text-[15px] font-normal leading-[20px] text-[#003867]"
+          >
             <img
               :src="person?.image"
               alt="sponsor image"

@@ -12,7 +12,7 @@
       >
         {{ postContent?.text }}
       </p>
-      <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
+      <p class="text-[#003867] text-[28px] font-normal uppercase leading-[28px] my-[30px]">
         {{ postContent?.card_kontaktperson?.tittle }}
       </p>
       <div class="flex flex-col md:flex-row">
@@ -43,7 +43,7 @@
           </a>
         </div>
       </div>
-      <p class="text-[#003867] text-[28px] font-normal leading-[20px] my-[30px]">
+      <p class="text-[#003867] text-[28px] font-normal uppercase leading-[28px] my-[30px]">
         {{ postContent?.tittle_bottom }}
       </p>
       <p
