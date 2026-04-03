@@ -78,7 +78,7 @@ onMounted(async () => {
       return
     }
     currentSlide.value = (currentSlide.value + 1) % returnTotalSlides.value
-  }, 15000)
+  }, 10000)
 })
 
 onUnmounted(() => {
