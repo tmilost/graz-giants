@@ -11,8 +11,8 @@
       <div class="flex flex-row items-center gap-[10px] mb-[30px]">
         <div v-for="(tag, index) in newsContent?.tags" :key="index">
           <p
-            class="text-[15px] font-normal uppercase leading-[15px] leading-[21px] text-[#003867] cursor-pointer"
-            :class="currentTagName === tag ? 'font-bold text-[#FAB900] underline' : ''"
+            class="font-roboto text-[15px] font-bold uppercase leading-[15px] leading-[21px] text-[#003867] hover:text-[#FAB900] cursor-pointer"
+            :class="currentTagName === tag ? 'text-[#FAB900] underline' : ''"
             @click="retrieveNewsByTag(tag)"
           >
             {{ tag }}
