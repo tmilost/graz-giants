@@ -1,6 +1,6 @@
 <template>
   <div
-    class="nav-bar font-roboto h-[80px] w-[100%] text-[15px] leading-[15px] font-bold uppercase flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)]"
+    class="nav-bar font-roboto h-[80px] w-[100%] text-[15px] leading-[15px] font-normal uppercase flex flex-row flex-nowrap justify-center items-center bg-[rgba(24,50,100,0.7)]"
   >
     <!-- navbar items left -->
     <div
@@ -12,7 +12,7 @@
             v-if="item.url && (item.url.startsWith('http://') || item.url.startsWith('https://'))"
           >
             <a
-              class="nav-bar-links text-white underline"
+              class="nav-bar-links text-white hover:text-[#FAB900] focus:text-white underline"
               :href="item.url"
               target="_blank"
               rel="noopener noreferrer"
@@ -20,9 +20,11 @@
             >
           </template>
           <template v-else>
-            <router-link class="nav-bar-links text-white underline" :to="item.url">{{
-              item.title
-            }}</router-link>
+            <router-link
+              class="nav-bar-links text-white hover:text-[#FAB900] focus:text-white underline"
+              :to="item.url"
+              >{{ item.title }}</router-link
+            >
           </template>
         </div>
       </template>
@@ -43,7 +45,7 @@
             v-if="item.url && (item.url.startsWith('http://') || item.url.startsWith('https://'))"
           >
             <a
-              class="nav-bar-links text-white underline"
+              class="nav-bar-links text-white hover:text-[#FAB900] focus:text-white underline"
               :href="item.url"
               target="_blank"
               rel="noopener noreferrer"
@@ -51,9 +53,11 @@
             >
           </template>
           <template v-else>
-            <router-link class="nav-bar-links text-white underline" :to="item.url">{{
-              item.title
-            }}</router-link>
+            <router-link
+              class="nav-bar-links text-white hover:text-[#FAB900] focus:text-white underline"
+              :to="item.url"
+              >{{ item.title }}</router-link
+            >
           </template>
         </div>
       </template>
