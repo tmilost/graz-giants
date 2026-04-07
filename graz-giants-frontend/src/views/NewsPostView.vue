@@ -5,17 +5,16 @@
       <h1
         class="py-[30px] md:w-3/4 text-left text-[50px] font-normal uppercase leading-[50px] text-[#003867] max-[790px]:my-[20px]"
       >
-        {{ postContent?.tittle }}
+        {{ postContent?.title?.rendered }}
       </h1>
       <div class="flex w-full flex-row flex-wrap items-start gap-[30px] lg:flex-nowrap">
-        <p
-          class="font-roboto whitespace-pre-wrap text-[15px] font-normal leading-[20px] text-[#003867] flex-1 min-w-[240px]"
-        >
-          {{ postContent?.text }}
-        </p>
+        <div
+          v-html="postContent?.acf?.text"
+          class="font-roboto text-[15px] font-normal leading-[20px] text-[#003867] flex-1 min-w-[240px]"
+        />
         <img
-          v-if="postContent?.image"
-          :src="postContent?.image"
+          v-if="postContent?.acf?.image"
+          :src="postContent?.acf?.image"
           alt="News image"
           class="w-[264px] h-[264px] shrink-0 object-cover"
           height="264"

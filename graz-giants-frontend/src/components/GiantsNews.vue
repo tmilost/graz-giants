@@ -10,9 +10,9 @@
       class="flex flex-row flex-wrap justify-around gap-[30px]"
     >
       <NewsCard
-        v-if="value?.acf?.image && value?.slug"
-        :imageSrc="value?.acf?.image"
-        :title="value?.acf?.tittle"
+        v-if="value?.slug"
+        :imageSrc="value?.acf?.image || HeroImage"
+        :title="value?.acf?.headline_short || value?.tittle"
         :date="formatDate(value?.date)"
         :readMoreLink="'news/' + value?.slug"
       />
@@ -38,6 +38,7 @@
 import { onMounted, ref } from 'vue'
 import { useApiCalls } from '../stores/apiCalls.js'
 import NewsCard from '@/components/ui/NewsCard.vue'
+import HeroImage from '@/assets/HeroImage.jpg'
 
 const apiCalls = useApiCalls()
 const postContent = ref([])

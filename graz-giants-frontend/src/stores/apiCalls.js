@@ -56,6 +56,22 @@ export const useApiCalls = defineStore(
         })
     }
 
+    function retrieveNewsByCategory(categoryId, page) {
+      const cacheKey = `retrieveNewsByCategory:${categoryId}:${page}`
+      if (apiCache.value[cacheKey]) return Promise.resolve(apiCache.value[cacheKey])
+      return axios
+        .get(
+          `${apiPaths.BASE_API_PATH}/posts?acf_format=standard&categories=${categoryId}&order=desc&page=${page}&per_page=10`,
+        )
+        .then((response) => {
+          apiCache.value[cacheKey] = response.data
+          return response.data
+        })
+        .catch(() => {
+          return null
+        })
+    }
+
     function retrieveTagsIds(tagSlug) {
       const slugs = Array.isArray(tagSlug) ? tagSlug.join(',') : tagSlug
       const cacheKey = `retrieveTagsIds:${slugs}`
@@ -71,13 +87,28 @@ export const useApiCalls = defineStore(
         })
     }
 
+    function retrieveCategoriesIds(categorySlug) {
+      const slugs = Array.isArray(categorySlug) ? categorySlug.join(',') : categorySlug
+      const cacheKey = `retrieveCategoriesIds:${slugs}`
+      if (apiCache.value[cacheKey]) return Promise.resolve(apiCache.value[cacheKey])
+      return axios
+        .get(`${apiPaths.BASE_API_PATH}/categories?acf_format=standard&slug=${slugs}`)
+        .then((response) => {
+          apiCache.value[cacheKey] = response.data
+          return response.data
+        })
+        .catch(() => {
+          return null
+        })
+    }
+
     function retrieveNewsPost(postSlug) {
       const cacheKey = `retrieveNewsPost:${postSlug}`
       if (apiCache.value[cacheKey]) return Promise.resolve(apiCache.value[cacheKey])
       return axios
         .get(`${apiPaths.BASE_API_PATH}/posts?acf_format=standard&slug=${postSlug}`)
         .then((response) => {
-          const data = response.data[0]?.acf
+          const data = response.data[0]
           apiCache.value[cacheKey] = data
           return data
         })
@@ -136,7 +167,9 @@ export const useApiCalls = defineStore(
       retrievePage,
       retrievePeople,
       retrieveNewsByTag,
+      retrieveNewsByCategory,
       retrieveTagsIds,
+      retrieveCategoriesIds,
       retrievePeopleByTag,
       apiCache,
     }
