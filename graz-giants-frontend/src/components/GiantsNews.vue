@@ -51,14 +51,6 @@ onMounted(async () => {
   checkAllNewsLoaded(data)
 })
 
-function increaseNews() {
-  totalNews.value = totalNews.value + 4
-  apiCalls.retrieveNews(totalNews.value).then((data) => {
-    postContent.value = data
-    checkAllNewsLoaded(data)
-  })
-}
-
 function checkAllNewsLoaded(data) {
   if (Array.isArray(data) && data.length < totalNews.value) {
     allNewsLoaded.value = true

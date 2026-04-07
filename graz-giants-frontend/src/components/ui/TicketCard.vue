@@ -25,7 +25,7 @@
 <script setup>
 import YellowButton from './YellowButton.vue'
 
-const props = defineProps({
+defineProps({
   image: {
     type: String,
     required: false,

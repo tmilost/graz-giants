@@ -27,6 +27,7 @@ const props = defineProps({
 // Utility to decode HTML entities
 function decodeHtml(html) {
   if (!html) return ''
+  // eslint-disable-next-line
   const txt = document.createElement('textarea')
   txt.innerHTML = html
   return txt.value
